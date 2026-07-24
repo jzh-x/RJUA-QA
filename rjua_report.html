@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://workbuddy-space-static.codebuddy.work/page/323jLVOn0aNyRou1Hjpmac/0/report_rjua_11.html -->
+<html data-page-node-id="sB1W6s7eyrXVX2oeabHoOu" lang="zh-CN"><head data-page-node-id="Xffi25K4B8YkFzsTD2nf4N"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-page-node-id="95rRxxOp2S1CbDQ0zmW3uv" src="./inject.js.下载"></script><meta data-page-node-id="cIS7ab0ZaBJGJ0Ec6Iud45" content="width=device-width,initial-scale=1.0" name="viewport"><title data-page-node-id="J1ggER6qn4DXdOcLUFhRzw" data-pnid-children="9YLYzTWyE84FyODxBi3B7l">RJUA-QA 评测报告</title>
+<style data-page-node-id="uOwwqO5ilTW6m7IOPitnTw" data-pnid-children="jyGcbJhLPU6eUAqMQe1PrI">body{font-family:-apple-system,'Microsoft YaHei',sans-serif;margin:0;padding:20px;background:#f5f7fa;color:#333;}
+.container{max-width:1100px;margin:0 auto;}.card{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:24px;margin-bottom:20px;}
+h1{margin:0 0 4px;font-size:26px;}h2{margin:0 0 12px;font-size:18px;color:#1976D2;border-bottom:2px solid #1976D2;padding-bottom:6px;}
+h3{margin:16px 0 8px;font-size:15px;}.meta{color:#666;font-size:13px;margin:4px 0 12px;}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0;}
+.stat-item{background:#fafafa;padding:14px;border-radius:8px;text-align:center;}.stat-value{font-size:28px;font-weight:bold;}
+.stat-label{font-size:12px;color:#888;margin-top:2px;}table{border-collapse:collapse;width:100%;font-size:12px;}.num{white-space:nowrap;text-align:center;font-weight:bold}
+th{background:#f5f5f5;padding:6px 8px;border:1px solid #ddd;text-align:left;}td{padding:5px 8px;border:1px solid #ddd;vertical-align:top;}
+tr:hover{background:#f0f4ff;}.scroll{overflow-x:auto;}footer{text-align:center;font-size:12px;color:#999;margin-top:24px;}
+</style><script data-smartpage-injected="database">;(function(){"use strict";function e(e,t){if(!(e instanceof t))throw TypeError("Cannot call a class as a function")}function t(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function r(e,r,n){return r&&t(e.prototype,r),n&&t(e,n),e}function n(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var a=function(){"use strict";function t(){var r=this,a=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"*";e(this,t),n(this,"targetWindow",void 0),n(this,"targetOrigin",void 0),n(this,"pendingRequests",new Map),n(this,"counter",0),n(this,"RPC_TIMEOUT",3e4),this.targetWindow=window.parent,this.targetOrigin=a,window.addEventListener("message",function(e){var t=e.data;(null==t?void 0:t.type)==="rpc:response"&&r.handleResponse(t)})}return r(t,[{key:"call",value:function(e,t){var r=this,a="rpc_".concat(Date.now(),"_").concat(++this.counter),i={id:a,method:e,params:void 0!==t?[t]:[],timestamp:Date.now()};return new Promise(function(t,o){var s=window.setTimeout(function(){r.pendingRequests.delete(a),o(Error("[database-sdk] RPC timeout: ".concat(e)))},r.RPC_TIMEOUT);r.pendingRequests.set(a,{resolve:t,reject:o,timer:s}),r.targetWindow.postMessage(function(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{},a=Object.keys(r);"function"==typeof Object.getOwnPropertySymbols&&(a=a.concat(Object.getOwnPropertySymbols(r).filter(function(e){return Object.getOwnPropertyDescriptor(r,e).enumerable}))),a.forEach(function(t){n(e,t,r[t])})}return e}({type:"rpc:request"},i),r.targetOrigin)})}},{key:"handleResponse",value:function(e){var t=this.pendingRequests.get(e.id);t&&(this.pendingRequests.delete(e.id),clearTimeout(t.timer),e.error?t.reject(Error("[database-sdk] RPC error: ".concat(e.error.message))):t.resolve(e.result))}}]),t}(),i=function(){"use strict";function t(){e(this,t),n(this,"bridge",void 0),this.bridge=new a(function(){try{var e=window.location.ancestorOrigins;if(e&&e.length>0){var t=e[0];if("string"==typeof t&&t)return t}}catch(e){}try{if(document.referrer)return new URL(document.referrer).origin}catch(e){}return console.warn("[smartpage-database-sdk] cannot resolve parent origin, falling back to '*'"),"*"}())}return r(t,[{key:"addRecord",value:function(e){return this.bridge.call("database.addRecord",e)}},{key:"updateRecord",value:function(e){return this.bridge.call("database.updateRecord",e)}},{key:"deleteRecord",value:function(e){return this.bridge.call("database.deleteRecord",e)}},{key:"getSchema",value:function(e){return this.bridge.call("database.getSchema",e)}},{key:"getRecord",value:function(e){return this.bridge.call("database.getRecord",e)}},{key:"query",value:function(e){return this.bridge.call("database.query",e)}}]),t}(),o=window;o.__SMART_PAGE__=o.__SMART_PAGE__||{},o.__SMART_PAGE__.database=new i;})();</script></head><body data-page-node-id="abeP9pgUBsRASvOyvdyKCl"><div data-page-node-id="ccvPuelvOIZqR5irBOoiU8" class="container">
+
+<div data-page-node-id="mgO6r1NsvW58skhuKdjXAH" class="card">
+<h1 data-page-node-id="iDsfjF1RTtlYdtNUrmXNO2"><!--pnid:ERIRofd81qyvovYr7Fyoj9-->RJUA-QA 评测报告</h1>
+<p data-page-node-id="lYYpKZbVUJPVFxk6NseGmr" class="meta"><!--pnid:yJRHI1pe21j88m6oDzuUmR-->数据集: RJUA-QA (仁济医院泌尿科 x 蚂蚁集团) | LLM: deepseek-ai/DeepSeek-V3 | 2026-07-23T12:55:00.426793</p>
+<div data-page-node-id="PXk5WJNwLj9KcTkHoYMgJk" class="stat-grid">
+<div data-page-node-id="PVzljaUuiyN3owunyHecf5" class="stat-item"><div data-page-node-id="Q1K6sJBLdkv8pUWfxON2is" class="stat-value" style="color:#1976D2"><!--pnid:3by9Evuy9PzxYR2GzpJ6t9-->50</div><div data-page-node-id="k7N4b6wTqgPRXwkYeJaOQ3" class="stat-label"><!--pnid:1b9hyjs7LzZC874PzH7rru-->总题数</div></div>
+<div data-page-node-id="fTuUvYtcKGBbLVHLOECE6D" class="stat-item"><div data-page-node-id="pSNhfkQpv32G5xdNU3wREX" class="stat-value" style="color:#4CAF50"><!--pnid:xgnFymHz0sS0MDoDZr4Gi3-->35</div><div data-page-node-id="mfMMEWh2cd9jpXHdsESxyJ" class="stat-label"><!--pnid:WoU8BuBmKhG0AOV7nSceJV-->✅ 通过</div></div>
+<div data-page-node-id="pFou06cfR1P6S0NPECjkQn" class="stat-item"><div data-page-node-id="0FwAOIYdD96uviJS7Uy1Rb" class="stat-value" style="color:#FF9800"><!--pnid:jKZRsMv0swnUb6dbevw5tU-->14</div><div data-page-node-id="94mHsZJ8dqMC6c0DpK2h70" class="stat-label"><!--pnid:w4YWuGyCfgNb0IR2T3JbvD-->⚠️ 部分通过</div></div>
+<div data-page-node-id="wJrjP0Hje1lH7q6htSbpiW" class="stat-item"><div data-page-node-id="JLQnw0LTjQ5WQidxJHnMI9" class="stat-value" style="color:#f44336"><!--pnid:C6aAcPKWZ1AzzB8PqN03Rj-->1</div><div data-page-node-id="XdRN9bSsNjNP1MdVByH11S" class="stat-label"><!--pnid:seh5Zq1hnMpnVDMMlL3Oxv-->❌ 未通过</div></div>
+</div>
+<p data-page-node-id="xmSkSvK4h20WeZTFe0MZZt" style="color:#666; font-size:14px"><!--pnid:cXx7SM1SPwpzKF4dHNVsoW-->
+严格正确率: <b data-page-node-id="6HZh3rNp9SeLudD5hhQMPi"><!--pnid:VC3M4FiGVyPV71NVZR4AFm-->70.0%</b><!--pnid:uzbPpdOjLbYT2AkVUqfvsT--> | 
+完整: <b data-page-node-id="Mx9u0p1yWblls2V0Zs8F6B"><!--pnid:sdX7BH5BffzezBP25p6Llf-->57.8%</b><!--pnid:oloFdlj8dRjMuYqkHimL2S--> | 
+忠实: <b data-page-node-id="WwwccQ3Dcyr3gBcXDMf4b8"><!--pnid:vY8k1FMuHAGMmnxbDdI0EE-->90.7%</b><!--pnid:iBlKwtadFqUwg0NTDljGzQ--> | 
+相关: <b data-page-node-id="cEltFtFHf0EauGVGAEDos5"><!--pnid:wFIk06S5sZt6PjsC53i3n2-->89.6%</b><!--pnid:BAkkVVDjNBRQQSEnDiZ46D--> | 
+正确: <b data-page-node-id="vQmAedQbmoZPQc3gzIb098"><!--pnid:d0t5FO0Bo4FhHd6sJFHF4c-->84.0%</b>
+</p>
+</div>
+
+<div data-page-node-id="vhZxfNpyjPOKDR7HsjgYdd" class="card"><h2 data-page-node-id="QI9tl5av2BiF7djFyYNq19"><!--pnid:UTBRw3OoNSjTB4IKijbAOy-->四维评测释义</h2>
+<div data-page-node-id="Qftxzr1wjHVghJbaQlf5xp" style="display:grid; gap:12px; grid-template-columns:1fr 1fr">
+<div data-page-node-id="6XAQBiBQ1ZnKHq731IdZTr" style="background:#E8F5E9; border-radius:8px; padding:12px">
+  <div data-page-node-id="Hoz6gd94DY8P1jbuzi7IdY" style="color:#2E7D32; font-size:16px; font-weight:bold"><!--pnid:4OUmsMT61gZCL61Uu7hqUJ-->📋 完整度</div>
+  <div data-page-node-id="AWrgbC9a2TTuP1MC1Cb4lj" style="font-size:13px; margin:4px 0 6px"><b data-page-node-id="Ew0eQuZ5FN6Mtol2VaujrE"><!--pnid:fiksFaHrOT2dElCcVauc9Z-->57.8%</b></div>
+  <div data-page-node-id="f4Bdqm8hgkqwEsRXquFLyz" style="color:#555; font-size:12px"><!--pnid:whHa3A9YDi8KC2qH5j2DJl-->答案字面匹配了数据集中期望关键词的比例。低分=LLM遗漏了某个必查/必治项的字面表达。</div>
+</div>
+<div data-page-node-id="mwxGLSREV4DsaVQ5B6hp0O" style="background:#E3F2FD; border-radius:8px; padding:12px">
+  <div data-page-node-id="xsU2iKDXQYohG3l0j0CHg9" style="color:#1565C0; font-size:16px; font-weight:bold"><!--pnid:9iQwIxJpKS1fFPVzzOkTLV-->✅ 正确度</div>
+  <div data-page-node-id="MVboIdaPMQ3VGrF4gixa52" style="font-size:13px; margin:4px 0 6px"><b data-page-node-id="dONyyRnMmWAtmerTfY1DjD"><!--pnid:ObQjzyvZwVaegTUbwfmkFA-->84.0%</b></div>
+  <div data-page-node-id="UFVCntdcZILcDwq1TEgget" style="color:#555; font-size:12px"><!--pnid:JkBv8ujzMshDklxnnyhrdX-->DeepSeek-V3 语义判断答案在医学上是否正确。高=LLM认为答案无原则性错误。</div>
+</div>
+<div data-page-node-id="RzWzNAlf5Ygn1TppWQURLm" style="background:#FFF3E0; border-radius:8px; padding:12px">
+  <div data-page-node-id="fKfd0oW9MzVT7ERYmwhjyW" style="color:#E65100; font-size:16px; font-weight:bold"><!--pnid:SPOO1exeDavBPhrgSsHPAU-->📚 忠实度</div>
+  <div data-page-node-id="hk3Ljrh1bbwjmQr9o5stRE" style="font-size:13px; margin:4px 0 6px"><b data-page-node-id="f4LkWEPNw1VOK8VdoDOP96"><!--pnid:6vAa7hrqQm8C5gaunHVWtk-->90.7%</b></div>
+  <div data-page-node-id="uWTd8wgRGclaQZKGmBMNrD" style="color:#555; font-size:12px"><!--pnid:ewMnxQrO7ojJPZKV7KqYYh-->答案中的医学主张能被源文档支持的比例。RAGAS标准：提取所有断言→逐句验证。高=LLM没有编造。</div>
+</div>
+<div data-page-node-id="xyrmVX2FOR4bVZkgoHzDp7" style="background:#F3E5F5; border-radius:8px; padding:12px">
+  <div data-page-node-id="4FEeCxGjz1W2U4owa5o78j" style="color:#6A1B9A; font-size:16px; font-weight:bold"><!--pnid:eGILf0y3l9UKZEsOF6IRU9-->🎯 相关度</div>
+  <div data-page-node-id="k5HA3TwA86lfSEoc7QglJg" style="font-size:13px; margin:4px 0 6px"><b data-page-node-id="lBpaAwQ4cToLmecm48gb9E"><!--pnid:vZQXI3drNZXicDpAW5N12E-->89.6%</b></div>
+  <div data-page-node-id="UBW7gSJM2yxfbmVgiiz9IF" style="color:#555; font-size:12px"><!--pnid:0qk3bbzBbOEzgfd9YS261j-->答案是否直接回应问题核心。RAGAS标准：从答案逆向生成问题→对比原问题。高=没有偏题。</div>
+</div>
+</div>
+</div>
+
+<div data-page-node-id="BHy8FP7cFJvNUQwDduGUcT" class="card"><h2 data-page-node-id="l75Sn2joLvLd4RkTwHkMmz"><!--pnid:VOMHR4R4jb7g5sffTOlIvI-->按疾病分类</h2><p data-page-node-id="AZn4QWMMcH2eIa4zOe3Yh8" style="color:#888; font-size:12px; margin-bottom:8px"><!--pnid:zAPLgBhD1z16ROsHaPN0d0-->✅ 通过=PASS | ⚠️ 部分=PARTIAL | ❌ 错误=FAIL | 严格=仅PASS | 加权=PASS×1.0+PARTIAL×0.5</p><div data-page-node-id="rVEiVsvArCrlVA4B1yYdR5" class="scroll"><table data-page-node-id="rmkkJ04pVPj8AN7GMsxlgb"><thead data-page-node-id="RS7SI69lyq6w3MRJ5RrqYq"><tr data-page-node-id="C6jjQV5fCe8MlMTiLzQeiR"><th data-page-node-id="7NencSQfkDETyGmNaBZP3Z"><!--pnid:CpL7cBJE4YX3sKT9URAfW8-->疾病</th><th data-page-node-id="959To9DuwK1FxQx0Bk1FyT"><!--pnid:93b6PFQv7YdLx3vZdyawZa-->总数</th><th data-page-node-id="QwsqsZEH1kiSj8P5OHXlP9"><!--pnid:OzCCxtQR51iz9Odrd6LjaZ-->✅ 通过</th><th data-page-node-id="tFpqPcganLSUNP0fjnlbHd"><!--pnid:bwN5LpyHgJWRO8QMExmUmT-->⚠️ 部分</th><th data-page-node-id="ErA5peLuVuSz9neMiw4P7S"><!--pnid:ozchh3fjATozy2FgmRZsOC-->❌ 错误</th><th data-page-node-id="ZJlfnckppmStfIZwhHFIYV"><!--pnid:QimNKxwuIxKtWJBJ3BtDHG-->严格</th><th data-page-node-id="rL87qE1HxPey1PZhY5rW4z"><!--pnid:hajRRplmiyagq8dFwHmw25-->加权</th></tr></thead><tbody data-page-node-id="G1J9sKS6m5IlWxKSKtkWmO"><tr data-page-node-id="URVwqQnhFHlIlqrVQSpDcR"><td data-page-node-id="Fj5Hjglc7awYwpdWVTPgc8"><!--pnid:m5vk3yFOEYRnXULq8qoWZO-->前列腺增生</td><td data-page-node-id="QfIjb7fFmKpXlvjIPTKjgE"><!--pnid:WXpmuetd0n6cquXH4onKYd-->4</td><td data-page-node-id="8ZNiXsRSiLHb5CETozfHK7"><!--pnid:yQ1G4bCSHA8Q3JQQSJylKv-->4</td><td data-page-node-id="0MQJizlS6Y8hdHPbyasRGo"><!--pnid:ImvzewzosUIc6Oytf6bfHZ-->0</td><td data-page-node-id="WFbQqlVSDtMIcLeI7OgZgN"><!--pnid:tt3sSTftu1ln8dErbV9iVd-->0</td><td data-page-node-id="F5HdYz7wHFIKcuAT6Gt9EA" style="color:#4CAF50; font-weight:bold"><!--pnid:MiKHCDnDeynlTDhBaei1Ky-->100%</td><td data-page-node-id="rdvBH9W9UuyQkteF82U7LG" class="num"><!--pnid:dJkvKSIkZEh1PKYGDdtn12-->100%</td></tr><tr data-page-node-id="UXLwzeoC4s2eI7jfnnYAzo"><td data-page-node-id="Q0CmFqdJSJtLatRd4qH3ge"><!--pnid:VXv7MnMXIzkmEBvwEkOsBT-->右肾小结石</td><td data-page-node-id="V2qAKIgevQfWvugfiGmRzR"><!--pnid:vpwN5oCbryWq8qIf3eQpyg-->1</td><td data-page-node-id="Il8DZPVmUBs0onbdhEa1Wy"><!--pnid:LDZuah7P0PWNG0EznoJXfz-->1</td><td data-page-node-id="yoUifdQVACM7hufovP7e5g"><!--pnid:mdyOJzGl07wTOPwDwKe1Io-->0</td><td data-page-node-id="xczDxB38MmxywVQtdayb6B"><!--pnid:T8fCCrVrnYKRbeDm7tjtBc-->0</td><td data-page-node-id="aQLEENWs5AKVxH0LvLdW9y" style="color:#4CAF50; font-weight:bold"><!--pnid:5vrwjQey9eMykr8J5GVfhZ-->100%</td><td data-page-node-id="qvT6iS3th7pjGMwVUi3X5G" class="num"><!--pnid:EstnECDjlOB2tibOi3tHaN-->100%</td></tr><tr data-page-node-id="mM52TkjpqsxlAiSEtiUE4S"><td data-page-node-id="khZepcrszGriXbm4nIAHkl"><!--pnid:7tfb4o5qAmAUvpusgTN8fF-->神经源性尿失禁、急性肾功能不全</td><td data-page-node-id="VPP36PNGqaOpbUypRgzMg8"><!--pnid:J7Z3ao9hA56PzP6lixY1hO-->1</td><td data-page-node-id="ZjoEI29H4Lxaa0nKggMhFB"><!--pnid:CykBkKvxgGcGfc7u9i5OPk-->1</td><td data-page-node-id="bddPPM5eulMWiDzkKPWMM9"><!--pnid:ZHjiImEc9ASR7eXIgw8yU9-->0</td><td data-page-node-id="zraosflviwSOhnJ5IBSYYg"><!--pnid:Q4GwMifnO9p73dkgHxWdA0-->0</td><td data-page-node-id="CkyITn9TS5vuPhmXf0QOJd" style="color:#4CAF50; font-weight:bold"><!--pnid:2H3dSG4efRiV140lXUZy3G-->100%</td><td data-page-node-id="RrC1R8BQAldFH96FpR521E" class="num"><!--pnid:tiwQRM88HBgpvDWSZIfcVP-->100%</td></tr><tr data-page-node-id="xcfnQtF0RgiswGcoCTl8Jr"><td data-page-node-id="g74zf5H6U6AVIcq5ikg3LQ"><!--pnid:xoaTf8IqVDrzroSOGNkmj1-->右肾结石、右肾盂输尿管移行处狭窄</td><td data-page-node-id="Vpc4nJXIXvEvbRStzkwcpk"><!--pnid:UfqS7D7lODVMq82WCFgph0-->1</td><td data-page-node-id="8UkJk9akspQ2fxiwO9XS8C"><!--pnid:2g69t5TCxb8ZVMlx5OllPh-->1</td><td data-page-node-id="izqvUoyckYd0PiSBobnE77"><!--pnid:twvnxHqVzgP0qKe4SEsLGy-->0</td><td data-page-node-id="rLPRTVTTTw0l9QJHt8gRDn"><!--pnid:OZ0xI6Enrpr4DeAtLAshNv-->0</td><td data-page-node-id="xkHoXmJvZdDloxgK656Mgf" style="color:#4CAF50; font-weight:bold"><!--pnid:krm2TjK9SggXQf9NIDq26c-->100%</td><td data-page-node-id="bgrae8nfoVGRuNsRn2S73O" class="num"><!--pnid:IzoX442ay8WIIN4G2JEY87-->100%</td></tr><tr data-page-node-id="xSuUj7FWM2OqwDC5c9VfWo"><td data-page-node-id="vLKTgfLMtZA26PGVgIuAtZ"><!--pnid:3OZWTrx5hsJ3uPpSlyCuPg-->睾丸扭转</td><td data-page-node-id="8F7gZS9JhuxJROXvOLkUEw"><!--pnid:b8SZuptQTBYjV3U0gI32Qh-->1</td><td data-page-node-id="jtygpCem7v3AtjeOEPfTTq"><!--pnid:2paiFXwny8hs8Q96WcBaIC-->1</td><td data-page-node-id="Suba1IhplIhj9Ljz1z2I7z"><!--pnid:5wIZAcQSrfcwtDD3RlZz7x-->0</td><td data-page-node-id="amfFHFETIT3ZPrSowlLKiZ"><!--pnid:Lgbcdfb29jn8mH2nKT67Pf-->0</td><td data-page-node-id="kYwZCXfz3mSnjYJHTLSePA" style="color:#4CAF50; font-weight:bold"><!--pnid:fIyuTYqvQ9PDYYYi7UwbhK-->100%</td><td data-page-node-id="bK4shjqB0bHuukJnszJFoo" class="num"><!--pnid:zgDknEXrJOXnHQWy3b5GKo-->100%</td></tr><tr data-page-node-id="CLxIEVg3kkXD8OHGnIW2t3"><td data-page-node-id="DdWMNYxemvwl42EuZWJNp4"><!--pnid:Qcdn4Gy5Xl78vEO01GjwJI-->睾丸附睾炎</td><td data-page-node-id="RdvvCm3v8tKajqvSxguu4i"><!--pnid:k0n0nygYan3PaPkm6E2DzN-->1</td><td data-page-node-id="GETICRyKPC3tecUM6DlBr3"><!--pnid:aaMz6M7g6KZTGI50YOO0ru-->1</td><td data-page-node-id="sZCX38n3fuw9EkJ1zH9xA7"><!--pnid:uJKAPlla3ekGpAb5byU3Iw-->0</td><td data-page-node-id="NmXzo1JPxXRxeWSxI85L6o"><!--pnid:HkprWSnhgT4AoRIUDKHIdf-->0</td><td data-page-node-id="wIYxzCuRyZVfJXwMyw5Zi6" style="color:#4CAF50; font-weight:bold"><!--pnid:pNXF7ljfUm5ufJIgEMvkzd-->100%</td><td data-page-node-id="MRjcUTPXyx0N4r8MF8qrNn" class="num"><!--pnid:g4PSqTO31qjdSRdVsJHnzN-->100%</td></tr><tr data-page-node-id="v3MZTCQhUQWbPS9czwwCYv"><td data-page-node-id="ROmErRKYNnsTIhwsPJsqHd"><!--pnid:FtjzvTLL6xtABD7k9EFTZL-->尿道炎</td><td data-page-node-id="wcQNfwG2XiywQLApOLEzTt"><!--pnid:O5ruhyrAvkldaXXz5OS9QN-->1</td><td data-page-node-id="piqAtlDV2ENFwUYGCkC9GY"><!--pnid:1YGBqHGcSoCPvCYXzEZaLF-->1</td><td data-page-node-id="sDKzIfut5AlxIetpqyyKCc"><!--pnid:YDCJsDUZSotUI7shkfmheg-->0</td><td data-page-node-id="GPq4V98aGj7TsRJ27RNip9"><!--pnid:Ph20WsEe70kaazhnmSOEkb-->0</td><td data-page-node-id="dkPjAYZrsQRlytDDfjcZG9" style="color:#4CAF50; font-weight:bold"><!--pnid:1bpvZIOnXdP8W7mpZsrr8n-->100%</td><td data-page-node-id="kfPi8m74DduWcpyOxdTfkY" class="num"><!--pnid:IfDJOxH14AgCjbq7EqUe8B-->100%</td></tr><tr data-page-node-id="93GPpqegUG289zXmzkYGSt"><td data-page-node-id="OGbAbBYZgkiLXZBoqK15ll"><!--pnid:oEmh2zkrW6xh3INIM0zxXc-->左肾占位，分期T1aN0M0</td><td data-page-node-id="wygHl8LAUyoK50l4FVItEV"><!--pnid:rhfQACb7eDkdeWojKWkWID-->1</td><td data-page-node-id="pWCnCsILz0P59HweoI9lxv"><!--pnid:H1ShVlwEqyq7TObhgmWoU0-->1</td><td data-page-node-id="6a5k3caqUFEW7TUcfyB4zd"><!--pnid:YqqNCW5zkl3ryC3yg6LgjU-->0</td><td data-page-node-id="drLQv0eHXiq3XuiV5XMr1H"><!--pnid:khkVmMCIsANjvAJV7Ox8Vz-->0</td><td data-page-node-id="LGSok3t5GzP0gBmfyrBJZt" style="color:#4CAF50; font-weight:bold"><!--pnid:E3Wk0cWqstrey355uh38tz-->100%</td><td data-page-node-id="4RYBZaQ4Ljd2nN1IyppUvv" class="num"><!--pnid:wfnL2KbVDmyO0eu2MH6vEM-->100%</td></tr><tr data-page-node-id="gIgqCkWzLkkY6JpFgAZ8N4"><td data-page-node-id="RnyxVuTaoBXtqlyWvxUFFN"><!--pnid:PBREpHvohklcpV275DGx13-->慢性前列腺炎</td><td data-page-node-id="yNuH7Q1oekUZ0PWMpE4VGU"><!--pnid:7ri9fApBOYFfhPuMsbyGPO-->1</td><td data-page-node-id="9TzJ33nUJcuwMlb3Wn131l"><!--pnid:etOdM1zDGinBQi1CcOU4nV-->1</td><td data-page-node-id="iI1btoDT3bEhDCZeSe0XPl"><!--pnid:CkvmD5ndUB4s6vIA3Gc9iF-->0</td><td data-page-node-id="UPhBmncFASygRVhmCGbtZM"><!--pnid:9LYpRSLSRNIZYT9TbcLrby-->0</td><td data-page-node-id="B6AVGXLZ1HzfzvmPmvTKoR" style="color:#4CAF50; font-weight:bold"><!--pnid:TmChGRYJo880X9MFULASET-->100%</td><td data-page-node-id="mFZb5RgCUSc72WwY1lF0zn" class="num"><!--pnid:K5KFZAWJKmYWKCROMOKZFw-->100%</td></tr><tr data-page-node-id="V6k0wgHK8vkGXGpImkAUXt"><td data-page-node-id="zwbljuTNDXWHJt4QTUWL5U"><!--pnid:pLhDd9Mttlfu6cEjeQhXcL-->慢性前列腺炎、前列腺增生</td><td data-page-node-id="zFszfA2I7pmnKY3yEkDR65"><!--pnid:ClrIQpwdLqbnh6zaVjQbBJ-->1</td><td data-page-node-id="W3JVL3ptQIU2s3fOTXcE43"><!--pnid:9xt3HAnSReHN2Khc8LSzWd-->1</td><td data-page-node-id="J6Rc6lGRQyi1uA55I8IrhG"><!--pnid:Av1wYKKOx9HIT4BZpSvzz7-->0</td><td data-page-node-id="X6eMpF2emrFO7rBubA5KgH"><!--pnid:UQ8lSFXtK5wLTvJTzgbOWh-->0</td><td data-page-node-id="0ffkOZnjZAJdhPpq2WEZMa" style="color:#4CAF50; font-weight:bold"><!--pnid:FjNqlmgbeNL9IzlWR2NJ3Y-->100%</td><td data-page-node-id="ZJ3j4Mga8VRKCh9WkhhSky" class="num"><!--pnid:EwOqOlkqG4ogT0OAll7H7M-->100%</td></tr><tr data-page-node-id="wXKsryEkJxuPFDrI6J4gGO"><td data-page-node-id="RVdqa2wThpCqeNFjV9AM4v"><!--pnid:O4ndNPGOI1pD623VRG6QHm-->睾丸炎、睾丸扭转，脓毒血症</td><td data-page-node-id="NtQkqJLzldclPnqVBXjQYI"><!--pnid:EaUeb3imHqCbumCFlMfAFR-->1</td><td data-page-node-id="NRKThdl4nKvQguNT9J0SFW"><!--pnid:2MXwdx2EEff0wbswerhHsj-->1</td><td data-page-node-id="NzgkRyTPRDCe04YmlY2wRU"><!--pnid:HttgTEhkf208aSynauwbsL-->0</td><td data-page-node-id="s1o2PbUQNgm55iVJ7j51Xn"><!--pnid:Q4vEw6m8ZDmMmxOZUebA2H-->0</td><td data-page-node-id="zKlhHSgERDrbaxJyy5LvvP" style="color:#4CAF50; font-weight:bold"><!--pnid:lrpKjl8yX3xm4MFtKHOMjw-->100%</td><td data-page-node-id="gQ5akRBLwsmevFCMuR3ce5" class="num"><!--pnid:YVm9uUIUdDzjmBrCyPI7Ko-->100%</td></tr><tr data-page-node-id="rD2AgH4T7RUYBmEapGp4wO"><td data-page-node-id="lA0V8onjRwhhYfKJeGFNO6"><!--pnid:XeSMKYsKFinthvDscqGRaE-->肾挫伤</td><td data-page-node-id="N6RDqV0bB3vhKW3pm06GuH"><!--pnid:nU14PS6B8AKeD8awSHnwH9-->1</td><td data-page-node-id="gYxAJqJZAPpBOXsmFjbroq"><!--pnid:SBWbPrbYgLxVVBREYQTuoH-->1</td><td data-page-node-id="529cpCbJRb9u0DEXIef7yp"><!--pnid:HmUzYVdDrxOtL8bDEWv6ZM-->0</td><td data-page-node-id="alsratjWhpIFDC760Dn90Y"><!--pnid:98NCiRLYYbqVAfEPjRBffc-->0</td><td data-page-node-id="hDIhozzK4j2rdIM6eeozhe" style="color:#4CAF50; font-weight:bold"><!--pnid:w8DTa0C3QT4FHIDq0jAggg-->100%</td><td data-page-node-id="uA3pDZX0tGPZnV4b20fn6f" class="num"><!--pnid:MyXKGvgPebpJUp73sl7geO-->100%</td></tr><tr data-page-node-id="In2wpH8pKCzMjqyISnHQ9E"><td data-page-node-id="l6MtsiDazqputkx9IIG9ey"><!--pnid:LXuFbilEfGXAuHV23eY5us-->左肾恶性肿瘤（T1aN0M0）
+左肾上腺占位</td><td data-page-node-id="esbq6USN3hvrWvnFptIINc"><!--pnid:sEy0UbXCBaIRJ4XbhiJDrp-->1</td><td data-page-node-id="9nr3kjVtSTMNNyEudeeK8e"><!--pnid:XCTOelFs4c2VXsuE4Ac0Wr-->1</td><td data-page-node-id="eXRnAy5EAWiVj6fjxkaC3l"><!--pnid:mRA1jeaF803hRYcc9E42PY-->0</td><td data-page-node-id="PvDS6O9N8tywWbMSuq1pwv"><!--pnid:fjSFLQtiK6Iy0VhoHyyWRB-->0</td><td data-page-node-id="6ifBDMDc8KqVO2VpsutCX7" style="color:#4CAF50; font-weight:bold"><!--pnid:YNt9CZQVe5HPfZ36Op5QWu-->100%</td><td data-page-node-id="u3QnHg4iffU7weEF0uuhi6" class="num"><!--pnid:FrdpK5o4Oesfo0Emvyb24P-->100%</td></tr><tr data-page-node-id="WznMH2Wl6DE7PZZmuACiZb"><td data-page-node-id="aOXo8x7gvcWyxtrP6so2J7"><!--pnid:uPKigmy0Vk6mwzqLifjAe8-->右输尿管结石、肾积水、泌尿道感染、肾功能不全</td><td data-page-node-id="oOzyf1tDcTkk2af5YlYlkf"><!--pnid:fRmqglSazZIRuTUj3luEOZ-->1</td><td data-page-node-id="PjaIdalC1Gza7YfVPjqIiY"><!--pnid:hQwoPMcr5p1ABsPPjCXHVH-->1</td><td data-page-node-id="MHlwDnolUlCvUImbZkcSxX"><!--pnid:bix0KcKzZrTDUyxCGfU7xU-->0</td><td data-page-node-id="zNb8pMp4GHcK0cg1xWgKrB"><!--pnid:PrTWtESj0IzkgtLbiRbOcU-->0</td><td data-page-node-id="BycXP4pZRnVSU0Jfv2qaZ2" style="color:#4CAF50; font-weight:bold"><!--pnid:xDPibW3I1YFKbEpgC5Og3K-->100%</td><td data-page-node-id="HLHDPk3Opc1gzTFOIXiXEl" class="num"><!--pnid:Z8R22ByffSlrp3gYTv49R0-->100%</td></tr><tr data-page-node-id="vqa3yhfGBH6iSpOiMjzHkL"><td data-page-node-id="Dv2AhlIG56ozRYcCrhGBN6"><!--pnid:2pZwQXmqHLd0PSA3TjtQJQ-->左输尿管占位（T1bN0M0）</td><td data-page-node-id="MFxGCEhudVqwuRuHPKKqIj"><!--pnid:FPtscX2qYmWEp5zaZfQuGw-->1</td><td data-page-node-id="BaMIl4qjoK0glM7N34e8iF"><!--pnid:YpztiriLuzj4qADZIQS0Mv-->1</td><td data-page-node-id="QxAOZ4AwzdreAZFGBPt2AT"><!--pnid:GqHgvL0gSQka2bjjYWt9qx-->0</td><td data-page-node-id="gl480fThF5asv2X8QCfZAM"><!--pnid:B2D9skcmWu2VcllJquLaaz-->0</td><td data-page-node-id="kciF1VWVgT2Qyu42BzMZaV" style="color:#4CAF50; font-weight:bold"><!--pnid:F3kzMogEhRODdWKkKEIsPS-->100%</td><td data-page-node-id="wwqKf3ZlTivRFR3wUv7TEV" class="num"><!--pnid:4hHqU3qPKodMBc9Wu1Bdkt-->100%</td></tr><tr data-page-node-id="76LmnFdDX2TAxAdOehMcdT"><td data-page-node-id="4EcwJ1Wh6qEeOMjU3i9GGz"><!--pnid:4sCIQu2fkkfRkQJiIEe5Rf-->包皮过长</td><td data-page-node-id="mHQbMC0g5O9HYF5kMagmjV"><!--pnid:Kd3WTBDlpY6PREXEGfHo0b-->1</td><td data-page-node-id="IkACSu7TFMl7TI9TBImYGW"><!--pnid:5Lq0yjpqdoKq6yoktoUgnQ-->1</td><td data-page-node-id="pYhbEQJ8yjnPPwgzuxD44T"><!--pnid:vqUT55T5eTFixt7Kw66vW5-->0</td><td data-page-node-id="8fmlnDtkjd154TN4aoBuPr"><!--pnid:CZuALRRChrzmiPIk3B5Y28-->0</td><td data-page-node-id="OX96WkPZJICOmmffxTlYvt" style="color:#4CAF50; font-weight:bold"><!--pnid:dg9BvMhnkAYT4tCgIiyhWT-->100%</td><td data-page-node-id="l7xZGMvRZPjwWsYMrVFV9t" class="num"><!--pnid:hBXxDX30sXcKl9R7k5i9Np-->100%</td></tr><tr data-page-node-id="HapLAoYqg39Byb1xWVrV7A"><td data-page-node-id="WMnWkpU3FocCseuTjqxvLW"><!--pnid:Lnvs0ek4d7jGYOW2Rq2BrS-->输尿管狭窄</td><td data-page-node-id="TxEAmmEVCopaHHWgTBrmdh"><!--pnid:Od9io9PRfxuVXOLwJFyTxN-->1</td><td data-page-node-id="brF6OOSNgKQU4fotX8ZKVs"><!--pnid:XhWY3VuAw9CJzS24UMXSJg-->1</td><td data-page-node-id="T7sTlTYXIxFaxAWkrLsS9F"><!--pnid:hIkubHQapeGlb7va5Q1Az8-->0</td><td data-page-node-id="5UPEDNw2KbqJcnVa8X1DTw"><!--pnid:l2gFJb4vCEEkpxXNqAg98b-->0</td><td data-page-node-id="JnBNEmoedJENsjD1fttbKm" style="color:#4CAF50; font-weight:bold"><!--pnid:yrEPAtD1cmLVUj7JGs2woa-->100%</td><td data-page-node-id="rm102388LqJZ8NbEPBbHTO" class="num"><!--pnid:HFEvMj57vk6emxV2H76k7M-->100%</td></tr><tr data-page-node-id="9oY5DanyQLFokjTW5vR5Tk"><td data-page-node-id="AAfGFkdttLIA2EzZE45Tn0"><!--pnid:2PpUKBB2XKpoPrXAuwQpzn-->前列腺增生、双肾积水、双肾输尿管上段扩张、尿潴留</td><td data-page-node-id="V7q5Fpt4k82Eb79D4ol8tj"><!--pnid:ioq23lDwMfex1I3g6xqFNw-->1</td><td data-page-node-id="5S6zGsc5lMDW0q9xwnitu7"><!--pnid:krL5l2bUoziLb33hIBY85q-->1</td><td data-page-node-id="CbkOvdkFah8aN1GSmYnAu2"><!--pnid:ZTc0M9jouB7rbPM3H3QL0p-->0</td><td data-page-node-id="mzH7wC1505ylAKFfBaN8p8"><!--pnid:x1dq4Q1ryoDVVvt31k6NG7-->0</td><td data-page-node-id="q2MzBppThviWxGHShEBqsR" style="color:#4CAF50; font-weight:bold"><!--pnid:LZb3MXIESYtXZIU6Es0kHZ-->100%</td><td data-page-node-id="h6VIMH6b7ypD1Jvq9iMPKJ" class="num"><!--pnid:rYHvmTBaw5FzMhyGAGXE7X-->100%</td></tr><tr data-page-node-id="cVS9F1ENcoBODeK67OIVv0"><td data-page-node-id="2fCEMVHtBoxP9mklNUn1iK"><!--pnid:mkFAmYkXYYuJd0Nt29lfGr-->左腹膜后占位,Castleman病</td><td data-page-node-id="Hp3hcMU1od00BtNPGGigui"><!--pnid:PjS5AemXnPo7IRmh90SMKc-->1</td><td data-page-node-id="VpUEfouOxza6ZkQsNS5rnb"><!--pnid:nZRk553HMrlE5II6c2FpxW-->1</td><td data-page-node-id="WOn4DU69HsmZrkMZEzUqEs"><!--pnid:YMrYAve7RE4jMCHCaU3swW-->0</td><td data-page-node-id="fwMpNxokNaUoPEDaer9MjC"><!--pnid:zU6fnu3aAr552tHKkJelBe-->0</td><td data-page-node-id="k04oWwOOG7ZDVOHE4rYyGs" style="color:#4CAF50; font-weight:bold"><!--pnid:jtZI0elnGYh7RPO7Crp492-->100%</td><td data-page-node-id="TaE62JVTuxrHH6zbW284Vd" class="num"><!--pnid:mhsxM6hizeIIPovXj3hN8O-->100%</td></tr><tr data-page-node-id="uCtBDcANC1EBF1mr1qsJCA"><td data-page-node-id="qs1ZpuSMhdzEvRSXMuzLlc"><!--pnid:djgWG48CJ8P68Q9RoInbbd-->右肾上腺肿瘤</td><td data-page-node-id="P6AMK9eR0QOy0f1pwDJdXy"><!--pnid:KYZhZlFI2VxoU11EbJ60vp-->1</td><td data-page-node-id="X09UM4lNANjHW8hF7kKqX6"><!--pnid:0EW6CyukjjuYvrh5op1X2P-->1</td><td data-page-node-id="RrWyf4Ce7x1o2MFbxSKuBc"><!--pnid:mNsAKMTb2AmNGd4vVei13G-->0</td><td data-page-node-id="YPqNNq5Ex7Fw7CXZt6mQI7"><!--pnid:yfbhZPDxybixo78417GITM-->0</td><td data-page-node-id="VAcjHD5Tey0lWGIOjaLBvO" style="color:#4CAF50; font-weight:bold"><!--pnid:r3cDGpKiUCFobbtWs8Lbth-->100%</td><td data-page-node-id="2pb7nWvgxjJ4zqzlnDCkQv" class="num"><!--pnid:vtIYkKEYm708F8jrNwet82-->100%</td></tr><tr data-page-node-id="jGmYfkRQF1OOp64TMvcPm2"><td data-page-node-id="RqAhWBQwGh08uRYoEaXTOC"><!--pnid:w5jZf0wB6sAfI1Jl6npEmX-->右肾上腺占位</td><td data-page-node-id="h12v7ydrjAX5H00KuMYmRL"><!--pnid:i6BWSq4rXAGmzScSuSWGYG-->1</td><td data-page-node-id="U5VGMCJ5CnuW4D8Xcp4tCx"><!--pnid:q6NbGDHtPWUKkbeWHLP5CT-->1</td><td data-page-node-id="ir8qdWWKq4mPbHUNIiQ1UD"><!--pnid:YETSajjAe8gYRyzRuZ3Vyn-->0</td><td data-page-node-id="dV83mmet36f7y9K9l89kAV"><!--pnid:tcY6YZnFNOfdx1fEdixKF3-->0</td><td data-page-node-id="fMz3TR7YJtAGCKzfDaFS9i" style="color:#4CAF50; font-weight:bold"><!--pnid:n6g1xpA8U8fIk8Dh6CL90l-->100%</td><td data-page-node-id="uGTCFpgo1YdA2n68pGcaKj" class="num"><!--pnid:eX5YDQJQcXkFeyKpjhPoSf-->100%</td></tr><tr data-page-node-id="UeFpVD8wJG1Q5Oq12VatdN"><td data-page-node-id="L5jF0WWbhr4eTTsC9oEe1W"><!--pnid:h5hh146IOc5jWMywY5VpQS-->右肾盂输尿管占位</td><td data-page-node-id="38gaMBUl7UgbGvOxzbQ7xf"><!--pnid:AQ74wpAbZ81V1mgGvBd8qI-->1</td><td data-page-node-id="yN4VmUkfdps7YaFqoWf2YW"><!--pnid:IQ6PZ2CTHicsTXCwg52s7G-->1</td><td data-page-node-id="ap8dJ4Fj5pId4y06hxjgAx"><!--pnid:ugC8mqn7VUMgK6SU5ksQaS-->0</td><td data-page-node-id="i9wxNgpUlNrxo3dCL2GmrV"><!--pnid:Sl4OPL1Dsy3ZU5xsYVPrzq-->0</td><td data-page-node-id="XzgznAZxCUETdC2nPJ4dhm" style="color:#4CAF50; font-weight:bold"><!--pnid:J2xniwV2UqrI20rxaAle6N-->100%</td><td data-page-node-id="BPTkkqf25UeQp66g1md9Lx" class="num"><!--pnid:GCQGQdaGlnfnM61FACddBw-->100%</td></tr><tr data-page-node-id="z1P47h6HOoSHh5TeZO08hm"><td data-page-node-id="e3UdGvzlyuRrt5cOCbiYCl"><!--pnid:Z4pgPUV8CxZk9zjyfqmR2D-->左侧睾丸肿瘤</td><td data-page-node-id="qxl04JIlSUE2cJ5sEXHVKH"><!--pnid:CTr9TV4dlDGSEou3yQlMUe-->1</td><td data-page-node-id="yxmejhPRmvIcbruUrL7hyN"><!--pnid:NXkCWexiXVoHrsvGCC9bBq-->1</td><td data-page-node-id="nQjiSjBvvekhupv6qKzmms"><!--pnid:wbv1IsksQUeF0PM4AHywGK-->0</td><td data-page-node-id="kEAnXmzlSLCnuqbbOIBEH6"><!--pnid:uipRn4gHnNkiJSOHlqbiHK-->0</td><td data-page-node-id="zZg4tY2SnN6i68eataXTq1" style="color:#4CAF50; font-weight:bold"><!--pnid:XfQQ04PU24ZKHFJapZsmlt-->100%</td><td data-page-node-id="kb1WK69XnUvS9HicbeSWE8" class="num"><!--pnid:Stps9YNPI8nbr8JhTwqtp7-->100%</td></tr><tr data-page-node-id="mdkG5rQNCl6yemIx1gCy2Z"><td data-page-node-id="bvZdh3JJN1MZDH3uvqyCUO"><!--pnid:HOypVphN4CqC59oajai4oK-->压力性尿失禁</td><td data-page-node-id="dxKra2hGsydExfv2oeP1bZ"><!--pnid:FdAXLhZYwAsXGXQ2cDiyTt-->1</td><td data-page-node-id="uHOtJboFrN0sXQsuDdrBWl"><!--pnid:TcfemHNm2h2LytKN5WlMNy-->1</td><td data-page-node-id="FuLOLXMGkZNfKhc6NUUGhj"><!--pnid:TxWbYYSFUCw6bhsK5G4nJP-->0</td><td data-page-node-id="fYlxNapayqAE4FZ4hRXOLL"><!--pnid:HGurF8z80RIBAenMuANdtb-->0</td><td data-page-node-id="itGWbgDDxYvwIZdEMcBTch" style="color:#4CAF50; font-weight:bold"><!--pnid:mwXVTJHf4bFEmnpMtXwEg9-->100%</td><td data-page-node-id="RgBibc96JPFKE3kGqiEFAY" class="num"><!--pnid:rqjgbWdYd8VKXVAs8wLZry-->100%</td></tr><tr data-page-node-id="qu2uh9coqNKiwBT5JiXlAA"><td data-page-node-id="0IHM0ZIVbmBOwIwHcQ6Aro"><!--pnid:Kpo1yuXEQMCb3M0UMFZCoX-->右附睾囊肿</td><td data-page-node-id="NwWJq4Yhaoy8MGBB7ZRBOa"><!--pnid:N78fSnKh4EU8G0vj2nbW0E-->1</td><td data-page-node-id="hWOKyZOcScZNwVVYWqf5ys"><!--pnid:9gxYUF2t53VvBkKLxsG7YW-->1</td><td data-page-node-id="AomMEPiKvaTgMwMUmuOCcG"><!--pnid:4lUIpqeQfqK62ARPbJVG7W-->0</td><td data-page-node-id="qSZcQ6TnJvD6Aj7wWUuOQv"><!--pnid:ycJjRjwUIKILMA8NNxaqVA-->0</td><td data-page-node-id="SNGyFyHyk7uLEVQNykWlUP" style="color:#4CAF50; font-weight:bold"><!--pnid:NBqf2Eg8rNgwyKLeDgWdoZ-->100%</td><td data-page-node-id="xKd1coKseAG8H5tOyFn3qO" class="num"><!--pnid:tWIEDhAqkJFlm2FpBmmoPO-->100%</td></tr><tr data-page-node-id="FpVmdEP3m01vApCIU9iebg"><td data-page-node-id="aLMZwn1ziglOU0UYcRU4EC"><!--pnid:uRRWJUz2cL2k9R6vNmvqYK-->男性勃起障碍</td><td data-page-node-id="a8XaMvd6sbjdgx8iR4YCDn"><!--pnid:Vjjz6WPaSB2MqtAFlwNetZ-->1</td><td data-page-node-id="rhYOVBOeHwLBzsbqBtfQhI"><!--pnid:TDAboXQYBfTrnm7qAmDmEn-->1</td><td data-page-node-id="IuzsvblWtWGG66ZoIbbrzi"><!--pnid:7RWIqzffq3NVnFObhFsxwX-->0</td><td data-page-node-id="nKJOZgJnu3L0qtiYUvBKau"><!--pnid:fWz8868lkjtKSujeZrOqE8-->0</td><td data-page-node-id="5030HXsAFrB9VCtE8XHxae" style="color:#4CAF50; font-weight:bold"><!--pnid:GmteGvYKv1aKBED31nyr4n-->100%</td><td data-page-node-id="0ZoPYT3p7C1vUSAG0zVKWW" class="num"><!--pnid:eKToixoulzTlSFNGVhn9hm-->100%</td></tr><tr data-page-node-id="8ODFElAsaDxjAmG1UxFWiW"><td data-page-node-id="MscaARZjxpvn37BxF8xUcH"><!--pnid:87BXOdSiCp5kDClKyTdPs6-->左肾上腺肿瘤</td><td data-page-node-id="TfDbARP57iV0V2hl4uvHci"><!--pnid:62rkP5W4NpXtFlDOlI5gmG-->1</td><td data-page-node-id="Kzz0dfNXg95BRbvMmrfTpy"><!--pnid:K6ZOWFnllS98kynP9xkXRz-->1</td><td data-page-node-id="YCndI1dEQuz6KMivVMUWjF"><!--pnid:QHMLSqpraRnfkJ2luk79l7-->0</td><td data-page-node-id="mQivznJp7oD4i8wUqV1H9H"><!--pnid:7wQ0JF0L1GiNAnqxBHONAp-->0</td><td data-page-node-id="0wjhkqAfUTggwxDGtyCgPT" style="color:#4CAF50; font-weight:bold"><!--pnid:sYx0A3bSfv7XJoC61DzxP6-->100%</td><td data-page-node-id="WiHHpjeQKB9TjdeDOlMN3v" class="num"><!--pnid:FLAe4mMfTsmEnM4hiZjiNi-->100%</td></tr><tr data-page-node-id="aPWEuH3bpvUUxW14F3tojv"><td data-page-node-id="CYmfCTnlTZ7cwoZXVa35N4"><!--pnid:po0Ou6TvQpL06adVyuFXQh-->左侧输尿管乳头状尿路上皮癌</td><td data-page-node-id="lyrfQCm0ZlGDHHWSDXjiV0"><!--pnid:cSttI3PBmOSMdbPhWGl5KV-->1</td><td data-page-node-id="q0GphGnBdg0aozUNQHUBb0"><!--pnid:8rgGCSWoF0nop0wj87zVg4-->1</td><td data-page-node-id="6prR27JEkt3FuzQfdm1vn9"><!--pnid:g8F99tNxIcwKF0ojLzdbvY-->0</td><td data-page-node-id="UrPcjlhGBxRy178kkjhIEK"><!--pnid:keX6KLIEz5XSX27mz6RxbX-->0</td><td data-page-node-id="JdjQPsAMpzqDgWv0t8dmBi" style="color:#4CAF50; font-weight:bold"><!--pnid:8FzLRXDwIVSbvrHrn4oQFJ-->100%</td><td data-page-node-id="AHvLGDng3NCyR98G30a9Vd" class="num"><!--pnid:lsUSpDfmAkkAcgTSE2ec79-->100%</td></tr><tr data-page-node-id="yqFIMPms0X7RR16atHAp9e"><td data-page-node-id="DDEi1yx0QFF0QsllFrrJ4n"><!--pnid:Ijj5HbLiUqpXsmCmUhStyw-->多囊肾</td><td data-page-node-id="GLEwJmalK3huJykLAHReRA"><!--pnid:lVJjJEwcJqZoriUVeuJdLd-->1</td><td data-page-node-id="S5U4GINNBtUwpNZPVbXVNW"><!--pnid:oZfkCmno4iVfM90D8V7tyT-->1</td><td data-page-node-id="x1LL9oLGsuZyTttZO3he2T"><!--pnid:D3w245x2LVXOUQPSL1GDaa-->0</td><td data-page-node-id="mwgjdZewO5t8fP6IBnDdmU"><!--pnid:184UFU5EADfF6DhEtuwlny-->0</td><td data-page-node-id="7S2bJfyGYvxTGfXzH12rjz" style="color:#4CAF50; font-weight:bold"><!--pnid:I9sc1w1FMwoRbFNByigNc0-->100%</td><td data-page-node-id="9alAQw8Ail5sRaHcB5s7Cw" class="num"><!--pnid:gROPfUkniU9i1REMuuoRYp-->100%</td></tr><tr data-page-node-id="nmgCIVaL9wLv1cqdbRjq0u"><td data-page-node-id="PougwDM0cjkfv21FlcdGws"><!--pnid:VTI4FJ5m3Zqy1BSXPIcwJP-->睾丸肿瘤</td><td data-page-node-id="s5KAW168iAt89TO3P9JRtE"><!--pnid:JZWf7HHlUvK7SFjcFiB8EU-->1</td><td data-page-node-id="L26QnVz4mG13eZ4o80ekbK"><!--pnid:kB5H2NPsjUi1PdjmjZgK8u-->1</td><td data-page-node-id="mT3OOrxM6jJwT5TCJpDXcE"><!--pnid:OSgzXQythhg1R6WPY48XCA-->0</td><td data-page-node-id="Lpz63TJANPSgm8fUvFzNgM"><!--pnid:Yl6RtuDyRPSuVzLhVBHOO1-->0</td><td data-page-node-id="zwCITnk7Z4A4sj1rvbtGIF" style="color:#4CAF50; font-weight:bold"><!--pnid:LltL3cPJ9ZGK37uVvt5uqu-->100%</td><td data-page-node-id="7dFVRZLr2WYE0O0h0ttKkU" class="num"><!--pnid:PdaoD64NVn4y7atl7tKylC-->100%</td></tr><tr data-page-node-id="HIOqPTUAzhWKmX4KfCuPi2"><td data-page-node-id="jZQvH1oRUffZZfDZlLd5Z0"><!--pnid:VNUlYhYI5NOT2tCX57LZio-->精液质量不佳</td><td data-page-node-id="FLF69tkbWkC4d9VeHKC3M0"><!--pnid:vSjkHfQu3e0sd0ptzNZV0P-->1</td><td data-page-node-id="ClrA5Vw5U8QRvG8rEvx3aS"><!--pnid:w8V1nZ2eDOV48UyU2AzvQU-->1</td><td data-page-node-id="jQ9wVlN23rWhPEI4U6HBM6"><!--pnid:TNf85RzSmBVkWeICI4CbM9-->0</td><td data-page-node-id="zEerN5ilUz1qXhZbHNw8hw"><!--pnid:qXOOlvmlBUFVvlWIy9a4aa-->0</td><td data-page-node-id="8Oq2NfaIEuYOtTMHnjtpWZ" style="color:#4CAF50; font-weight:bold"><!--pnid:bjwJk9cs3XyRHJXxAA8To7-->100%</td><td data-page-node-id="fpz6rz0AxelJkVXbuxvxj1" class="num"><!--pnid:7rJSZjMOMXkv32fqwQmdsc-->100%</td></tr><tr data-page-node-id="19HM1zv4JbUoyOw8pT8fdA"><td data-page-node-id="3CrWPmxTfdDAaVTuxU5MXn"><!--pnid:Pz7KS7io1wGTbMtKuf8HGb-->泌尿道感染</td><td data-page-node-id="k12sHICWBgSysDJcYyp637"><!--pnid:brugUx3NQoVNIeKggqmEvD-->1</td><td data-page-node-id="DGYMmHjsccPvTIWDprEnIF"><!--pnid:eLw5BCAy6S3pXTuz2vcnN2-->1</td><td data-page-node-id="rh4AljJwAN1QTKYObi9RrF"><!--pnid:ZJXvbp7FfRb7nbklk2prpw-->0</td><td data-page-node-id="UvQhg84ZtDB8xGgQrh1ujk"><!--pnid:45Fgy88KxnmhzLb0pA88VB-->0</td><td data-page-node-id="MIfB3o3gXZhEeVFe4sdt8L" style="color:#4CAF50; font-weight:bold"><!--pnid:6ymj4uvacotBnPhPdV9LwN-->100%</td><td data-page-node-id="ZjkcoVKcfkSNL5a8G55h6M" class="num"><!--pnid:FwFRwQpPu3ekY7JB0FqCK3-->100%</td></tr><tr data-page-node-id="TUK0tP0WfKyoUqQ2IAd3T0"><td data-page-node-id="qmHW5W3XJffXWAtJRcH3mr"><!--pnid:SlQixTFwJh5OAYjNXnPhHq-->左肾结石、泌尿道感染</td><td data-page-node-id="C1MN0nkXW4RVxNoLleZD1R"><!--pnid:5ONZhBnOK23uo1ymLt1Lnn-->1</td><td data-page-node-id="XKY2wTPrs01oTCAVYHo0Ww"><!--pnid:D793wWv0L407xPcguhJTC2-->0</td><td data-page-node-id="bxy1vft0OIjPI2FJl9Bp4j"><!--pnid:qrulcTmY01XTeNjUKbHdA5-->0</td><td data-page-node-id="rjY3KA2zLTutDa03B6S8xq"><!--pnid:wzu5Dnh3oCRnntllj0QAa1-->1</td><td data-page-node-id="NgTOnQ9TH85VnNqRc3ZuZq" style="color:#f44336; font-weight:bold"><!--pnid:oO0BAlxSRKXtdw5bOSS28S-->0%</td><td data-page-node-id="g7StLxCTMGR4SP0Pmj4U0p" class="num"><!--pnid:Qf2TNP0V4Q6sQuFjZSErWz-->0%</td></tr><tr data-page-node-id="Q6JecxqXYaYKS2bx4kDpNJ"><td data-page-node-id="3eeXAUp30Ca9CuGiUM6DzV"><!--pnid:No7eUSBT1fkLFOzsEhG9Re-->左肾结石、左输尿管狭窄</td><td data-page-node-id="gRzPaNCG2GoWUtxBjrXQur"><!--pnid:MsglQLSJUIYvexU4KWba9o-->1</td><td data-page-node-id="FevFTkkkNVmJ2afW8lMtAN"><!--pnid:aufcNy60gmRJ7OYhfvvIKH-->0</td><td data-page-node-id="Ub7DPHGhNc9l2cPvoTPv7A"><!--pnid:9oDqtowl4oQEiNPo6XnZWw-->1</td><td data-page-node-id="USeIIyVmUemCGN4b2ltvj1"><!--pnid:U3ntO3SO66RCxXn7q6xjRM-->0</td><td data-page-node-id="SsVw8AzZKitSNqjh1qEhoI" style="color:#f44336; font-weight:bold"><!--pnid:pcuy0fVVE7iQqtMmwLiMVJ-->0%</td><td data-page-node-id="cwjQtAeM52ZIrwjjXptn9x" class="num"><!--pnid:UfFPWFzL3xJrqVROd8i3aG-->50%</td></tr><tr data-page-node-id="YJfSXiwB9WDZw14johAbg8"><td data-page-node-id="Shh1OEL3yNNSPhYFKETtAL"><!--pnid:W4qB99Tqa75qUL3lrYqRua-->龟头包皮炎</td><td data-page-node-id="JZvc3gtzYPh9crXa7r0xRi"><!--pnid:OEj5fWr1xkDCfsKnM0qlFY-->1</td><td data-page-node-id="kbv9rIS6flE7ZNWsdHCKmE"><!--pnid:9bJp94JPsDuB9VOoG7oshr-->0</td><td data-page-node-id="Mh6gt0wt85Iu1wY4AIt6fo"><!--pnid:AesMHuNfIN4gZ45umpG84c-->1</td><td data-page-node-id="rRNhgUMFoFzL2WbIS5qajU"><!--pnid:8zmJDNhJ06S898lcCSqIvs-->0</td><td data-page-node-id="EKXFQmeiYMUCRDp8osY5Ad" style="color:#f44336; font-weight:bold"><!--pnid:5pqWpo06EEg5OZus1P0h6g-->0%</td><td data-page-node-id="SOlOKPZYNV9HMpw6yxh883" class="num"><!--pnid:84CQ6nMmLqZc1lP9O4swEq-->50%</td></tr><tr data-page-node-id="SgLvhOMOHE9fNPPQksqhCQ"><td data-page-node-id="siQ6YTet1XKmIgolAvw6h2"><!--pnid:q4lZ2Dvgn9yvS8Jp8QJ3qf-->右肾盂占位（T1bN0M0）</td><td data-page-node-id="K3xR3Vs6fWWdO1OxQS6V5V"><!--pnid:uNxZTX86VbjpaKmYmBxdjX-->1</td><td data-page-node-id="9QVYpMLVjwWM2P9Jgtmqyt"><!--pnid:5FeAdJSCkbbMUqFOrM2Pv8-->0</td><td data-page-node-id="ZBojFHh3iJT0hcg2Bpnfoi"><!--pnid:smIReTkgA6lwIyO7j0hRKW-->1</td><td data-page-node-id="cplLQueM4UaU089fKlrfLY"><!--pnid:Pddtk3A5JTMdXkkb5tuF1F-->0</td><td data-page-node-id="wlmFRReDGjuQNEL3rV8mMa" style="color:#f44336; font-weight:bold"><!--pnid:Amos4eGovPsOpzSvBb6stK-->0%</td><td data-page-node-id="JkZ4wOkRsmyEoksesbp2ZJ" class="num"><!--pnid:cQgLgJAL4SIAHjKNbtiIFV-->50%</td></tr><tr data-page-node-id="bG1A56hOK3RFJEwOtGL9H0"><td data-page-node-id="b9Yy8YhaYhFrErgdjblfZy"><!--pnid:I4oWPHEOdJqNHyUhwbU3AW-->左肾无功、左侧输尿管上段结石</td><td data-page-node-id="3bScWp0UIbUrk95siYDHav"><!--pnid:QZ16ei8Um6rNYTM7NoWHk8-->1</td><td data-page-node-id="3VnLN4fucR5tyhAAXMuYsp"><!--pnid:1bXYpEcawzJrNK7JvWT2mW-->0</td><td data-page-node-id="YdTwsSzVTNMoo9LkphGUXk"><!--pnid:NjMX8HDL6UpRyFh3nPalGB-->1</td><td data-page-node-id="udspzGrHMtbLdKBx1anxjE"><!--pnid:P1bX5tVtu87I9zFu0mabYm-->0</td><td data-page-node-id="x2ROnMGzudncDZUjXDRcVH" style="color:#f44336; font-weight:bold"><!--pnid:a9ssPLRHeLrqOxDRY9wZdB-->0%</td><td data-page-node-id="qPkQnR8sT6qq1aPYTIyb6a" class="num"><!--pnid:JawNj5OckAaflIVnuXlBwb-->50%</td></tr><tr data-page-node-id="C93yquC83z2cWjavZoDIGf"><td data-page-node-id="2N4ryTB2gBCJS8G4tujr8H"><!--pnid:tVP92GdVB7IEZjAUIiFKyA-->前列腺腺泡癌</td><td data-page-node-id="XfWgu5Wqb6kRHwgp4v4Pds"><!--pnid:WYUPpPwAdUljo6yqqMnVAF-->1</td><td data-page-node-id="KaltQmmOFU9bvOWJmNNBc4"><!--pnid:qg3JbXm6hP9leWB6mKTOkF-->0</td><td data-page-node-id="CaDdi8Z43xX8vDoe0QEOJB"><!--pnid:Z8jFJxQ4ErH28c1DxMQzP6-->1</td><td data-page-node-id="qWljHTm89NU3kDyFVT6drP"><!--pnid:K3K8SYsFz6vjtQqVr1tJ5A-->0</td><td data-page-node-id="x2gDLiZJ6SroPBSeHYbqDc" style="color:#f44336; font-weight:bold"><!--pnid:SJbYy0CJmX5E5FvT47RNOQ-->0%</td><td data-page-node-id="rZUxVRbCQ3uyRSH6vXoYUy" class="num"><!--pnid:Iev3tPo8rt5lcwdj9TkO8f-->50%</td></tr><tr data-page-node-id="KjBfsa344XGuKznLfJAoEM"><td data-page-node-id="WhTiyzX7owRnfukrNxyLbJ"><!--pnid:QT9KddC77NhewOBvtSJELV-->右侧输尿管上段结石、泌尿道感染</td><td data-page-node-id="xn4rxfutruaw953bVToffB"><!--pnid:j7LLMS1xuXYSmXXMAOWYnQ-->1</td><td data-page-node-id="FlDgXC6l1klF4PzcbeVSjm"><!--pnid:msnYUt05TCHXyjPEWK6X9o-->0</td><td data-page-node-id="p1O71mdZT9NVYvwuA45mjM"><!--pnid:4QUp85SMo1nvOPtLeoRdbx-->1</td><td data-page-node-id="p4fzDgRYqdSLOB7b9uyLJ3"><!--pnid:GMhqm5Yc4ustcZbCwS10Pj-->0</td><td data-page-node-id="6gyFWbUIYYGNuGnzu6Pp7q" style="color:#f44336; font-weight:bold"><!--pnid:6FT1QkLW8wfhb4J481UnwX-->0%</td><td data-page-node-id="g4dk1VW68KI36DDO3xugCn" class="num"><!--pnid:UoLRnEWAW4pFtbdJCfvSK6-->50%</td></tr><tr data-page-node-id="6cy3v7zIrCr8vYLqUAENg3"><td data-page-node-id="ycMEO6rMdIvdKyH8OzN4G5"><!--pnid:Fcn5PKBlbi9IzrnGAJYQKA-->右侧鹿角形结石、左输尿管上段结石</td><td data-page-node-id="EqYtLn51eytc44fCQ9e9kU"><!--pnid:aNkarG50LBuI4ltpRcG6GX-->1</td><td data-page-node-id="v8atlhtfiJV8qVVrIfaVP1"><!--pnid:VPKBFkw9f5bsFuJveiOoV7-->0</td><td data-page-node-id="16OGWb0ffLP68KJ2CDvGX5"><!--pnid:SFTeb5aZzXT9TtokJVeYAr-->1</td><td data-page-node-id="KApb5q8i8PqgJlXMaIxBYk"><!--pnid:WaxyKa8TmRBYvYBllIK46A-->0</td><td data-page-node-id="NJCKo89to2ntS33KrxwF6X" style="color:#f44336; font-weight:bold"><!--pnid:aHNooLjQOaEjPJC9h01saL-->0%</td><td data-page-node-id="tSQxUkdD6qE3nnyLjlSAxH" class="num"><!--pnid:jjbMcJXYUCrvQ5WOQ8iMyV-->50%</td></tr><tr data-page-node-id="TbTaSCBXRxO4c7Txu8QrNL"><td data-page-node-id="oaJlJ6ahQWY0moqE70S2gg"><!--pnid:UnmQirFLHvT9jirUUQSWJ5-->左侧肾盂癌</td><td data-page-node-id="pRV9mw2a4suK9YfM0qCX6L"><!--pnid:YTQsre7QNcrndvNVEsfC8P-->1</td><td data-page-node-id="PR1ayIKSGnVhHGlVxDOQIf"><!--pnid:6EzCFXDZkOF1igw9YapEGI-->0</td><td data-page-node-id="SWcwNEhvNFdq30H2PO9OlC"><!--pnid:nhHqwlk1pQc1xmfohIOBed-->1</td><td data-page-node-id="dUDjIoSkGBx18uJ7vPZ4BX"><!--pnid:YNHLRyEy7J3xxtHrDmLfRI-->0</td><td data-page-node-id="MpDnaIinEFOCgmVBoIMVhi" style="color:#f44336; font-weight:bold"><!--pnid:uIlV0KeYMK9HRqgd4LYqEe-->0%</td><td data-page-node-id="DQWdk9APKAciGY6JohT3MB" class="num"><!--pnid:DeHUpyct3D6uUnKv63mQTd-->50%</td></tr><tr data-page-node-id="gJy7BNufpHMCQxN993jVHr"><td data-page-node-id="VZRsRvANK4IhajurDSxsA8"><!--pnid:zYRaqH3FF2mBBmz9hZYw2m-->右肾结石、泌尿道感染、右肾无功能</td><td data-page-node-id="EXy3NvojF7Aat5KPWAqCz2"><!--pnid:8RMxhrWvzrWBzpFk3grQRK-->1</td><td data-page-node-id="m7w125TaAwwkpIn8e24qdc"><!--pnid:ErD2tR7uhbfS4AR4JWdHeL-->0</td><td data-page-node-id="vRPtwfc26fw0BHXQIHDQ4y"><!--pnid:QT2fdkFiNs7pb3a9rcgydN-->1</td><td data-page-node-id="L1BJhp8qWQkFud2Oz4SDG0"><!--pnid:LNk5wywfMp49TR51xid2ux-->0</td><td data-page-node-id="yPFlfF3KCdXAUnsvhtVeGd" style="color:#f44336; font-weight:bold"><!--pnid:LXCpWhUbARWfw8753uJy0E-->0%</td><td data-page-node-id="RmJnco2BZc7sU5K4Q8vrQT" class="num"><!--pnid:1GGmjKak0mikeGxokGh29y-->50%</td></tr><tr data-page-node-id="VkpT8mkHJ3UNnaaja7D2HO"><td data-page-node-id="lbQ9NnY79VNBzGktnsSfo0"><!--pnid:EWTLTg6ZAE646LsF39UBZs-->双肾囊肿（右侧为著）</td><td data-page-node-id="QiMB8gvWsijbxJ6JeeoSiY"><!--pnid:So1fO4uxNBHw1deiIqBIy9-->1</td><td data-page-node-id="4HThssDWI33ldSUZTw2AOq"><!--pnid:yGW7aWMX4zFapyKBhvUx9P-->0</td><td data-page-node-id="HksZ4EKFsMiDJ4SjkIb61e"><!--pnid:1MmPR4a3gyLY4MtDLGLRXD-->1</td><td data-page-node-id="oJunxigcGZ9MH900vLziLp"><!--pnid:4DXyhS1hxEAID6ayQDYQLM-->0</td><td data-page-node-id="Glzijk3Mh4bD8G4JBOcy9P" style="color:#f44336; font-weight:bold"><!--pnid:Ojfh7Ol5AV9dS75UqNwg8S-->0%</td><td data-page-node-id="8fwxRLvaSaApJRsBz6swMW" class="num"><!--pnid:BvD77ylQmgCLdoRPAAMyJx-->50%</td></tr><tr data-page-node-id="m7lKA2qAaJ0E4JvnaoRalL"><td data-page-node-id="HHyU9q6Z5LQZN7j8ZguUrH"><!--pnid:HuopjyeayCG8tV8qyRhVHL-->左输尿管占位、上游尿路积水扩张、左肾功能不全</td><td data-page-node-id="ACOcvwdQMGdgALCELj2CvO"><!--pnid:HPNe7eHuxlVElEMdSHUad8-->1</td><td data-page-node-id="mr02TSgttNJA2eM3mLk6nL"><!--pnid:LB914B84Wwdz6rs9z8R2Sj-->0</td><td data-page-node-id="ro9aTIaQTxZ13obquwJsIl"><!--pnid:7osFNHKMPJyf4xcHaQFkzz-->1</td><td data-page-node-id="0UlaRfYieRqdv6rM5gE49c"><!--pnid:SVvHJRoJtSF2kHn0NYkFay-->0</td><td data-page-node-id="boHY5g5mawtDm5wk5fypJs" style="color:#f44336; font-weight:bold"><!--pnid:nsgZ3uEK0XatyZh3iyZgWo-->0%</td><td data-page-node-id="eGw0SokEkaiD134mJY4hwe" class="num"><!--pnid:68C1F1srZ2ed8obFdngSML-->50%</td></tr><tr data-page-node-id="6aX1B1DWYZj4GbJRHzOHyv"><td data-page-node-id="QoYHY68u78CMM6ncmG6E3h"><!--pnid:tVm5G3PrFwUjA0LVL9vaD2-->前列腺癌（T2c N1 M0 ISUP 5）</td><td data-page-node-id="jGw8FJH6e40R4qSLqBocn0"><!--pnid:uQqxAQuYFPraYK29UaTlNO-->1</td><td data-page-node-id="TKXw4th4Mtfppr7uBJZUaE"><!--pnid:Q5QZWjhbw1irlF65yfoGEJ-->0</td><td data-page-node-id="pmdu41X2JZc1fodmNOGAzG"><!--pnid:l30yeDfe3PgqWaSQaau64j-->1</td><td data-page-node-id="l2AohwyBLPkvRDnkycL0hE"><!--pnid:Lk5vQgEzsjPDYQB7GdHf2p-->0</td><td data-page-node-id="lxLm9WCwlr8T5EeSFHK3ik" style="color:#f44336; font-weight:bold"><!--pnid:yqiN6hinXJB9nRANmtfaFz-->0%</td><td data-page-node-id="xaaNvy1xr3RCDwxhsN4box" class="num"><!--pnid:FIygkoXiuparKZ7ObnTwzY-->50%</td></tr><tr data-page-node-id="akCjzjDN2q8kRvDRbMyGCS"><td data-page-node-id="GoUP1yJV3sOBDjzMSFM9KY"><!--pnid:EeVsGDCUdGcVeJq2XLyDaA-->右侧输尿管占位性病变</td><td data-page-node-id="cC6zMKlGssNNHJzqI6uECK"><!--pnid:fukTOMLYxX4J14Nb1x6QJy-->1</td><td data-page-node-id="HEFMT4HCnRil8QA8kMxpY1"><!--pnid:nUtmF1804reqcCIoCARdPg-->0</td><td data-page-node-id="dkVFVPLYQR3A5FgP5lU0el"><!--pnid:HREseNTG4iK6S5v9iCaYLb-->1</td><td data-page-node-id="xTcvuletd3tOvZmdYoajRX"><!--pnid:eXhy9v7T2sA78fjkTY9NLW-->0</td><td data-page-node-id="rGd9py2uQr4JM0zSdXDujL" style="color:#f44336; font-weight:bold"><!--pnid:d1FBCU0Gu6AWnDXDKeTG7d-->0%</td><td data-page-node-id="pLlXuYsVlLgPC7L3Aw92G9" class="num"><!--pnid:L7dPrSGZ3kZoZeDKZarbZd-->50%</td></tr><tr data-page-node-id="4SXSSQW0fsyl2eY3bfum31"><td data-page-node-id="4EdcglnWedHez2bvArA2he"><!--pnid:n4xeqQ0z4jYhQMfBIZllzd-->左输尿管下段结石、双肾小结石</td><td data-page-node-id="dhgiK5XN8w2M4MOJitvITm"><!--pnid:TFUUekmepNch8BSLCl3V6N-->1</td><td data-page-node-id="g6Z4F32LMPlASxCVKPhCkR"><!--pnid:Ki2tcE5Fq8fHCoEVM8INUJ-->0</td><td data-page-node-id="AMr9u5bjog6D0CY86Emffk"><!--pnid:Fshv8qChmvdbQDkzYR1gEO-->1</td><td data-page-node-id="ME7Tzuc0EMFoMchvnry8ro"><!--pnid:KEtJrNPMyHyPfJmn1Y5mXu-->0</td><td data-page-node-id="wCEydhyNYw5pl6cUMxh0Og" style="color:#f44336; font-weight:bold"><!--pnid:caO8wd3nbL2I4xB8cTry7v-->0%</td><td data-page-node-id="d1DZ8x2sg4eCQUZ9bjHKap" class="num"><!--pnid:Gavrq3tyCgoYwVh7KNbYLQ-->50%</td></tr></tbody></table></div></div>
+
+<div data-page-node-id="iLWkIKMMuahZS5PMByAbaz" class="card"><h2 data-page-node-id="b5dIuklciUHD9P58Ovxdh9"><!--pnid:RQOxi49LS43Iddyo1etlcc-->失败模式分析</h2>
+<p data-page-node-id="ISL5UZFqtC3xNi12RinzhW" style="color:#666; font-size:13px; margin-bottom:12px"><!--pnid:9a3oWWqKkY4KEfSMYhM5T5-->15题非完全通过(非PASS), 按失败原因分为3类:</p>
+<table data-page-node-id="MHuXyOz47fnBlUgufgluTi" style="font-size:13px">
+<tbody><tr data-page-node-id="jG9OGdchyTahvb1N0Rusop" style="background:#f5f5f5"><th data-page-node-id="sSE7PnwprbYg2wwajJwj3a"><!--pnid:S6A9ZVOgemZW9t44KWhAgH-->模式</th><th data-page-node-id="X8Z0k1FcpGCaWQHjVEH8rW"><!--pnid:Q6piMID9GfkB8olhX03AA7-->数量</th><th data-page-node-id="HcOeYWecKmQhZ3FGHz2oCZ"><!--pnid:GmKpU8PGigZTgwQ267Yzsu-->覆盖率</th><th data-page-node-id="noWUFrxaNU3C5fB8yJfJGM"><!--pnid:8Ki8NkabrceKvfAaRrcCpY-->典型题</th><th data-page-node-id="7z81XDbtZR9byWi9dURMFK"><!--pnid:s5W5iPlXbJBGGKf7E7L0Yb-->问题本质</th><th data-page-node-id="irMnNgyAxfOZTpwP03ZAwL"><!--pnid:U1ZLadB3XqbhHg0FyHT0Cq-->改进建议</th></tr>
+<tr data-page-node-id="u59ae0W4TJFu6yUSH5GgG2"><td data-page-node-id="Z6gVACNQ5FPj4LV2ostUlY"><strong data-page-node-id="P7K0POE35kPYxmMhXD03Me"><!--pnid:4a7aPRJ9RBIwYGk1gElX9k-->1. 单点全匹配但深度不足</strong></td><td data-page-node-id="pUuhmvvrWJ2hWgeFargA6j"><!--pnid:psU0hrEqkBO8Umy9lA75Zl-->6</td><td data-page-node-id="GMO3doU8dmOETTkVlCu1Bb" class="num"><!--pnid:GWuJGRZROiFL4dO60EP44w-->100%</td><td data-page-node-id="Lp2PlMCIGuJoYsInujXV3m"><!--pnid:N4MAGfrJ97LG95vypYvSW7-->Q002/Q008/Q015/Q019/Q033/Q045</td><td data-page-node-id="VuMxQkglrG5ltqqyvQXQXX"><!--pnid:6lP4JUQKMqS7BWzweUujRZ-->关键词全覆盖, 但LLM Judge认为答案在诊断或治疗建议上不够深入</td><td data-page-node-id="iZD6pElpYaWdHUDQhz2BR8"><!--pnid:2dgkGATR3YLQZv8i8OuPax-->检测到覆盖率=100%但PARTIAL时, 自动识别为"深度不足"</td></tr>
+<tr data-page-node-id="c0AOZmfH4YbSccLfiq0vL4"><td data-page-node-id="kNfKr78G7p9AACvFm6QQmS"><strong data-page-node-id="xn78Xkzc1RYukyGuX9gmp8"><!--pnid:mzyxMt1DmBm7B81BIVPU1P-->2. 多要点部分遗漏</strong></td><td data-page-node-id="Igr5B2osFz61EftmYcgLQJ"><!--pnid:Gl7Bv8gyERlUbsrw0Uflar-->7</td><td data-page-node-id="9YPsPOVhEtk0rFfWhtzoth"><!--pnid:U3afuMOF9FisX0cEVA53tp-->0~50%</td><td data-page-node-id="OoFdMsKh8ixAwheWodh4FT"><!--pnid:CrPyN2Fh9bwBZoHI38ciwk-->Q010/Q012/Q018/Q022/Q023/Q026/Q028</td><td data-page-node-id="azzc7WCkL8NY6X9SgxwlCn"><!--pnid:XU7eocsCFizJSj23jNX422-->问多个要点(检查+治疗), LLM答了其中一部分, 遗漏了后续建议</td><td data-page-node-id="wN4Pw6R8rOLJlOxPmjArS1"><!--pnid:vSlEfR4wtvm7RwoLL4Hind-->prompt增加"须逐一回答所有要求"约束</td></tr>
+<tr data-page-node-id="GdSQQ7VBYalWqRlBRxI0UC"><td data-page-node-id="B0YEIcOsWhKXJLxLCISNVW"><strong data-page-node-id="G928TbEVMIG2ha0wkVmOGf"><!--pnid:oWOZszzsemdwU5bh5KHCuJ-->3. 零覆盖但语义通过</strong></td><td data-page-node-id="NYldz4j28lfzjyPYpBhonR"><!--pnid:BqNShyc6mki1zQiFBdgXKa-->2</td><td data-page-node-id="E3ycJyT9gwBwwpW42Rkokw" class="num"><!--pnid:3vP13pMYuWeu4Ekck0DBUp-->0%</td><td data-page-node-id="ryXysDVJJBiG3wz7aUtLuM"><!--pnid:HgJqNSdwon0NgAVMc2HyLi-->Q034/Q041</td><td data-page-node-id="tjfxtwwSojMOI10vgF60Hb"><!--pnid:o9FA42wmBvDxcHwc9w7J0A-->关键词全部未匹配, 但LLM Judge判定答案医学实质正确(表述不同)</td><td data-page-node-id="9JDtZ8jb5FJeEHPa0n4duS"><!--pnid:YG2si2wH9A4KU5KoWyDRda-->丰富关键词同义词表或改用完整参考答案做对比</td></tr>
+</tbody></table>
+</div>
+
+<div data-page-node-id="xsngdBjotFupFC67uxJeXf" class="card"><h2 data-page-node-id="i944FkZtBnGaHRMTsP8Euc"><!--pnid:333GrmfJIBLJz4otoVCX09-->非通过题明细 (15 题)</h2><div data-page-node-id="i33kQiaa8bXxvKjy1MEQxU" class="scroll"><table data-page-node-id="56DNkVuPuoyFbmxYiLUiWr">
+<thead data-page-node-id="ygX3dLObz3BaHEsVkjK0Mm"><tr data-page-node-id="2XOXzgd0G443t5XVgJ8fey"><th data-page-node-id="zKp9fHDoNrk0bNLwIhst7O"><!--pnid:aL736vEgiyCsEnE0InWtQL-->题号</th><th data-page-node-id="Bxe3G9qAoIsVbEEbH9wWdj"><!--pnid:jDsmqiARI5EyZWGlRMeHTz-->判定</th><th data-page-node-id="wvlV8Uti4JkTvdMnJ6IXmH"><!--pnid:A7k1pou4u96D3wnwN5qkFe-->问题</th><th data-page-node-id="68QPVaRtzLojqzfzDHgufG"><!--pnid:YCwQdLWTcbezBstQKeoQii-->疾病</th><th data-page-node-id="Dmh6mHFBKRQTR9FzlF7VZa"><!--pnid:UHpxy7XEActz2ArytzWWCL-->完整</th><th data-page-node-id="quTTrw8oSSAeB0fRxcwLLu"><!--pnid:d3aztdxe1RiPAxdwtEeGLj-->忠实</th><th data-page-node-id="HumONpsoRApg6SSXK7JWl7"><!--pnid:z54egZoLCWAZDvOHbKbN1v-->相关</th><th data-page-node-id="cCp8i0cVB6Oyd2XrrwcLLx"><!--pnid:T899Y4LESBsi0Cg65kG76M-->正确</th><th data-page-node-id="6Hzj8dE5ycTCrWKbJC9V4d"><!--pnid:rfNou9SOFYolgxI8WNnIEK-->LLM评分</th><th data-page-node-id="TtzzH17F45bzBafH8pg4oi"><!--pnid:lvpB9HzCgs2i3NzX5gDh3R-->✅ 已匹配</th><th data-page-node-id="66JnuiYbAX4C26owecSjNm"><!--pnid:FnJXfCnbJSQS36EmAwo23w-->❌ 缺失</th><th data-page-node-id="uir7n9satHhX3wxQiQgqNC"><!--pnid:neLBXWgPamqA7zcgkKN7xd-->参考答案</th><th data-page-node-id="Q8pgtqQ9qRBoQm8cjLZHf7"><!--pnid:WtMq91MkfOGX7rbgdZW7Eh-->实际回答</th></tr></thead>
+<tbody data-page-node-id="ow2XxgaII95O4ZJqmAdFTP"><tr data-page-node-id="3yctDdD2wiIPCqNf4TXhU5"><td data-page-node-id="A9HdxlmbPVkN6uW3YsHo5P" style="font-weight:bold"><!--pnid:v6MZO7JB73qV1NyzQleo6x-->Q002</td><td data-page-node-id="wY3RaYfDhEMCKBJxIkiWuk"><!--pnid:u2Z85syQDBGvSzwPTWg0K9-->❌ FAIL <span data-page-node-id="zkrkmskjFfF1Bg6JK72CrX" style="color:#FF9800; font-size:10px"><!--pnid:2lw8utCv9cfcL7vINoH0Zj-->关键词100%但LLM判不完整</span></td><td data-page-node-id="sWpObx8wjNSqgVgoMiYN0V" style="max-width:200px; white-space:pre-wrap"><!--pnid:IyYSr4O58YRsm86NyUIROz-->患者：医生您好，我是一名70岁的男性患者。我发现自己左侧肾结石已经有3个多月了。最近我做了一次检查，结果显示左侧肾盂肾盏</td><td data-page-node-id="pmnrqCVIO4Q6xeg8yMTKwb"><!--pnid:ik4DQavCVaDlFt1TkvX5tM-->左肾结石、泌尿道感染</td><td data-page-node-id="eKbyKYeKakd7ilxOJLHoN0" class="num"><!--pnid:wxUDZdcHyAbr1ZUjmXx6Yu-->100%</td><td data-page-node-id="n0fAHiVGm4XEXdcwNGYZtT" class="num"><!--pnid:xehvU7Y95yqIog8popK0e7-->92%</td><td data-page-node-id="iBlXToG3OuDpzBE1YKLosx" class="num"><!--pnid:3vg9ok6xvl3y3pduKN1O8G-->93%</td><td data-page-node-id="Y2hi4PQb8fiEI0aJFvw4cS" class="num"><!--pnid:W6lp13asZsGvHpeSbtjbQQ-->0%</td><td data-page-node-id="Pv7yDpvkyGplchQF1jbQPS" class="num"><!--pnid:6z8NEC8gA5BEpOumuASbJk-->❌ FAIL</td><td data-page-node-id="WusJKNjMhl9wVhDX4rQKcY"><!--pnid:1T9mSe5o0C2vdtX7MXqXRx-->腹腔镜下左肾切除术</td><td data-page-node-id="ULLFAw3FACgk9oXFqHdXPM"><!--pnid:05TVY4B3KVl71iM6fYojQt-->-</td><td data-page-node-id="attVqsqiQYIbzcYBEsN3SC" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:FpbbPswHnQvUYbg15Wvd0H-->医生：您好，根据您的病情描述和检查结果，您被诊断为左肾结石伴感染。针对这种情况，我们建议进行腹腔镜下左肾切除术，以切除失去功能的肾脏。</td><td data-page-node-id="FI1yvr6zaAb5h8g5WMU3BY" style="font-size:12px; white-space:pre-wrap"><!--pnid:CyxzC7nhs9LlfvtzKsEpz3-->先把能直接套用到您这个场景的规则摆出来：
+
+1. 对输尿管结石，证据写得很明确：直径＜5mm 首选非手术；直径 5–10mm 可在密切监测下选用非手术，并且要“定期监测结石位置及肾积水的变化”，观察一般以 1 个月以内为宜。  
+2. 另一条证据提示：结石 7–15mm 时，震波碎石一般较有效；但“有时结石影响肾功能或用上法不能成功者则需外科手术去除”。  
+3. 对梗阻合并肾功能受损，证据指出“严重的双侧性肾梗阻应立即给予手术解除梗阻”，解除上尿路梗阻最常用的方法是“输尿管内放置支架和经皮肾穿刺造瘘手术”；解除梗阻后 GFR 可在 1~4 周逐渐恢复，但“较长时期的梗阻肾功能丧失，常不能逆转”。  
+4. 对肾盂输尿管连接部狭窄/梗阻，治疗目的是“解除梗阻，根除感染，挽救和保护肾功能”；可根据部位采用内切开、球囊扩张加内支架，或开放/腹腔镜/机器人辅助腹腔镜下肾盂成型术；检查上要看 B 超、同位素肾图了解分肾功能、IVP、逆行造影、CTU/MRU 等。  
+5. 对“几乎无功能肾/是否切肾”，证据写到：肾切除在“患侧肾脏无功能、对侧肾脏功能良好”等情况下可采用；但同时又特别强调“对萎缩肾不宜轻易切除”。  
+6. 如果局部壁增厚需要考虑上尿路尿路上皮癌，CTU 是“目前首选的影像学检查方法”；术前分层还要看细胞学、输尿管肾盂镜活检以及 CT 是否提示浸润生长。并且“合并肾积水”本身就是 UTUC 高危因素之一。
+
+把您的情况代入这些规则后，可得出几点：
+
+### 1）您现在不像是继续单纯保守观察的场景
+您已经是“左侧肾盂肾盏及输尿管上段多发结石，最大 1cm”，同时还有左肾积水、GFR 减低、左肾实质仅见菲薄皮质影。  
+而现有证据对保守治疗的支持，主要是输尿管结石＜5mm，或 5–10mm 且在密切监测下短期观察，且随访通常建议 1 个月以内。  
+您已发现 3 个多月，并且已有积水和肾功能下降，这说明病情已经超出“短期观察、等自行排石”的证据范围。
+
+### 2）当前治疗重点应先放在“尽快解除梗阻、保护剩余肾功能”
+您的检查里已经有：  
+- 肾盂肾盏及输尿管上段多发结石；  
+- 肾积水；  
+- GFR 减低；  
+- 左肾实质菲薄。  
+
+这和证据里“解除梗阻、挽救和保护肾功能”的目标是对应的。  
+因此，从现有证据看，治疗思路通常不是先长期吃药拖着，而是要由泌尿外科尽快评估是否需要先行引流减压——常见方式就是输尿管支架或经皮肾穿刺造瘘。  
+
+尤其是您已经有肾功能受损迹象时，先解除梗阻有现实意义，因为证据提示解除后 GFR 可在 1~4 周逐渐恢复；但若梗阻时间较长，功能丧失可能不能逆转。
+
+### 3）结石本身大概率需要介入/手术处理，而不是单纯等待
+您最大结石约 1cm，处在 7–15mm 这个证据提到“震波碎石一般较有效”的范围内。  
+但要注意，您不是单纯一枚结石，而是“肾盂肾盏及输尿管上段多发结石”，并且已经影响到肾积水和肾功能。按照证据，“有时结石影响肾功能或用上法不能成功者则需外科手术去除”。  
+
+所以更符合证据的实际顺序是：  
+- 先判断是否要先引流减压；  
+- 再决定后续清石方式。  
+
+### 4）左侧肾盂输尿管连接部“局部壁增厚”，不能只当普通结石看，需补做鉴别
+这部分很关键。证据里说明：  
+- CTU 是诊断上尿路尿路上皮癌目前首选的影像学检查；  
+- 术前评估还要看细胞学、输尿管肾盂镜活检、CT 是否提示浸润生长；  
+- 对狭窄/梗阻还可做逆行造影、CTU 或 MRU 判断狭窄水平与长度，以及梗阻以上输尿管、肾盂扩张程度。  
+
+所以您这个“局部壁增厚”至少要和以下几类情况区分：  
+- 炎症性改变；  
+- 肾盂输尿管连接部狭窄/梗阻；  
+- 上尿路尿路上皮癌。  
+
+从现有证据看，下一步应重点完善的是 CTU 或 MRU、必要时逆行造影，并结合尿细胞学/输尿管肾盂镜活检来定性，而不是直接默认就是单纯炎症。
+
+### 5）是否保肾还是切肾，要看“是否真无功能”及对侧肾情况，不能光凭“肾皮质薄”就下结论
+证据支持肾切除的场景包括“患侧肾脏无功能、对侧肾脏功能良好”等。  
+但同一组证据又明确说“对萎缩肾不宜轻易切除”。  
+
+代入您的情况：  
+- 您有 GFR 减低、左肾皮质菲薄、显像剂分布缺损未填充，这提示左肾功能确实很差；  
+- 但检索结果里**没有给出您左肾的具体分肾功能数值、也没有给出对侧肾功能结果**。  
+
+因此，现有证据只能支持这样一个结论：  
+**要先进一步确认左肾是不是“无功能肾”或“几乎无功能肾”，并结合右肾功能后，才能决定是尽量保肾解除梗阻，还是进入肾切除评估。**  
+单凭“皮质薄、显像差”还不足以直接下“必须切肾”的结论。
+
+### 6）您年龄 70 岁，术前需要做系统围手术期评估，但本次检索没有拿到结石手术专门的老年评估清单
+检索结果里只找到一条与围术期相关的线索，提到手术时应重视麻醉监测、术者与麻醉师沟通、术前准备充分。  
+但这条证据来自其他肿瘤场景，不足以替代“老年结石手术前评估清单”。  
+所以我不能据此编造您一定要做哪些具体麻醉分级、心肺项目或停药流程。
+
+## 结合您当前情况，我给您的明确结论
+**从现有证据看，您最需要的是尽快到泌尿外科住院或加急门诊评估，不适合继续长期保守观察。治疗重点应是：先评估并尽快解除左侧上尿路梗阻，再决定清石方式，同时必须排查肾盂输尿管连接部壁增厚到底是炎症、狭窄还是肿瘤。**  
+
+更具体地说：
+
+1. **近期优先事项**：评估是否先放输尿管支架或做经皮肾造瘘减压。  
+2. **随后处理结石**：因最大约 1cm 且已影响肾功能，后续大概率需要碎石或外科/腔内取石，而不是继续单纯等待。  
+3. **必须补查定性检查**：CTU/MRU、必要时逆行造影；若怀疑 UTUC，还应结合细胞学和输尿管肾盂镜活检。  
+4. **是否切肾**：现在还不能只凭您提供的描述直接定，需看分肾功能是否已到“无功能”程度，以及右肾是否良好；而且证据明确提示对萎缩肾不宜轻易切除。  
+
+## 您现在就医时，建议直接带着医生重点回答这几个问题
+- 左肾当前是否需要先行 D-J 管或肾造瘘减压？  
+- 左肾分肾功能到底还剩多少，是否还有保肾价值？  
+- UPJ/肾盂局部壁增厚更像炎症、狭窄还是 UTUC？是否需要 CTU、逆行造影、尿细胞学或输尿管肾盂镜活检？  
+- 清石方案是先引流后碎石/取石，还是若左肾证实无功能再评估切肾？  
+
+如果您愿意，我下一步可以根据您现有检查单，帮您整理成一份“去泌尿外科复诊时的问诊清单”。</td></tr><tr data-page-node-id="nTr6zzWK7lPrxrmYgWIXCY"><td data-page-node-id="M1S76H30BdUEDtnGynUFgu" style="font-weight:bold"><!--pnid:noznlCkX84mdZyDEkc91JD-->Q008</td><td data-page-node-id="ImrPfEi67GINXhGbTVQliw"><!--pnid:RaZf2dlu6XM9SrGV9hnyFU-->⚠️ PARTIAL <span data-page-node-id="XS38bOKcrAaYO9Si66Ctul" style="color:#FF9800; font-size:10px"><!--pnid:q8x287WhTtusSgi7O3Rsm4-->关键词100%但LLM判不完整</span></td><td data-page-node-id="fQjK5u4zDYEWaxpSwYQ8Gi" style="max-width:200px; white-space:pre-wrap"><!--pnid:VKcVkXncLJFGdBH2SW8Vtv-->医生，您好。我是一名49岁的男性患者，最近有一些健康问题想向您咨询。我主要的症状是酱油色尿已经持续了一个月，并且左侧腰部</td><td data-page-node-id="5qZoZ91idvQBSSm09gxqTh"><!--pnid:FgfGsx9wcXcBFiIDC5O8H9-->左肾结石、左输尿管狭窄</td><td data-page-node-id="ivUcreghqzwC4wKZgERylU" class="num"><!--pnid:0URRSs9vzYubDxVYuVCJ7B-->100%</td><td data-page-node-id="6oEoSwGdZnrH73upac4GuB" class="num"><!--pnid:BozDgzM1c5vImIcBoaaCnN-->92%</td><td data-page-node-id="FtRCShLikjSpptM2SPiDH6" class="num"><!--pnid:rACCPKe5J4nlP84PjAZZuV-->100%</td><td data-page-node-id="k0vkU9NgcwoO4Wg1UAwAEJ" class="num"><!--pnid:l1OeqoimKqJt62iC4Z60xH-->50%</td><td data-page-node-id="PM0YMnyFJE8dqmZzLmaySs" class="num"><!--pnid:NjHZf4L8f29oaxjBBrXGp6-->⚠️ PARTIAL</td><td data-page-node-id="INnWKtXTYxFaaxddp9BSMr"><!--pnid:AbHV91KaYJbsWlNvmaj8uJ-->腹腔镜下左肾切除术</td><td data-page-node-id="RfRUiTehEvvIAdXU3kq1AI"><!--pnid:ZZP70TeokxwIim2SOVaT6a-->-</td><td data-page-node-id="bIPp8zIl14VmGxJtVoWjq8" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:d9stP5ZjpSAQuYkxQCygOI-->您好，根据您的病情描述和检查结果，您被诊断为左肾结石伴积水和左输尿管狭窄。这种情况可能导致您出现酱油色尿和左侧腰部疼痛的症状。左肾已经基本失去功能了，建议您行腹腔镜下左肾切除术。</td><td data-page-node-id="WTFw5qMsNxFB7OLY1ibsKo" style="font-size:12px; white-space:pre-wrap"><!--pnid:jx3I4JnCq6EzEMFtoCa3Ym-->先按检索到的规则把您的情况代入说明。
+
+**1）先看“当前最需要解决什么”**  
+检索到的输尿管狭窄处理原则是：治疗目的是“恢复输尿管腔连续性及其功能，解除梗阻，根除感染，挽救和保护肾功能”；并且输尿管狭窄可表现为肾积水，检查上要看肾积水程度和分肾功能。  
+另有规则指出，严重上尿路梗阻应尽快解除梗阻，常用方法是**输尿管内支架**和**经皮肾穿刺造瘘**；解除后 GFR 可在 **1~4 周**逐渐恢复，但梗阻时间较长时，肾功能丧失常不能逆转。  
+如果梗阻同时合并感染风险，资料还强调：对结石、肿瘤、狭窄、先天畸形等引起或加重尿路感染的梗阻性疾病，要积极处理梗阻，并在手术或操作前积极控制感染，以免继发尿源性脓毒血症。
+
+**代入您的场景：**  
+您已有**左侧输尿管狭窄 + 左肾积水 + 左肾GFR 12 ml/min**。按上述规则，这一阶段首先不是单纯观察，而是优先围绕“**是否需要尽快减压解除梗阻**”来处理。因为证据明确说，解除梗阻的常用途径就是**支架**或**肾造瘘**，而且梗阻久了功能可能难逆转。  
+如果您同时有发热、脓尿、感染指标升高，或医生判断存在感染性梗阻风险，那么更应先控制感染并处理梗阻。
+
+**2）再看“是良性炎症狭窄，还是要高度怀疑上尿路尿路上皮癌（UTUC）”**  
+检索到的UTUC规则写得很明确：  
+- **CTU 是目前临床价值最高、诊断 UTUC 准确性最高的检查**，可判断肿瘤位置、浸润深度、与周围器官关系，也有助于鉴别肿瘤性质。  
+- UTUC 常见症状是**肉眼或镜下血尿**，也可因梗阻出现腰痛。  
+- 术前高危标准里，只要满足任意一项即可列为高危，其中包括：**合并肾积水**、**细胞学检查提示高级别肿瘤**、**输尿管肾盂镜活检提示高级别肿瘤**、**CT提示肿瘤浸润性生长**等。  
+
+**代入您的场景：**  
+您有**酱油色尿 1 个月**、**左腰痛**、CTU 见**左侧输尿管中上段及左肾盂肾盏壁增厚模糊伴强化**、**左肾积水**，这些表现与检索到的 UTUC 相关线索是重合的，其中“**合并肾积水**”本身就是高危因素之一。  
+另外，关于您提到的**左后腹膜区稍大淋巴结**，检索结果提示 UTUC 的区域淋巴结分期存在 N0、N1、N2、N3 的划分；同时，高危且伴**多发淋巴转移患者（T3/T4 及 N+）**更倾向根治性切除，且开放手术被描述为金标准方式之一。  
+这意味着：**不能把它简单当成普通炎症狭窄处理完就结束，必须进一步完成肿瘤性质评估。**
+
+**3）接下来应该补哪些关键检查/评估**  
+根据检索结果，输尿管狭窄的检查包括：  
+- **B超**：看狭窄以上输尿管扩张、肾积水、肾皮质厚度；  
+- **同位素肾图**：了解分肾功能；  
+- **IVP**：看积水程度和狭窄部位；  
+- **逆行插管造影**：若导管能通过狭窄段，可确诊狭窄水平和长度；若不能通过，也要结合其他检查判断；  
+- **CTU / MRU**：可显示梗阻以上输尿管及肾盂扩张程度。  
+针对 UTUC，检索结果又明确提到：术前危险分层需要参考**细胞学检查**和**输尿管肾盂镜活检**结果。
+
+**代入您的场景：建议优先补齐的方向是：**  
+1. **尽快由泌尿外科评估是否先行左侧上尿路减压**：支架或肾造瘘。  
+2. **完善肿瘤定性检查**：重点是**尿细胞学**、**输尿管肾盂镜检查和活检**，因为这些正是检索结果中用于 UTUC 风险分层的依据。  
+3. **结合逆行造影/镜下评估狭窄段水平和长度**，因为这会影响后续是腔内扩张、重建，还是走肿瘤根治路径。  
+4. **持续评估左肾功能是否有可逆性**：现有证据提示解除梗阻后 GFR 可能在 1~4 周恢复，但长期梗阻可能难逆转。
+
+**4）治疗路径大致分两条：良性狭窄路径 vs 恶性病变路径**
+
+### A. 如果最终更支持“炎症性/良性输尿管狭窄”
+检索到的处理原则是：  
+- 短段狭窄可在输尿管镜下扩张，留置 **D-J 管**；  
+- 肾盂输尿管连接部狭窄可做冷刀切开、球囊扩张放内支架或肾盂成形；  
+- 输尿管上中段狭窄若腔内扩张失败，可切除狭窄段做**端端吻合**；狭窄段较长时，可行**肠代输尿管术**。  
+
+**代入您：**  
+如果后续证实是炎症性狭窄，而且医生评估狭窄段可修复，那么通常逻辑是：  
+**先减压/控感染 → 再判断狭窄长度与可修复性 → 决定腔内扩张 + D-J 管，或重建手术**。  
+
+### B. 如果最终更支持“上尿路尿路上皮癌（尤其高危）”
+检索结果指出：  
+- **根治性肾输尿管全长切除 + 膀胱袖状切除术**仍是 UTUC 治疗金标准。  
+- 对于具备高危因素者，如影像学提示浸润性疾病、高级别肿瘤、肿瘤较大、多中心起病，更应考虑根治性切除；肾盂和输尿管中上段肿瘤也更倾向根治性切除。  
+- 若伴**多发淋巴转移（T3/T4及N+）**，开放手术是目前金标准方式之一。  
+
+**代入您：**  
+您这个病灶位置在**左侧输尿管中上段及肾盂肾盏**，且已合并**肾积水**和明显左肾功能下降，这些都让“高危 UTUC”必须被认真排查。  
+如果尿细胞学/镜检活检/进一步影像最终支持恶性，按检索到的规则，**根治性肾输尿管全长切除加膀胱袖状切除**是最需要优先考虑的路径。
+
+**5）左肾 GFR 12 ml/min，保肾还是切除，怎么理解**
+检索到的规则里，关于肾切除的线索是：  
+- 在某些情况下可考虑肾切除，如**患侧肾脏无功能、对侧肾功能良好**等。  
+- 还有一条更具体：**患肾无滤过功能[GFR≤10 ml/(min·1.73m)]**且分泌大量肾素导致严重高血压时，可考虑切除；但同时又强调**对萎缩肾不宜轻易切除**。  
+
+**代入您的数值：**  
+- 您左肾 GFR = **12 ml/min**；  
+- 检索证据里明确给出的一个阈值是 **≤10 ml/(min·1.73m)**。  
+
+所以单从这条证据看：  
+**12 并不等于证据里写明的 ≤10 阈值。**  
+这意味着，**不能仅凭“12”这个数字就直接下结论一定切肾**。更合理的做法是结合：  
+- 梗阻解除后是否还有恢复空间；  
+- 病变到底是良性狭窄还是高危/恶性 UTUC；  
+- 对侧肾功能是否足够好（您右肾 GFR 67 ml/min）这一点与“对侧肾功能良好”线索方向是一致的。  
+
+**6）给您的明确建议结论**  
+基于现有检索证据，**我更倾向于建议您尽快到泌尿外科住院或至少加急专科评估，而不是门诊长期观察**。理由有三点：  
+1. 您已有**明确左侧上尿路梗阻/狭窄 + 肾积水 + 左肾功能明显下降**，规则上应优先考虑**解除梗阻**，常用途径是**输尿管支架或经皮肾造瘘**。  
+2. 您同时有**持续酱油色尿、腰痛、肾盂/输尿管壁增厚强化、肾积水、后腹膜淋巴结稍大**，这组表现与检索到的 **UTUC 高危线索**存在重合，尤其“**合并肾积水**”本身就是高危因素之一。  
+3. 左肾 GFR **12 ml/min** 虽然非常低，但检索证据并**不足以支持立刻仅凭数字决定切肾**；应先完成**减压 + 定性检查（尿细胞学、输尿管镜/活检）**，再决定是保肾重建路径，还是按高危 UTUC 走**根治性肾输尿管全长切除加膀胱袖状切除**路径。
+
+**一句话概括：**  
+您这个情况，现阶段最像的规范路径是：**先评估是否需要紧急减压（支架/肾造瘘）并控制感染风险 → 尽快做尿细胞学 + 输尿管镜/活检明确性质 → 若是可修复良性狭窄，做扩张/重建；若证实或高度支持高危 UTUC，则优先考虑根治性肾输尿管全长切除加膀胱袖状切除**。  
+
+如果您愿意，我可以下一步按“**住院后通常会怎么一步步检查和决策**”给您整理成一个更具体的就诊路线图。</td></tr><tr data-page-node-id="WgiuvYTcGTZRP6QgQdrrpF"><td data-page-node-id="NP2A6FBNcYlJPvlBdDAE9e" style="font-weight:bold"><!--pnid:HMZXXg4LrVWEcNVcbMqZaa-->Q012</td><td data-page-node-id="sUKapAe5yKnaS8nqeO2Xhm" class="num"><!--pnid:koLrjBBGqJs9O7jYSP6eFh-->⚠️ PARTIAL</td><td data-page-node-id="Eh6INHY7wurskjOrz3Sg7Z" style="max-width:200px; white-space:pre-wrap"><!--pnid:xik3iiEXnfi3NwXjsoXvPn-->医生您好，我儿子今年7岁了，因为他包茎伴反复炎症
+针对他的情况，您有什么好的建议和指导吗？非常感谢您的关注和帮忙！</td><td data-page-node-id="8vNh1lzBc6EcRB9TUdAqlD"><!--pnid:chlfcbPCeC1AYn5P3LKRsN-->龟头包皮炎</td><td data-page-node-id="MD0UX0HqGHr5Zp1LPX9b8X" class="num"><!--pnid:WG0Z4WAn9ATermusBp4tRr-->0%</td><td data-page-node-id="5TSrk9cyNzNwIwi65gpoz1" class="num"><!--pnid:JKis4GfdxRAOZTfNm0aUcv-->95%</td><td data-page-node-id="RIDIbOWNlbtbxUF47enthg" class="num"><!--pnid:tT70Ppycl6TK4dLtBG05TL-->89%</td><td data-page-node-id="LWgWVESXYtqr8e9XwKY9Ol" class="num"><!--pnid:UdpxfesLjSHJlQOfL7heal-->50%</td><td data-page-node-id="odLwfTwci5V7QNDYuqQLhM" class="num"><!--pnid:H6HxXvR83FFalmMbHPqx0t-->⚠️ PARTIAL</td><td data-page-node-id="y7uSYZfNdL9BSyqeTwGEDZ"><!--pnid:qR7vOUcbliD9rtNf36XoZf-->-</td><td data-page-node-id="VNV75i8WT8GmgyGnRJubN7"><!--pnid:1JIkD3f5HEuQAsmkh4RnLY-->清洗包皮<br data-page-node-id="hdykbW58tDViyG0pLjLYXc"><!--pnid:BRQqMtEyAT8t80rdpe2ksj-->外用药物连用<br data-page-node-id="yPQ1fk3T0t0bQM4ljY3hrc"><!--pnid:kJw0a32CKyvwCSXi38opll-->莫匹罗星软膏<br data-page-node-id="LehCl4e8dJb7g4m3TYqjlG"><!--pnid:DegqCxrYNv8xEiJHyEZLPm-->每日手动外翻包皮治疗</td><td data-page-node-id="cuBdmMsaypj0iacGCRDyAT" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:krA1knxHEmHHqGqDPg5KCO-->你好，根据你的症状，包茎指由包皮口狭窄或包皮与阴茎粘连，包皮不能上翻显露阴茎头的现象。您儿子这个情况可能诊断龟头包皮炎，治疗主要是清洗包皮，并与外用药物连用，例如莫匹罗星软膏，一天三次直至，建议每日手动外翻包皮治疗。因此不急于手术治疗，可观察至青春期结束。</td><td data-page-node-id="CPywqHIYFZr7UgRxmP7esA" style="font-size:12px; white-space:pre-wrap"><!--pnid:Lh4tKtIsQFLluwMS9QfoC9-->先说检索到的适用规则：  
+- 包茎是“由于包皮口狭窄或者包皮与阴茎头粘连，包皮不能上翻显露阴茎头的现象”。  
+- 包皮手术的绝对手术指征是病理性包茎；此外，“先天性包茎，反复的包皮阴茎头炎及泌尿系统异常所造成的尿路感染亦为包皮手术的适应证”。  
+- 嵌顿包茎是包茎的急性并发症：包皮上翻后若未及时复位，可因静脉及淋巴循环受阻出现水肿，导致包皮不能复位。  
+- 国内流行病学调查显示，包茎发生率随年龄增长而下降，学龄期（7-10岁）男性包茎发生率提到为 12.14%。
+
+代入您孩子的场景：  
+1. 您儿子今年 7 岁，仍有包茎，本身并不等于一定马上手术；因为检索证据也提示这个年龄段仍可见包茎。  
+2. 但您描述的关键点是“包茎伴反复炎症”。按检索到的原文，“反复的包皮阴茎头炎”本身就属于包皮手术适应证。  
+3. 所以，单从这份知识库证据看，您孩子不是单纯“观察就行”的情形，而是已经达到需要由小儿外科/泌尿外科进一步评估干预的情形，重点是判断是否属于病理性包茎，以及是否进入手术适应证范围。
+
+我给您的明确建议是：  
+- **尽快带孩子到小儿外科或泌尿外科面诊评估**。因为证据里已经明确：病理性包茎是绝对手术指征，而反复包皮阴茎头炎也是手术适应证。  
+- **如果正处在急性炎症发作期，应先就诊处理炎症，再由专科继续评估后续方案**。检索结果没有给出急性期的具体用药流程，但明确提到临床上需密切观察疗效并及时调整治疗方案，防止治疗失败。  
+- **不要自行强行翻包皮**。因为检索结果明确提示，包皮上翻后若不能及时复位，可能发生嵌顿包茎这一急性并发症。  
+- **一旦出现包皮翻起后卡住、明显肿胀、不能复位，应尽快就医**，因为这正符合嵌顿包茎的描述。
+
+【直接回答】  
+针对“7岁儿童包茎伴反复炎症怎么办”，现有证据支持的核心结论是：**反复包皮阴茎头炎属于包皮手术适应证，建议尽快去小儿外科/泌尿外科评估是否为病理性包茎及是否需要手术处理**。
+
+【检索到的相关线索】  
+- 包茎定义：包皮口狭窄或包皮与阴茎头粘连，导致包皮不能上翻显露阴茎头。  
+- 手术指征：病理性包茎是绝对手术指征；反复包皮阴茎头炎也是手术适应证。  
+- 急性风险：包皮上翻后不能复位可形成嵌顿包茎。  
+
+【为何无法完全回答】  
+检索结果**没有提供**您关心的更细化内容，例如：局部激素怎么用、具体护理步骤、急性炎症期的标准用药、手术方式选择、术后护理与复诊时间。因此我只能依据已检索到的规则，给出“需要专科评估、反复炎症已属干预适应证、避免强行翻包皮、警惕嵌顿包茎”的结论，不能替代面诊开具具体治疗方案。  
+
+如果您愿意，我下一步可以按您最关心的方向，继续帮您整理成更实用的面诊清单，比如：  
+1. 去医院时怎么跟医生描述病情；  
+2. 家长要重点观察哪些表现；  
+3. 门诊通常会重点评估什么。</td></tr><tr data-page-node-id="fXPVgfnPqxWapSkDc2HZpl"><td data-page-node-id="UJXDm6RNp9Utg84zs147N6" style="font-weight:bold"><!--pnid:8Uyfm5gNdAYW1qp0v6JN5O-->Q015</td><td data-page-node-id="7x4Y4Wn4RclgQz3AZu0mZ1"><!--pnid:LnPYl3kxaO9KTrpImyD9KN-->⚠️ PARTIAL <span data-page-node-id="rkTu7GPbHpbNROQ01crjYY" style="color:#FF9800; font-size:10px"><!--pnid:5C3aE8iVlHyo2cB4vlxjpo-->关键词100%但LLM判不完整</span></td><td data-page-node-id="SbDfDDWM9esFy2uAKYswFO" style="max-width:200px; white-space:pre-wrap"><!--pnid:NfX8FJnRRyTP0MrczUk3tG-->患者：医生您好，我是一名58岁的男性患者。我有一个问题想请教您。我最近半年偶发血尿，并且一个月前发现右肾盂有一个占位。我</td><td data-page-node-id="AC9j80bC1Vq3h48GZxQZhz"><!--pnid:P2zHAKubFm6xWjs38Rdh3j-->右肾盂占位（T1bN0M0）</td><td data-page-node-id="gHyEnevRdxUo67moftBQ1i" class="num"><!--pnid:gNsLbY0tmJQggfVN0VTT3c-->100%</td><td data-page-node-id="C7hs4EfGvxelJZKcThVATB" class="num"><!--pnid:G4jtgSccky8QIVr9sfFe3d-->95%</td><td data-page-node-id="PX2zFzCnvX9OjJjduH6HDW" class="num"><!--pnid:WhK3UpPuU7eWEktGWCYmVA-->89%</td><td data-page-node-id="J5ZN2SpkjqPFuMobzswCGz" class="num"><!--pnid:7ZhsRoiB46QpRidBP52Ech-->50%</td><td data-page-node-id="aXpjQ8sQ7iwHVPmpPkBnPo" class="num"><!--pnid:nc1UYDjmIxrOlF6lkg83ix-->⚠️ PARTIAL</td><td data-page-node-id="w06HsPXGcaPw3ixAbDLePX"><!--pnid:1T0BlysjWIgsFFhtwdhmbP-->腹腔镜下右肾盂癌根治术+膀胱镜检查</td><td data-page-node-id="4hdGrGzE5jEvcgBALpFE6m"><!--pnid:1euetNoyMtHm2GHdY1F2Eu-->-</td><td data-page-node-id="G1qkmkIKRAs2vco0vQk08A" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:gL9MDXHb32ylRrud43wyVW-->医生：您好，根据您的病情描述，您被诊断为右肾盂占位（T1bN0M0）。针对这种情况，我们建议您进行腹腔镜下右肾盂癌根治术+膀胱镜检查的手术治疗。手术会彻底清除肾盂的占位病变，并进行膀胱镜检查以排除其他病变。在手术前，我们会进行术前准备，如备皮和备血。如果您有其他疑问或需要进一步了解手术细节，请随时告诉我。</td><td data-page-node-id="cwLU2GOEPvKaeRohf7gZ00" style="font-size:12px; white-space:pre-wrap"><!--pnid:b9nkhIkq2rxlUC7vKxlqzb-->先套用检索到的规则。
+
+上尿路尿路上皮癌（UTUC）包括肾盂癌和输尿管癌，肾盂输尿管恶性肿瘤中最常见的病理类型为尿路上皮癌；其最常见症状是肉眼或镜下血尿，而 CTU 是目前首选的影像学检查，可判断肿瘤位置、浸润深度及与周围器官关系。  
+术前可将 UTUC 分为低危和高危：  
+- **低危**需同时满足：单发、肿瘤直径＜2cm、细胞学未见高级别、输尿管肾盂镜活检为低级别、CT 未见浸润性生长。  
+- **高危**只需满足任意 1 条：合并肾积水、肿瘤直径≥2cm、细胞学提示高级别、活检提示高级别、多灶性、既往高级别膀胱癌根治术后、存在多种组织学类型、CT 提示肿瘤浸润性生长。  
+治疗原则上，**根治性肾输尿管全长切除加膀胱袖状切除术**仍然是 UTUC 的金标准手术方式；尤其是影像学提示浸润性疾病、高级别肿瘤、最大直径在 2cm 之上、或多中心起病时，更应考虑根治性切除；相对输尿管下段肿瘤，**肾盂和输尿管中上段肿瘤更倾向采用根治性切除**。
+
+把您的情况代入这些规则：
+
+1. 您有“半年偶发血尿”，而血尿正是 UTUC 最常见的症状之一，这与肾盂尿路上皮肿瘤的临床表现相符。  
+2. 影像已经提示“右侧肾盂软组织占位，增强后中度强化”，病变部位就在**肾盂**。证据中明确指出，肾盂肿瘤相对更倾向采用根治性切除。  
+3. 但您目前提供的信息里，**缺少决定能否保肾/是否已属高危的关键分层信息**：  
+   - 肿瘤是否单发；  
+   - 肿瘤最大径是否＜2cm或≥2cm；  
+   - 是否有肾积水；  
+   - 尿细胞学结果；  
+   - 输尿管肾盂镜活检分级；  
+   - CT 是否提示浸润性生长。  
+4. 因此，**仅凭您现在描述的“肾盂占位+血尿”这组信息，最符合证据的方向是：首先按“怀疑/高度怀疑 UTUC”进行进一步术前评估；若后续证实存在高危因素，则标准治疗是根治性肾输尿管全长切除加膀胱袖状切除术**。
+
+关于您提到的右肾另一个 **6×5mm 小圆形低密度影、无强化**：  
+检索结果里没有找到“右肾小低密度影无强化”在本场景下的明确处理规则，也没有证据说明它一定改变肾盂占位的首选治疗方案。能检索到的相关线索只有：CT/CTU 可帮助判断肿瘤性质并影响诊疗方案；以及肾囊肿在 CT 上可表现为边界清楚的低密度影，但这是另一类疾病内容，不能直接等同于您这个 6×5mm 病灶。所以这一点需要结合正式影像报告和临床医生判断，不能仅凭现有证据下定论。
+
+关于高血压合并症：  
+检索结果中没有找到“UTUC 合并高血压患者围手术期”的具体降压目标、用药调整或麻醉管理细则。能找到的相关线索只是：部分晚期患者可有高血压等肾功能不全表现；以及围手术期相关切片主要仍在讲肿瘤根治切除指征，而未展开高血压管理细则。因此我不能根据现有证据替您给出具体的围术期降压方案，但可以明确说，术前需要把高血压作为合并症一并评估。
+
+**明确结论：**  
+按现有证据，您的情况首先应按**右肾盂上尿路尿路上皮肿瘤/UTUC 可疑**来处理；如果进一步检查提示属于高危，或证实为肾盂尿路上皮癌，**首选治疗是根治性肾输尿管全长切除加膀胱袖状切除术**。  
+在决定最终术式前，关键还要补齐 **CTU 分期评估、是否肾积水、肿瘤大小、尿细胞学、输尿管肾盂镜及活检分级** 这些信息，因为只有满足全部低危条件时，才有可能落入保守/保肾思路；而一旦有任一高危因素，就更倾向根治性切除。
+
+如果您愿意，我可以下一步按“**住院前需要补做哪些检查**”和“**什么情况下能保肾、什么情况下必须切肾输尿管**”给您整理成一个更具体的就诊决策清单。</td></tr><tr data-page-node-id="MyVKauNiFujb0VvGAON4aG"><td data-page-node-id="P6z13RKG6uvptYum4J17T5" style="font-weight:bold"><!--pnid:8yKWUC8jfcguRHIvUY0wXj-->Q021</td><td data-page-node-id="EFw8QUh9ycVMPTGm8jaI6G" class="num"><!--pnid:hHxamg2vpRZIWRD180E8Sx-->⚠️ PARTIAL</td><td data-page-node-id="3OfYOvKC3W4WUuCBiAWCZE" style="max-width:200px; white-space:pre-wrap"><!--pnid:Wc5YVGpNP4x0oWm73kTShT-->患者：医生您好，我是一名66岁的男性患者。最近我进行了一次检查，发现我的左肾无功，而且我已经有左输尿管结石5年了。根据检</td><td data-page-node-id="UkoDlYOj5ZMUHWJdmy3A9Y"><!--pnid:e16fHQGy8MmJptvi1dCFp5-->左肾无功、左侧输尿管上段结石</td><td data-page-node-id="92mjOg9S8J934iD2PHnwSc" class="num"><!--pnid:lfxEBb08dURbsOSeQ3jRaw-->50%</td><td data-page-node-id="AzjcCSOydOzXFDSnX0VUOQ" class="num"><!--pnid:lb6YiQnkrKKjTLBUiYFYl2-->95%</td><td data-page-node-id="LRslvBuJkad56Xqvg6T6DG" class="num"><!--pnid:jCd1evnOHhUAh0dfYcA0W9-->89%</td><td data-page-node-id="sOSYc2FN3nuHmmLimW2EYt" class="num"><!--pnid:El5EKvVGAsov4HnjYE1D2M-->50%</td><td data-page-node-id="hog3RUWA7phAU4AscxNoZh" class="num"><!--pnid:Aypaca4h8cyHNm4aIcFLig-->⚠️ PARTIAL</td><td data-page-node-id="o0k0BVTbjJIrs1UVRxerqU"><!--pnid:JJsZhzqT8ctJDOkHwlmoey-->左输尿管切除术</td><td data-page-node-id="P9xuPH3HLpcnpfWDEJdVBi"><!--pnid:BwwAJdU1nmsOHR4YYYaHjS-->腹腔镜下左肾切除</td><td data-page-node-id="TtQQdIhNw6zSTY2WX231ei" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:h8C0gulihU1UyEAmqhrsMZ-->医生：您好，根据您的情况，您的左肾无功并伴有轻度积水，同时左侧输尿管上段有结石。此外，您还有多发淋巴结。基于这些情况，我们建议您进行手术治疗。手术名称是腹腔镜下左肾切除+左输尿管切除术。在手术前，我们会进行一些准备工作，如备皮和备血。手术前需要完善肾图GFR检查，明确双肾功能。术前的检查结果显示您的心电图有一度房室传导阻滞，胸部CT和其他检验未见明显异常，肌酐水平为117 umol/L，血红蛋白水平为121g/L。手术后，您需要遵循医生的建议进行恢复和康复。如果您有任何其他问题，请随时向我咨询。</td><td data-page-node-id="PTl2HWT4EE4POSbmDWZaLK" style="font-size:12px; white-space:pre-wrap"><!--pnid:jWcrko3UqYj7mPcZ41pJY7-->先说结论：按检索到的规则，您的情况已经不是单纯“小结石观察排石”的场景，而是“左肾无功能 + 长期左侧输尿管上段结石梗阻 + 左肾萎缩并轻度积水”的复杂情况。现有证据更支持先把重点放在**确认左侧残余肾功能、评估对侧肾功能、完善影像和感染风险评估**，再决定是**保守随访**还是**患侧肾切除**；如果存在感染、梗阻加重或肾功能恶化风险，则应积极处理梗阻。至于您提到的**腹股沟区多发淋巴结**，本轮检索没有找到与“泌尿系结石合并腹股沟淋巴结”直接对应的鉴别诊断和处置规则，因此不能仅凭这条信息就下“转移”或“必须切除”的结论。
+
+## 1）先套用检索到的规则
+
+关于“无功能肾/肾切除”的规则，检索结果写到：  
+“肾切除及肾部分切除术……在如下情况仍可采用：(1)患侧肾脏无功能，对侧肾脏功能良好”。  
+另外还写到：“患肾无滤过功能[GFR≤10ml/(min·1.73m)]但分泌大量肾素，导致严重高血压……对萎缩肾不宜轻易切除”。
+
+关于“结石导致无功能肾时是否一定手术”，检索结果还给出了一条非手术适应证：  
+“非手术治疗适应证：……2 结石导致患肾无功能，无症状，对侧肾功能正常的患者”。
+
+关于“输尿管结石和影像学评估”，规则写到：  
+“所有具有泌尿系结石临床症状的患者都应该进行影像学检查，其结果对于结石的进一步诊治具有重要价值”。  
+“CT尿路成像及核磁尿路成像(MRU)：在不使用造影剂的情况下，两者均可很好地显示梗阻部位以上输尿管及肾盂扩张程度”。  
+对梗阻肾功能恢复的判断，检索结果提示：“解除上尿路梗阻最常用的方法是输尿管内放置支架和经皮肾穿刺造瘘手术。解除梗阻后可望GFR在1~4周逐渐恢复，较长时期的梗阻肾功能丧失，常不能逆转”。
+
+关于“结石本身何时可观察”，规则写到：  
+“对于直径&lt;5mm的输尿管结石，约75%可自行排出……对于直径5~10mm的结石，可在密切监测下选用非手术治疗”。  
+但这是针对一般输尿管结石的排石观察规则，不是针对“5年梗阻 + 无功能肾 + 萎缩积水”的情形。
+
+关于“结石影响肾功能时的处理”，检索结果写到：  
+“治疗根据病因而定，结石可用震波碎石方法而去除，一般对结石7~15mm大小者较有效……有时结石影响肾功能或用上法不能成功者则需外科手术去除”。
+
+关于感染/合并症风险，检索结果提示：  
+“复杂性肾盂肾炎多伴有泌尿系统梗阻，可迅速进展为尿脓毒血症”。  
+“尿源性脓毒症的高危因素包括：高龄、糖尿病……以及尿路结石或其他原因引起的梗阻、尿路感染及尿细菌培养阳性、内镜手术等局部因素”。
+
+## 2）把您的具体情况代入这些规则
+
+### A. 左肾无功 + 左肾萎缩 + 轻度积水 + 左输尿管上段结石5年
+这部分与“患侧肾脏无功能，对侧肾脏功能良好，可考虑肾切除”是直接重合的。  
+但同时又有另一条限制：**对萎缩肾不宜轻易切除**。  
+所以对您来说，不是看到“无功肾”就立刻下结论，而是要先分层：
+
+1. **如果左肾确实已无功能，而右肾功能良好**，则“患侧肾切除”在规则上是可考虑的。  
+2. **如果虽报告写‘无功’，但仍需进一步判断是否有可恢复残余功能**，那就不能轻率切除，因为检索结果明确说“对萎缩肾不宜轻易切除”。  
+3. 您已经结石梗阻**5年**，而证据提示“较长时期的梗阻肾功能丧失，常不能逆转”，这意味着从证据倾向看，**左肾恢复希望可能有限**，但检索结果没有给出您这个个体一定“不可恢复”的判定阈值，所以不能替您直接下绝对结论。
+
+### B. 是否还能按普通输尿管结石那样观察排石？
+不太像。  
+因为普通观察排石规则主要针对“&lt;5mm”或“5~10mm密切监测”的输尿管结石，而您这里已经合并：  
+- 左肾无功  
+- 左肾萎缩  
+- 轻度积水  
+- 梗阻时间5年  
+
+这些都说明已不是单纯急性小结石观察情形。尤其证据中提到，梗阻性疾病若伴感染风险，需要积极处理，且梗阻时间长时功能常不能逆转。
+
+### C. 既往做过左侧经皮肾镜取石术，对这次决策意味着什么？
+本轮检索没有找到“既往PCNL后再次出现上段输尿管结石”的专门分层规则。  
+但检索到的一般原则是：  
+- 输尿管结石需先做影像学评估；  
+- 若结石影响肾功能，或保守/其他方法失败，可考虑外科手术去除。  
+
+因此，您“既往PCNL”至少提示这是**复发/复杂结石病史**，但仅凭现有证据，不能具体推导出这次一定该选哪一种取石术式。
+
+### D. 高血压、糖尿病对治疗策略有什么影响？
+从检索结果看，这两点主要影响的是**围手术期风险**和**感染/脓毒症风险**，而不是单独决定必须哪种术式。  
+证据提示：糖尿病是尿源性脓毒症高危因素之一，高龄、结石梗阻、感染、内镜手术也都增加风险。  
+另有围术期原则提到，手术中应重视血压监测，推荐实时监测动脉血压和中心静脉压，术前药物准备充分，术中术者与麻醉师及时沟通。  
+虽然这条原文来自其他泌尿外科手术场景，但至少说明：**您若要手术，血压和血糖需要先尽量控制稳定，再做麻醉和手术评估**。
+
+### E. 腹股沟区多发淋巴结怎么办？
+【直接回答】检索结果中**未找到“泌尿系结石合并腹股沟区多发淋巴结”的具体鉴别诊断流程、检查顺序或处理标准**。  
+
+【检索到的相关线索】  
+1. 有一组证据提到“区域淋巴结转移”的大小分层标准，如“N1、N2、N3按淋巴结最大径线划分”。  
+2. 有证据提到泌尿系结石患者都应进行影像学检查，CTU/MRU可显示梗阻部位以上输尿管及肾盂扩张程度。  
+3. 还有证据提示CT对鉴别某些肾脏炎性病变和肿瘤有帮助，必要时需结合短期随访甚至细针抽吸活检明确诊断。  
+
+【为何无法完全回答】  
+这些线索里，淋巴结分期证据实际来自其他肿瘤场景，并不是“腹股沟多发淋巴结的通用鉴别标准”；而结石影像学证据主要解决的是梗阻和结石定位，不直接回答腹股沟淋巴结的性质。因此，**目前不能依据现有证据判断这些淋巴结是炎症反应、其他疾病相关，还是与肿瘤有关**。
+
+## 3）基于现有证据，比较符合您场景的实际处理思路
+
+### 第一优先：先做完整再评估，而不是直接决定“取石”或“切肾”
+您目前最需要先明确的是以下几件事：
+
+1. **右肾功能是否良好**  
+因为“患侧肾无功能，对侧肾功能良好”是考虑肾切除的重要前提。
+
+2. **左肾是否仍有残余可恢复功能**  
+证据提示解除梗阻后GFR可在1~4周逐渐恢复，但长期梗阻丧失功能常不能逆转。  
+所以临床上这一步的核心不是“有没有结石”——您已经有——而是“这个左肾还有没有保留价值”。
+
+3. **是否存在感染或脓毒症风险**
+因为您有糖尿病、结石、梗阻、高龄，这些都属于高危因素。如果合并发热、尿培养阳性、白细胞或炎症指标异常，就要先重视感染控制。
+
+4. **梗阻的具体部位和程度**
+证据支持用影像学，尤其CTU/MRU，去看梗阻以上输尿管和肾盂扩张程度。
+
+### 第二优先：治疗方向大致分两类
+#### 方向1：若左肾确已无功能、右肾功能好，且左肾无保留价值
+这种情况下，按检索规则，**患侧肾切除是可考虑的方案**。  
+特别是如果还合并：  
+- 持续梗阻  
+- 反复感染  
+- 与高血压相关的严重问题（如证据所说“患肾无滤过功能但分泌大量肾素导致严重高血压”）则切除的理由会更充分。  
+不过，现有证据**没有直接给出“结石性无功能肾时必须做肾输尿管全长切除”**。检索到的“肾输尿管全长切除”证据对应的是上尿路尿路上皮癌场景，不适合直接套到您的结石病例。因此，不能据此建议您做“肾输尿管全长切除”。
+
+#### 方向2：若仍怀疑左肾有残余功能，或一时不能确认
+这时更合理的是先**进一步评估/必要时先解除梗阻**，因为证据显示解除上尿路梗阻常用方法包括输尿管支架和经皮肾穿刺造瘘，解除后GFR可在1~4周观察恢复。  
+如果最终证明仍有功能恢复空间，才有保肾取石讨论价值；但如果是长期梗阻后不可逆丧失功能，则再保肾意义可能不大。
+
+### 第三优先：如果当前无症状、无感染、对侧肾好，保守随访并非完全不可能
+检索中明确有一条：  
+“结石导致患肾无功能，无症状，对侧肾功能正常的患者”可列入非手术治疗适应证。  
+所以，如果您目前真的：  
+- 没有疼痛、发热、脓尿等症状  
+- 没有感染证据  
+- 右肾功能良好  
+- 左肾又确认已无保留价值但也暂未引发并发症  
+
+那么**观察随访**在规则上是存在依据的。  
+但结合您“5年梗阻 + 萎缩 + 轻度积水 + 糖尿病 + 既往手术史”，我只能说证据更提示要**慎重、完整评估后决定**，而不是简单长期继续拖着不管。
+
+## 4）给您的明确建议
+
+### 现阶段最符合证据的建议
+1. **尽快到泌尿外科进一步评估左肾是否还有残余功能，以及右肾功能是否良好**。这是决定“保留还是切除”的关键前提。  
+2. **完善影像学评估**，重点看左侧上段输尿管结石位置、梗阻程度、肾盂输尿管扩张情况；检索证据支持CTU/MRU用于显示梗阻以上扩张程度。  
+3. **排查感染风险**。如果有发热、尿频尿急尿痛、脓尿、尿培养阳性或炎症指标升高，要优先控制感染，因为复杂性感染在梗阻背景下可迅速进展。  
+4. **同步优化高血压和糖尿病控制**，为可能的介入/手术做准备；围术期需要重视血压监测和麻醉沟通。  
+5. **腹股沟多发淋巴结不要忽视，但也不能仅凭现有证据定性**。需要和泌尿外科/相关科室结合影像与临床进一步判断；本轮证据不足以给出标准化鉴别路径。
+
+### 更具体的结论
+- **如果评估证实左肾真正无功能、长期梗阻后无恢复希望、右肾功能良好**：可考虑**左肾切除**。  
+- **如果左肾还有残余功能或一时难以判断**：更倾向先做进一步评估，必要时先解除梗阻后观察恢复。  
+- **如果目前完全无症状且右肾正常**：保守随访在规则上不是绝对不行，但您这个病程和基础病背景使得“继续单纯拖延”并不稳妥。  
+- **现有证据不支持直接建议肾输尿管全长切除**，因为检索到的这类证据对应的是上尿路尿路上皮癌，而不是单纯结石。
+
+如果您愿意，我下一步可以根据您手里的**检查结果具体内容**（比如CT报告、肾图/分肾功能、肌酐、尿常规、有没有发热疼痛）帮您进一步判断：目前更像是“建议切除左肾”，还是“还有必要先试图解除梗阻再评估”。</td></tr><tr data-page-node-id="xvczaXuENZprcXHt3wPSMs"><td data-page-node-id="pnO0Oc9OgphI3zttoRCxFz" style="font-weight:bold"><!--pnid:wtLxdRNs7vtfL5CG6VeSVP-->Q022</td><td data-page-node-id="MgYydTFLnm7HAL8v6mdw82" class="num"><!--pnid:qLedCzqcs8aivIaXw0hZz0-->⚠️ PARTIAL</td><td data-page-node-id="JCUrgjiSEfWdZUCtfRdbZb" style="max-width:200px; white-space:pre-wrap"><!--pnid:yX3TUCQRKVcemHSi3OAqZq-->患者：医生您好，我是患有尿频、尿急和尿痛已经持续了一个多月了。我之前进行了经尿道前列腺电切术手术，已经过去两周了。根据之</td><td data-page-node-id="IKFgXrpbJIlQrduKZiEI7e"><!--pnid:rmVAe7bkPnOxnzwcJJP4Qn-->前列腺腺泡癌</td><td data-page-node-id="QZqqROBqYOkGLkLF8OV6zN" class="num"><!--pnid:hZ0aMDFbOOHpodkSSxDbCY-->0%</td><td data-page-node-id="lC7AaMj60ssHEhriQzddQN" class="num"><!--pnid:9d2CArkkpfbfxtOXgl6SPi-->95%</td><td data-page-node-id="UghHjmvPMvJnPBTjmiV4M8" class="num"><!--pnid:mIuOnTZYlEHlJp7VECDFno-->89%</td><td data-page-node-id="K007YFgk98SLZhb7sr3h96" class="num"><!--pnid:rJlxh4t65cBJJLyQ24Ozwi-->50%</td><td data-page-node-id="3yqzFnPJCHm0pUzR28xLFW" class="num"><!--pnid:aMsQyDTKO5pwEZsHwvdnRi-->⚠️ PARTIAL</td><td data-page-node-id="CycDhC2fSYo38tONWi48S8"><!--pnid:Vkf1KZ1z8oSzzwsbNvV9YX-->-</td><td data-page-node-id="2nLGWqdVYChTxV5TBOS3jy"><!--pnid:bvFS5X7w04f3uc1OTwEkQn-->机器人下前列腺癌根治术</td><td data-page-node-id="gUG6Q6KiEy1qPl4AZ6MC0S" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:Qn227WvA90GCRJZQj5prZR-->医生：您好，根据您的病情描述和检查结果，您被诊断为前列腺腺泡癌，且已经进行了经尿道前列腺电切术手术。根据您提供的信息，您的前列腺体积增大，局部缺如，残余前列腺DWI上未见明显信号增高，增强后强化不均。此外，您还有尿频、尿急、尿痛的症状，并且尿液检查显示尿潜血和尿沉渣红细胞、白细胞计数异常。针对您的情况，建议进行机器人下前列腺癌根治术。</td><td data-page-node-id="lelViWiHu5R7m3FWj5mCt4" style="font-size:12px; white-space:pre-wrap"><!--pnid:nArYeZ531NxKAFXYvoCeOL-->先把可直接套用的规则摆出来：
+
+1. 前列腺癌的临床分期要靠 DRE、穿刺活检阳性部位、CT、MRI、骨扫描和 PSMA PET/CT 等检查综合判断；其中 N 分期看淋巴结，MRI、CT、B 超、胆碱 PET/CT 和 PSMA PET/CT 可协助判断，M 分期主要评估骨和远处转移，常规方法包括全身核素骨显像、CT、MRI；如果骨显像可疑但不能明确，可进一步做 18F-NaF PET/CT 或 MRI；并且“推荐选择 PSMA PET/CT 或 PET/MRI 进行前列腺癌精准分期，可以替代传统影像学检查”。  
+2. 前列腺癌确诊仍依赖组织病理学检查，标本可以来自前列腺穿刺活检组织或经尿道前列腺切除组织标本。  
+3. AJCC 预后分期中，“任何 T，N1，M0”属于 V 期 A；“任何 T，任何 N，M1”属于 V 期 B；另外 “T1~2，N0，M0，PSA≥20，ISUP=1~4”也被列为 II 期 A。  
+4. 治疗原则上，需要根据临床及病理参数进行危险度分层，并结合预期寿命、健康状态及主观意愿共同决策；可选方向包括等待观察、主动监测、根治性前列腺切除术和根治性放射治疗；对“高侵袭性、进展迅速”的肿瘤，需要更积极的局部或系统治疗。  
+5. 对尿路感染/术后感染相关症状，尿痛、尿频、血尿是有诊断意义的症状；男性应做全面泌尿系统体检，包括外生殖器和直肠指诊；尿常规包括尿液理学、尿生化和尿沉渣检查。若存在下尿路症状，应考虑膀胱炎；如果存在复杂因素或梗阻，则要警惕复杂性尿路感染及尿脓毒血症风险。对于引起或加重尿路感染的梗阻性疾病、肿瘤、狭窄，以及长期留置尿管、支架管等，应积极处理或更换/去除相关医源性异物。
+
+把您的情况代入这些规则：
+
+- 您已经有病理证实“前列腺组织腺泡癌，Gleason 3+3=6”，而且该病理来源于经尿道前列腺电切术后取得的组织，这符合“经尿道前列腺切除组织标本可用于确诊”的规则。  
+- 您 PSA = 132 ng/ml，这一数值显著高于证据中提到的 PSA≥20 这一分期阈值；即便在 N0、M0 情况下，证据里也已把 “T1~2，N0，M0，PSA≥20，ISUP=1~4”列入 II 期 A。  
+- 同时，您的 MRI 已提示“双侧髂血管周围数枚淋巴结弥散受限”，而证据明确说 MRI 可显示盆腔淋巴结受侵犯情况，N 分期需要借助 MRI、CT、胆碱 PET/CT、PSMA PET/CT 等进一步判断。所以，您当前最关键的问题不是直接定具体治疗细节，而是要先把“这些淋巴结到底是不是转移、有没有骨或其他远处转移”分清楚。  
+- 您 MRI 里“骨盆各骨骨质未见明显异常信号改变”只能说明这次骨盆 MRI 没看到明显骨异常，但证据里对 M 分期的常规检查仍然是全身核素骨显像、CT、MRI，且推荐 PSMA PET/CT 或 PET/MRI 做精准分期。  
+- 您目前尿频、尿急、尿痛已持续一个多月，且尿潜血 3+、尿沉渣红细胞 136、白细胞 474、镜检白细胞 80、镜检红细胞 24，这与证据中“尿痛、尿频、血尿对尿路感染有诊断意义”是一致的；再加上您刚做过经尿道前列腺电切术，属于有明确泌尿系统操作后的场景，更要按复杂性尿路感染/术后并发症思路去评估是否存在梗阻、残余感染灶或医源性异物问题。
+
+基于现有证据，比较稳妥的治疗思路是：
+
+### 一、先做“重新分期”，这是决定后续治疗方向的第一步
+证据最支持您尽快完善以下分期评估：  
+- 进一步判断盆腔/髂血管周围淋巴结是否转移：MRI、CT、PSMA PET/CT 或 PET/MRI。  
+- 评估骨转移和远处转移：全身核素骨显像、CT、MRI；若需要更精准分期，优先考虑 PSMA PET/CT 或 PET/MRI。  
+
+**结论**：您目前最像是“已确诊前列腺癌，但分期尚未完成”的状态。由于 PSA 很高且 MRI 有可疑盆腔淋巴结，不能按单纯低级别、局限性前列腺癌来理解，应该先补全 N、M 分期，再决定最终方案。
+
+### 二、在治疗总方向上，现阶段更不应直接按“低危主动监测”处理
+虽然您的 Gleason 评分是 3+3=6，对应 ISUP 分级分组 1，但证据同时强调：治疗要综合临床和病理参数，不是只看 Gleason 一项。  
+您的 PSA 132 ng/ml，且 MRI 有可疑淋巴结，因此从证据可推导出：**不能仅因 Gleason 6 就简单归入可观察或主动监测那一类**。如果最终证实存在 N1 或 M1，那么分期就分别进入 V 期 A 或 V 期 B，治疗强度显然会高于单纯局限性低危病变。
+
+### 三、局部治疗与非手术治疗的选择，要等分期后定，但放疗是证据中明确列出的可选方向
+现有证据列出的治疗选项包括等待观察、主动监测、根治性前列腺切除术、根治性放射治疗，以及其他治疗方式。  
+结合您的场景：  
+- 您刚做过经尿道前列腺电切术，MRI 也提示术后改变；  
+- 目前又有持续明显尿路刺激症状；  
+- PSA 很高且有可疑淋巴结。  
+
+**因此更现实的路径通常是：先完成精准分期，再由泌尿外科和放疗科共同评估是否走根治性放疗或其他更积极的局部/系统治疗路线**。  
+
+不过，检索结果里**没有给出内分泌治疗的具体药名、起始时机、联用方案或放疗剂量流程**，所以我不能据此替您细化到具体处方或疗程。
+
+### 四、您的尿频、尿急、尿痛和脓尿/血尿问题，需要与肿瘤治疗并行处理
+证据显示，对这类症状应做：  
+- 全面的泌尿系统体检，男性做外生殖器和直肠指诊；  
+- 尿常规、尿沉渣等基础检查；  
+- 并尽快判断是否存在复杂因素，因为复杂性尿路感染常伴泌尿系统梗阻，可迅速进展为尿脓毒血症；  
+- 若有诱发感染的梗阻、肿瘤、狭窄、长期留置尿管/支架等，要积极处理。  
+
+**结合您的情况，术后两周仍有明显尿痛、尿频、尿急，同时尿白细胞和红细胞都高，说明不能只把症状归因于“术后刺激”，还要重点排查术后尿路感染或其他并发症。**  
+这部分处理的重要性在于：如果感染没有控制，后续任何肿瘤相关操作或治疗衔接都会受影响；证据也明确提到手术或操作前要积极控制感染，以免继发尿源性脓毒血症。
+
+### 五、如果单纯从症状控制角度看，下尿路症状可考虑药物对症，但这不是替代肿瘤治疗
+证据中提到，α1 受体阻滞剂可在数小时至数天改善症状，且不影响前列腺体积和血清 PSA；症状改善通常建议在 4~6 周用 IPSS 评估。  
+所以，对尿频尿急等症状，**可以把对症药物作为辅助措施**；但这只是缓解排尿症状，不能替代您现在最重要的两件事：  
+1. 完成肿瘤重新分期；  
+2. 控制术后可能存在的感染/炎症问题。
+
+## 最后给您一个明确结论
+**根据现有资料，最合适的处理顺序应当是：**
+
+1. **先完成精准分期**：重点做淋巴结和远处转移评估，证据最支持的是 PSMA PET/CT 或 PET/MRI，同时结合全身核素骨显像/CT/MRI。  
+2. **同时处理术后尿路刺激症状和感染风险**：按复杂性尿路感染/术后并发症思路评估，完善泌尿系统查体和尿液相关检查，并排除梗阻、异物等促感染因素。  
+3. **治疗方向上，不建议仅按 Gleason 6 低危癌处理**，因为 PSA 132 ng/ml 且有可疑盆腔淋巴结，提示需要更积极的分期后决策。  
+4. **分期完成后，再在根治性放疗、根治性手术或更积极的局部/系统治疗之间选择**；现有证据能明确列出放疗、手术、主动监测、等待观察这些方向，但**不能进一步给出某一种具体用药和疗程细节**。
+
+如果您愿意，我下一步可以基于您这份资料，继续帮您整理成一个“门诊就诊清单”，把**下一次复诊时应该优先补做的检查项目和想问医生的关键问题**按顺序列出来。</td></tr><tr data-page-node-id="cGbbKMECoxLD5uyRxkGnsg"><td data-page-node-id="yhjUZEUA1W0rP2JIJHe4Wk" style="font-weight:bold"><!--pnid:Bw2qWM3ZGWNN7Oap6kdRy7-->Q023</td><td data-page-node-id="morwoLC7sajFSvKl5GO13u" class="num"><!--pnid:nNoJKuZogPvbLxGblmI9uC-->⚠️ PARTIAL</td><td data-page-node-id="EBV4eJ5iXEgS6oMGcxxdHB" style="max-width:200px; white-space:pre-wrap"><!--pnid:Rat4nhcWHFmjO4PRvtGkkv-->医生，您好。我是一名68岁的男性患者，最近8个月来一直感到右侧腰部酸胀的不适。我没有出现血尿、尿频、尿急尿痛、发热或畏寒</td><td data-page-node-id="qMO0evE1K9Y0yLSHXqh30W"><!--pnid:DlkDpa4WU2jJk0vNwKwGAv-->右侧输尿管上段结石、泌尿道感染</td><td data-page-node-id="BXvt9m8mEFHcm8ySiaOxyq" class="num"><!--pnid:c40tgL5Pv4yy3pOBYuTFFp-->50%</td><td data-page-node-id="kheXPWPzw0ERoM2DvAxlWq" class="num"><!--pnid:xur4ZpQsuh45vR8lvxU0VJ-->95%</td><td data-page-node-id="eEtDSkVAnEEm51Z1R4A3x5" class="num"><!--pnid:uy0nZNCsSKvkj1W0MegGj1-->89%</td><td data-page-node-id="Fvdpo4cMicLFKWuLn44t7H" class="num"><!--pnid:kn5KrHewFSZSGIQ9qZ8lJT-->50%</td><td data-page-node-id="ai6Aj6VO9ALo29hgoj1Q2n" class="num"><!--pnid:prdDjaeHkXUM2bdLp3E3U1-->⚠️ PARTIAL</td><td data-page-node-id="Zw2JQYTuq2VzBav02wBzfX"><!--pnid:1j83Y5J0vfbXxvJkQRTyM6-->经皮肾镜取石术</td><td data-page-node-id="8zaJK754Zodbyo2DpEORb1"><!--pnid:jYMKlqg8Fwx70pHjjsjilZ-->输尿管软镜激光碎石取石术</td><td data-page-node-id="BRot4kK2Y5IrdA55IqWrAf" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:7QY1bS6HbvmRiQgoq43Li4-->您好，根据您的病例描述和CT检查结果，您被诊断为右侧输尿管上段结石伴积水及感染。针对您的情况，我建议您进行经皮肾镜取石术，或者输尿管软镜激光碎石取石术，这是一种微创手术，利用激光或超声波等技术将结石粉碎并清除，术后留置DJ管，积极抗感染治疗。</td><td data-page-node-id="gt68AjbnkqBnWkFUQx3oEV" style="font-size:12px; white-space:pre-wrap"><!--pnid:dk0BtzITy9A4K8Ducx1bB8-->先把检索到的适用规则摆在前面：
+
+1. 输尿管结石的保守治疗适应证与观察期：对于直径&lt;5mm 的输尿管结石，约 75%可自行排出，因此首选非手术治疗；对于 5~10mm 的结石，可在密切监测下选用非手术治疗。非手术治疗措施包括大量饮水、适度运动、镇痛，并且要“定期监测结石位置及肾积水的变化”；平均排石时间为 6~29 天，因此“建议对于排石的随访观察以 1 个月以内为宜”。  
+2. 输尿管上段结石自行排出的概率相对较低，检索结果提到 49%的输尿管上段结石可自行排出；结石越大，自行排出概率越低。  
+3. 所有具有泌尿系结石临床症状的患者都应该进行影像学检查；超声可作为常规检查。对梗阻/积水评估，B 超可见输尿管扩张、肾积水并了解肾皮质厚度；同位素肾图可了解分肾功能；IVP 可显示积水程度和狭窄部位；必要时可行逆行造影；CT 尿路成像或 MRU 可显示梗阻部位以上输尿管及肾盂扩张程度。  
+4. 结石合并梗阻时，感染和肾功能风险需要特别重视。检索结果提到：复杂性肾盂肾炎多伴有泌尿系统梗阻，可迅速进展为尿脓毒血症；而严重双侧性肾梗阻应立即手术解除梗阻，常用方法是输尿管支架或经皮肾穿刺造瘘，解除梗阻后 GFR 可在 1~4 周逐渐恢复。  
+5. 关于进一步治疗方式，检索结果明确提到体外冲击波碎石术是利用体外冲击波聚焦于结石使之粉碎并排出体外的治疗方法；另有证据提到结石可用震波碎石去除，一般对 7~15mm 大小者较有效；当结石影响肾功能，或保守治疗无效/其他方法不能成功时，则需外科手术去除。  
+
+结合您的具体情况来代入：
+
+- 您是“右侧输尿管上段结石伴积水”，并且已经保守治疗后“症状并没有好转”。  
+- 规则里给出的保守观察时间一般是 1 个月以内，而您描述的是右侧腰部酸胀已经持续 8 个月，且之前已有 CT 提示上段结石伴积水。  
+- 用时间代入可写成：建议观察期 ≤ 1个月；您的症状持续时间 = 8个月；8个月 &gt; 1个月。  
+- 同时，您属于输尿管上段结石，这类结石检索结果显示自行排出率仅 49%。  
+
+据此，我对您当前情况的明确建议是：
+
+### 一、总体方向：不宜继续单纯保守观察，应转入积极的进一步评估和手术/介入治疗通道
+因为您已经存在持续症状 + 既往影像提示结石伴积水 + 保守治疗无好转，这已经超出了检索结果里建议的保守随访窗口。  
+从证据看，此时下一步重点不是继续拖延，而是先重新评估当前是否仍有梗阻、积水程度如何、右肾功能是否受影响，再据此选择碎石或解除梗阻方案。
+
+### 二、您现在术前首先要补齐的检查和评估
+根据检索结果，建议至少完成以下几类评估：
+
+1. **影像学复评**：所有有泌尿系结石症状的患者都应进行影像学检查。  
+   - B 超：看右侧输尿管扩张、肾积水、肾皮质厚度。  
+   - CT 尿路成像或 MRU：看梗阻部位以上输尿管及肾盂扩张程度。  
+   - 必要时 IVP 或逆行造影：帮助判断梗阻位置、程度和长度。  
+
+2. **肾功能评估**：同位素肾图可了解分肾功能，这一点对决定是继续保肾处理、先引流还是直接做碎石/手术很重要。  
+
+3. **感染筛查**：虽然您现在没有发热、畏寒、尿频尿急尿痛，但检索结果提示梗阻合并感染时可迅速进展为尿脓毒血症，且术前要积极控制感染，避免操作诱发尿源性脓毒血症。  
+   检索结果中也提到尿常规是基本检查的一部分。  
+
+### 三、进一步治疗方式上，现有证据支持优先考虑“积极去除结石/解除梗阻”
+基于检索结果，当前可讨论的方向主要包括：
+
+1. **体外冲击波碎石（ESWL）**  
+   证据明确写到 ESWL 是通过体外冲击波粉碎结石并促其排出的治疗方式。  
+   另有共享证据提到，震波碎石对 7~15mm 的结石一般较有效。  
+   如果您复查后发现结石大小、位置仍适合碎石，而且肾功能未明显受损、没有感染，这可以作为一种进一步治疗选择。
+
+2. **外科/腔内手术去石**  
+   检索结果提到：如果结石影响肾功能，或用前述方法不能成功，则需外科手术去除。  
+   对您这种“积水存在且保守治疗无效”的情况，这条尤其重要。若复查提示梗阻持续、积水明显、分肾功能下降，那么积极手术的必要性会更强。
+
+3. **先解除梗阻/引流，再处理结石**  
+   如果复查发现存在明显梗阻，尤其合并感染风险或肾功能受损，检索结果提到常用的解除梗阻方法包括输尿管支架和经皮肾穿刺造瘘。  
+   这意味着：若当前重点是保肾、减压、控制感染，临床路径可能不是一步到位碎石，而是先引流，再择期处理结石。
+
+### 四、关于您的高血压和围手术期注意事项
+【直接回答】检索结果中**没有找到专门针对“普通高血压患者接受输尿管结石手术时，波依定、苯磺酸氨氯地平该如何术前调整、目标血压是多少、何时停不停药”的具体规则**。  
+
+【检索到的相关线索】  
+- 有一条证据提到：推荐全身麻醉手术且术中需实时监测动脉血压和中心静脉压，术前药物准备充分、术中术者与麻醉师及时沟通及麻醉药物适时适量使用，是预防术中低血压的关键要素。  
+- 但这段上下文主要来自肾上腺相关肿瘤手术，而不是普通高血压合并输尿管结石手术。  
+
+【为何无法完全回答】  
+现有证据只提到了“术中血压监测”和“术前药物准备充分”的原则，没有给出您这种普通高血压患者在结石手术前的具体停药/继续用药方案，也没有给出明确血压阈值，因此我不能根据这批证据替您编造更具体的降压药调整建议。  
+
+### 五、对您这个场景的明确结论
+**结论是：您这种“右侧输尿管上段结石伴积水，已保守治疗且 8 个月仍持续右腰酸胀不适”的情况，不建议继续单纯保守拖延，应该尽快进入泌尿外科进一步评估，并大概率需要积极干预。**  
+原因有三点：  
+1. 保守观察建议通常为 1 个月以内，而您远超这个时间窗。  
+2. 您是输尿管上段结石，自行排出率相对更低。  
+3. 既往已有积水，说明存在梗阻风险，继续拖延会涉及感染和肾功能损害风险。  
+
+### 六、您现在最实际的下一步
+建议您到泌尿外科就诊时，按这个顺序推进：
+1. 先做影像学复查，确认结石是否仍在、大小位置、积水程度。  
+2. 做分肾功能评估，明确右肾是否已受影响。  
+3. 做尿常规等基础检查，排查潜在感染。  
+4. 根据复查结果，在 ESWL、进一步手术去石，或先支架/造瘘引流之间做选择。  
+
+如果您愿意，我下一步可以根据这批证据，继续帮您整理一份**“门诊就诊时可直接带给泌尿外科医生的术前检查清单 + 问诊重点清单”**。</td></tr><tr data-page-node-id="FrL0hTBhjJXQKeMWIfmHBu"><td data-page-node-id="Y7UvT9cvuY73zboGHVCFgD" style="font-weight:bold"><!--pnid:o1b33qB6YsNmtjiI3monzR-->Q028</td><td data-page-node-id="ixjUx39slXX1gKFmqh7Q6v" class="num"><!--pnid:Zq91bRfyVxNtSlgvV2qgCw-->⚠️ PARTIAL</td><td data-page-node-id="jNDlcpSYwxnjApzLcZHDi9" style="max-width:200px; white-space:pre-wrap"><!--pnid:fRg6HRNB9z8CdYiSnkKXhp-->医生您好，我是75岁男性，体检发现的双肾结石，2天前【肾CTU】双肾位置无异常，注入对比剂前后双肾实质内可见无明确强化小</td><td data-page-node-id="5AIWc3j67eQZDUl21BV5TS"><!--pnid:6xD4Bhg0as2FXdlT1jDQCh-->右侧鹿角形结石、左输尿管上段结石</td><td data-page-node-id="jBM3sTuOtPeU04kWL1jYvo" class="num"><!--pnid:0iZIbzMwsmbII9RC3t3JyX-->66%</td><td data-page-node-id="1OpmO3p1PHLpjYt1g76Dm8" class="num"><!--pnid:ThOiFuLf4yfV16WETzwINQ-->92%</td><td data-page-node-id="p1h7lH8V1U3sKsgjqmBgmV" class="num"><!--pnid:kjGLuSaS8HE8NwhcMbtDkc-->93%</td><td data-page-node-id="0d6lndwYE6u4X6KHQzDCQe" class="num"><!--pnid:H0GRNhCpJfQvf6EBpDErky-->50%</td><td data-page-node-id="d2ZMzo2aNQog8lbbBITJyK" class="num"><!--pnid:pH7HTN4cIi0L5oy2OzNI8y-->⚠️ PARTIAL</td><td data-page-node-id="220uxqHXCwjsT1lrRxLVMi"><!--pnid:L1IpY6KXNZHOzDEUgJiyja-->左输尿管软镜取石术<br data-page-node-id="ONzbmzJi0ici9xb12ChQQs"><!--pnid:Lkw8oegk0tNkt9IVZR0LB1-->抗感染</td><td data-page-node-id="vH5wM9NZOOJJU8jYbpqNE1"><!--pnid:ozPzaitDJNvoRgh0ByxfqK-->右顺逆联合碎石取石术</td><td data-page-node-id="wcqOcJlD7udOIPBuzeclgR" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:Eo6bjE3cxQQaTMx8PQ8SeZ-->根据你的病史和检测结果，您考虑是右侧鹿角形结石，左输尿管上段结石。由于右侧结石体积较大且分布再各个肾盏内，很难通过常规方法取净结石。建议行左输尿管软镜取石术，右顺逆联合碎石取石术，即通过经皮肾镜取石联合输尿管软镜双通道，尽可能取出结石，同时需要抗感染治疗，监测体温和尿量，术后化验结石成分，针对性的预防结石复发。</td><td data-page-node-id="UUWgd5ZdtJ3cLt7v9JbAAa" style="font-size:12px; white-space:pre-wrap"><!--pnid:j1iwswDQVBaGaOgpExuEUP-->先把能直接套用到您这个场景的规则摆出来：
+
+1. 对输尿管结石，规则写得很明确：直径＜5mm者“首选非手术治疗”；5~10mm者“可在密切监测下选用非手术治疗”；非手术措施包括大量饮水、适度运动、镇痛、并“定期监测结石位置及肾积水的变化”，随访观察以1个月以内为宜。  
+2. 对肾结石，非手术治疗适应证是“无症状、无梗阻的肾盏结石”等；还包括“结石导致患肾无功能、无症状、对侧肾功能正常”或“存在体外冲击波碎石及各种手术禁忌证”的患者。  
+3. 结石影像学上，肾结石包括“鹿角形结石”，输尿管结石包括“输尿管上段结石”；所有有泌尿系结石临床症状的患者都应做影像学检查，结果对进一步诊治“具有重要价值”。  
+4. 对感染/梗阻风险，证据指出：由结石或结石相关梗阻可引起尿源性脓毒症；“积极手术治疗引起或加重尿路感染的尿路梗阻性疾病包括结石”，而且“在施行手术或操作前要积极控制感染”；严重双侧肾梗阻时应立即解除梗阻，常用方法是输尿管支架和经皮肾穿刺造瘘。  
+5. 另有一条与结石去除方式相关的线索：结石“7~15mm”时震波碎石一般较有效；输尿管中下段结石保守治疗无效可逆行取石；若“结石影响肾功能”或上述方法不能成功，则需外科手术去除。
+
+把您的情况代入这些规则：
+
+- **右肾**：CTU写的是“右肾中下份肾盏内鹿角型、颗粒样致密影，伴相应区域肾盏扩张”。这已经不是证据里所说的“无症状、无梗阻的肾盏结石”那类观察对象，因为您已有**鹿角型结石 + 肾盏扩张**。按现有证据，单纯长期观察并不符合已列出的非手术适应证。  
+- **左侧输尿管上段**：CTU提示“左侧输尿管上段颗粒样致密影”，但又写“左肾盂、肾盏和左输尿管未见明显扩张”。这说明目前从影像描述上**未见明确上游扩张**。如果这枚上段输尿管结石体积较小，现有规则允许先按保守排石路径评估；因为输尿管结石＜5mm首选非手术，5~10mm可在密切监测下非手术。  
+- **双肾周少许渗出**：检索证据没有直接把“肾周少许渗出”定义成必须立即手术的单独标准，但它和感染/炎症风险有语义相关。若同时合并发热、寒战、脓尿、白细胞/CRP/降钙素原升高、尿培养阳性，证据支持先控制感染，并对结石性梗阻及时减压。  
+- **年龄75岁**：检索到的围手术期线索明确把“高龄”列为尿源性脓毒症高危因素之一。所以您如果要手术，术前尤其要先把感染和肾功能风险评估清楚。
+
+### 结合您这个片子的较明确结论
+**更像是“分侧、分期处理”**：
+
+#### 1）右肾鹿角型/多发结石伴肾盏扩张：倾向积极处理，而不是单纯观察
+原因是：
+- 已有鹿角型结石；
+- 已伴肾盏扩张，不符合证据中“无症状、无梗阻肾盏结石”的观察条件；
+- 若后续评估提示肾功能受影响，证据也支持进入更积极去石路径。
+
+不过，**检索结果里没有直接给出“鹿角型肾结石首选必须是哪一种手术（如经皮肾镜）”的明确规则原文**。所以基于现有证据，我只能明确到：右肾这部分通常不宜单纯保守观察，应进入积极去石评估。
+
+#### 2）左侧输尿管上段结石：先看大小、症状和是否出现梗阻/感染
+- 若偏小，可按保守排石路径：饮水 2500~3000ml/天、适度运动、镇痛、1个月内复查结石位置和肾积水变化。  
+- 如果后续证实结石在约7~15mm范围，证据里提到震波碎石一般较有效。  
+- 如果保守失败，或出现肾功能受影响，则要转为更积极取石/外科去除。  
+
+#### 3）如果有感染征象，要先抗感染，必要时先引流减压
+证据支持以下处理顺序：
+- 先判断是否存在复杂性尿路感染/尿源性脓毒症风险；  
+- 手术或操作前积极控制感染；  
+- 如出现明显梗阻且肾功能受损，或严重双侧梗阻，应先解除梗阻，常用输尿管支架或经皮肾穿刺造瘘。  
+
+### 对您目前最实用的方案建议
+基于现有证据，比较稳妥的临床思路是：
+
+1. **先完善术前评估**：重点看是否合并感染、尿培养是否阳性、肾功能是否受影响，因为高龄本身就是结石相关尿源性脓毒症高危因素。  
+2. **右肾作为优先处理重点**：因为是鹿角型/多发结石并伴肾盏扩张，已不属于简单观察型。  
+3. **左侧输尿管上段结石根据大小决定**：  
+   - 小且无扩张、无感染、无明显症状：可短期保守观察；  
+   - 较大、排不出、出现疼痛/感染/肾功能影响：转碎石或取石。  
+4. **若发热、寒战、脓尿、明显炎症指标升高或肾功能恶化**：先抗感染，必要时先支架或肾造瘘减压，再谈 definitive 去石。
+
+### 最后的明确结论
+**按这份CTU描述，您的治疗重点不在左肾小结石，而在“右肾鹿角型/多发结石伴肾盏扩张”和“左侧输尿管上段结石”两处。**  
+- **右肾病灶更倾向积极手术去石评估，不适合单纯长期观察。**  
+- **左侧输尿管上段结石若体积小、无梗阻无感染，可先短期保守；否则考虑碎石/取石。**  
+- **一旦合并感染或肾功能受影响，应先控制感染，必要时先引流减压。**
+
+【直接回答】  
+检索结果中**没有找到足以直接下结论的“鹿角型肾结石首选术式、经皮肾镜适应证、以及双肾结石合并一侧输尿管结石的明确先后顺序”规则原文**，所以我不能仅凭这批证据替您指定“必须做哪一种手术”。  
+
+【检索到的相关线索】  
+- 证据明确提到肾结石包括“鹿角形结石”，输尿管结石包括“输尿管上段结石”。  
+- 对输尿管结石，＜5mm首选非手术，5~10mm可在密切监测下非手术；并需在1个月内随访。  
+- 对结石相关感染/梗阻，需积极处理，术前先控制感染；严重梗阻时可放支架或肾造瘘解除梗阻。  
+
+【为何无法完全回答】  
+这些线索能支持“右肾应积极处理、左输尿管结石按大小与是否梗阻感染分流”的大方向，但**没有把您最关心的具体手术路径写到足够细**，尤其缺少“鹿角型结石首选何术式”“双侧病变先做哪边”的明确条文。若您愿意，我下一步可以继续按制度/指南措辞帮您补查：  
+1）鹿角型肾结石的首选术式；  
+2）经皮肾镜、输尿管镜、体外碎石各自适应证；  
+3）双肾结石合并一侧输尿管结石的分期先后顺序。</td></tr><tr data-page-node-id="LVSbo2dTE9ffLkbZ3AR5hc"><td data-page-node-id="Rfzy6uuTx0ZXYIQl1WStzx" style="font-weight:bold"><!--pnid:Fq9lfx2qGuMB3zpbbtTcZ5-->Q029</td><td data-page-node-id="w4GkqXM4ZBqI5qXzehkLan" class="num"><!--pnid:MMRMuyejUUCpxwwat1jydi-->⚠️ PARTIAL</td><td data-page-node-id="X9D1mAKQrODMTKFGS52oZW" style="max-width:200px; white-space:pre-wrap"><!--pnid:IVOiLmXB9AxwnYbKwabRIk-->患者：医生您好，我是一名67岁的男性患者。发现自己有血尿已经持续了一个月，并且在两周前的MRI检查中发现左肾有一个占位。</td><td data-page-node-id="y5k6dODXOHIoYjEU8ELn1D"><!--pnid:wFxArrs388sb7WGAqCBkpE-->左侧肾盂癌</td><td data-page-node-id="wwFETivcZuAkbj6bBhdxV7" class="num"><!--pnid:Bbrgui1ID2KvWl5q8OU1bU-->50%</td><td data-page-node-id="vz445mWbpDXfIHIzY3kXgj" class="num"><!--pnid:dr2GJZZyEZGpu3AZpfPXqL-->25%</td><td data-page-node-id="gUialMIwf8gvHj6dzFXxrY" class="num"><!--pnid:eLylQrM3rlvas2U8P51vBH-->89%</td><td data-page-node-id="lpIydGIUYlsIsWcj1FmAmY" class="num"><!--pnid:sCDmGGVoZfIFYDW53FhqF3-->50%</td><td data-page-node-id="f0tEJiVp6OSaPO1eeJexho" class="num"><!--pnid:byDSCIoVAX282OT0mdvA7o-->⚠️ PARTIAL</td><td data-page-node-id="Z7vGdOnOdxGJ3435ylbQQG"><!--pnid:5dy7Y3vdkGwNrPputl0kVC-->半尿路切除</td><td data-page-node-id="cg13IusW3GSj9u0k1FAD6z"><!--pnid:vIyCjvC47vbB4DRdtlaWv0-->术后定期复查膀胱镜</td><td data-page-node-id="eV3kqgQswxcykUmi8gLWrC" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:z43Q11YelvySULj8eaPL0I-->医生回答：您好，根据您的症状描述和诊断结果，您可能患有左侧肾盂癌，原则上对于这类疾病，需要做半尿路切除，也就是切除患侧肾脏输尿管和部分膀胱。由于尿路上皮肿瘤容易转移，术后需要定期复查膀胱镜，排除膀胱内肿瘤新发，另外双肾囊肿的情况暂时不用处理，可以定期检查，如持续增大需要后续随访。</td><td data-page-node-id="crPpdHRm6r5UODLAmKBR84" style="font-size:12px; white-space:pre-wrap"><!--pnid:qrzBtmn9zmpwYxY790b8JU-->先按检索到的规则来套用您的情况。
+
+**1. 先看这类疾病的诊断与分层规则**  
+上尿路尿路上皮癌（UTUC）包括肾盂癌和输尿管癌，肾盂输尿管恶性肿瘤中最常见的病理类型是尿路上皮癌。  
+UTUC最常见的症状是肉眼或镜下血尿，发生率约70%~80%。  
+CTU是目前针对UTUC首选的影像学检查方法，敏感度可达67%~100%，特异度达93%~99%；它可以判断肿瘤位置、浸润深度及与周围器官关系，并影响诊疗方案制定。  
+由于术前准确临床分期有一定难度，可先把UTUC分为低危和高危：低危需同时满足“单发、肿瘤直径&lt;2cm、细胞学未检出高级别、输尿管肾盂镜活检提示低级别、CT未见浸润生长”；高危则只要满足任一项，包括“合并肾积水、肿瘤直径≥2cm、细胞学提示高级别、输尿管肾盂镜活检提示高级别、多灶性、既往曾因高级别膀胱癌行根治性膀胱全切、存在多种组织学类型、CT提示浸润性生长”。  
+
+**2. 把您的情况代入这些规则**  
+您目前已经具备一个与UTUC相符的重要临床线索：**持续1个月血尿**。而检索证据明确提示，血尿正是UTUC最常见的表现。  
+同时，MRI提示**左肾上盏内结节状软组织影，轻度强化**，再结合病灶位于肾盏/肾盂系统内，这种情况需要把**肾盂癌/上尿路尿路上皮癌**作为重点考虑对象；但检索结果中并没有找到“MRI上轻度强化结节＝即可确诊肾盂癌”的直接判定标准，因此目前更准确的表述应是**疑似UTUC，而不是已经确诊**。  
+按照现有规则，下一步关键不是单凭这份MRI下结论，而是补齐**术前分层所需信息**：  
+- 是否**单发**还是**多灶**；  
+- 病灶**直径是否≥2cm**；  
+- 是否合并**肾积水**；  
+- **CT/CTU**是否提示浸润性生长；  
+- **尿细胞学**是否提示高级别；  
+- **输尿管肾盂镜活检**是低级别还是高级别。  
+
+**3. 结合证据，您现在最需要完成的检查/评估**  
+对疑似UTUC，首选影像学检查应补做或完善**CTU**，因为它是当前首选且准确性高的检查，可判断位置、浸润深度及周围关系。  
+术前分期评估还需要影像学分期依据；检索结果中提到腹部CT平扫和增强扫描、胸部CT平扫或增强，是术前临床分期的重要依据。  
+此外，为完成低危/高危分层，还需要做**细胞学检查**和**输尿管肾盂镜活检**，因为这两项直接关系到“低级别/高级别”的判断。  
+
+**4. 治疗原则：先看是否属于高危，再定手术方式**  
+检索结果明确指出：**根治性肾输尿管全长切除加膀胱袖状切除术**仍然是UTUC治疗的金标准手术方式。  
+尤其是具备高危因素者，如影像学提示浸润性疾病、高级别肿瘤、肿瘤最大直径在2cm之上、多中心起病，更应考虑根治性切除；而且肾盂和输尿管中上段肿瘤也更倾向于采用根治性切除。  
+对于肿瘤体积较大、浸润性并伴多发淋巴转移的患者，开放手术是目前金标准方式。  
+
+**5. 代入您的场景后，现阶段更像哪种处理路径**  
+因为您已经有**持续血尿**，又有**左肾上盏结节状软组织影并轻度强化**，所以从证据看，确实应当按“**疑似肾盂癌/UTUC**”进入进一步检查与治疗决策流程。  
+但目前证据里**缺少病灶大小、是否肾积水、是否多灶、尿细胞学结果、肾盂镜活检结果、CTU浸润判断**，所以**还不能仅凭现有信息就决定一定做保肾治疗，或者一定做根治性肾输尿管全切**。  
+不过，现有规则同时提示：**肾盂肿瘤本身更倾向于根治性切除**，尤其如果后续检查出现高危特征，则更应走根治性手术路径。  
+
+**6. 关于“双肾小囊肿”对判断和手术方案的影响**  
+检索结果提示，单纯性肾囊肿通常边界清楚、呈均匀类圆形低密度，与邻近肾实质有明显分界。  
+对无症状、无并发症的单纯性肾囊肿，一般**不需治疗**；只有出现疼痛、不适、尿路梗阻、感染、出血、高血压、肿瘤、破裂风险或已破裂时，才需要尽早治疗。  
+因此，如果您说的是“**双肾小囊肿**”，按现有证据，它们多数情况下更像是一个**并存问题**，通常不会自动改变对疑似肾盂癌的主线处理。  
+需要注意的是，当超声提示多个囊肿时，应与多房性囊肿、多囊肾相区别；而且小囊肿太小时，存在漏诊或误诊可能。  
+也就是说，您的双肾小囊肿需要在影像上被**辨清性质**，但根据现有证据，**无症状的小囊肿本身通常不构成优先处理对象**，重点仍是先把左肾上盏病灶定性和分层。  
+
+**7. 还需要考虑哪些鉴别方向**  
+检索结果中与“占位+血尿”相关的鉴别线索显示，肾脓肿在某些情况下可表现得像肾内实质性占位，甚至易误诊为肾癌或肾结核，必要时要结合临床、短期随访甚至细针抽吸活检来明确。  
+但这些证据主要是针对“肾内实质性占位”的鉴别，并没有直接给出“肾上盏轻度强化结节”的完整鉴别清单，所以就您这个场景而言，**最重要的不是泛泛排查所有病种，而是优先完善CTU、细胞学和肾盂镜活检**，把UTUC与其他病变尽快区分开。  
+
+**8. 给您的明确建议**  
+**结论一：目前应把您视为“疑似左侧肾盂癌/UTUC”，需要尽快完成确诊与分层。** 您的持续血尿和左肾上盏结节状软组织影与该病相符，但仅凭现有MRI描述还不能确诊。  
+**结论二：下一步最关键的检查是CTU，其次是完成尿细胞学和输尿管肾盂镜活检，并结合腹部CT、胸部CT做术前分期。** 这些检查直接决定您属于低危还是高危，也决定是否应走根治性手术路径。  
+**结论三：如果后续证实存在高危因素，标准治疗更偏向根治性肾输尿管全长切除加膀胱袖状切除术。** 尤其肾盂部位病变本身就更倾向于根治性切除。  
+**结论四：双肾小囊肿在现有证据下通常不是主要矛盾。** 如果只是小的、无症状、无并发症的单纯性囊肿，一般不需单独治疗；重点仍是先明确左肾上盏病灶性质。  
+
+如果您愿意，我下一步可以继续按这个证据框架，帮您整理成一份更实用的**“就诊检查清单 + 可能的手术决策分支图”**，方便您和泌尿外科医生面谈时逐项核对。</td></tr><tr data-page-node-id="GhjFAXJHGFv2DvW63bMmKR"><td data-page-node-id="wk8RNijhEwNwZ7MErdqERY" style="font-weight:bold"><!--pnid:IByeZMrLDl88wlhh49GVtK-->Q033</td><td data-page-node-id="CSnMq46Iz87khFq6CBTNBh"><!--pnid:a09il5bPjNPxrkL6xtueKe-->⚠️ PARTIAL <span data-page-node-id="Q31rE1YJ9tHGvyGzHL2wM1" style="color:#FF9800; font-size:10px"><!--pnid:YZzc08QJRCc8Mu0alHQvwp-->关键词100%但LLM判不完整</span></td><td data-page-node-id="5fVAQkwU9Zmz3o4ntANjLj" style="max-width:200px; white-space:pre-wrap"><!--pnid:DzDywXaYcgJvqYkjeqdpG5-->医生，您好。我是一名83岁的男性患者，主要问题是右输尿管造口反复出现尿液浑浊已经有3年的时间了，并且伴随着腰痛和发热已经</td><td data-page-node-id="zAZAN6BtWyEq9uALTFvJxK"><!--pnid:KJ1vMIyRsy8FCxhgiSDtb6-->右肾结石、泌尿道感染、右肾无功能</td><td data-page-node-id="Y2Y6TKTTweksjuILi4CaFl" class="num"><!--pnid:YhCIIKzXmFIGvBbRwbpaYH-->100%</td><td data-page-node-id="iTzQ2OLC6JSEl4HQefmRqF" class="num"><!--pnid:jOQy2eBcxQJ3RCbOka96uU-->95%</td><td data-page-node-id="8m5JYOdw6V4o5uaKDPIgPj" class="num"><!--pnid:rcvgEUepc3YAhskKYI3fDe-->93%</td><td data-page-node-id="pKiglDFqvjYEN7VbRIPvqq" class="num"><!--pnid:38YseKt1BY6Bmbx4o0ohzc-->50%</td><td data-page-node-id="NJLKoel7bJIndbOtM6AL1z" class="num"><!--pnid:ouk90m5RQBiJFVtF9J69id-->⚠️ PARTIAL</td><td data-page-node-id="BozklOXi63kNnUYdSGJocX"><!--pnid:7BfJ6pr37lrzrEdOcBLwqk-->开放右肾切除术</td><td data-page-node-id="CuLSxJnuCbvjQ50AJ7QYU3"><!--pnid:DXAkBmfXxYg1ecwVQTVM4L-->-</td><td data-page-node-id="8YbXgv212FPtR0omOcLYiI" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:LAmaIjFXJlIBCXOCUrXwzH-->您好，根据您的病情描述和检查结果，您的主要问题是右肾结石伴感染、右肾无功能、右输尿管造口，以及全膀胱+BRICKER术后。根据您的病史，还有2型糖尿病史、阵发性心房颤动和双肺多发结节的既往史。建议您行开放右肾切除术，治疗疾病。在手术前，我们会进行一些准备工作，包括备皮和备血。手术后备急诊血透，因你有肾功能不全，切除右侧肾脏后可能引起急性肾功能衰竭。手术后我们会积极抗感染治疗。</td><td data-page-node-id="yxRtSCw3AqsMWSF64Y8TJU" style="font-size:12px; white-space:pre-wrap"><!--pnid:FYJjqc5Sesz4xqsqDROyPw-->先说结论：按检索到的规则，您这个情况应先按“复杂性上尿路感染/复杂性肾盂肾炎，并且要高度警惕梗阻或尿流改道相关感染”来处理，而不是只把“尿浑浊”当普通尿路感染看待。因为复杂性肾盂肾炎常伴泌尿系统梗阻，可迅速进展为尿脓毒血症；而您已经有发热、腰痛、CT提示右肾盂及右输尿管周围炎性渗出、右肾几乎无功能、左肾功能也明显减低，这些都说明需要尽快到有泌尿外科和急诊/住院条件的医院评估，处理重点通常会落在“控制感染 + 查清并解除梗阻/造口相关问题 + 保护仅存的左肾功能”上。
+
+**一、先套用检索到的规则**
+
+1. **复杂性感染的判断规则**  
+   “复杂性尿路感染的诊断主要包括两个条件：1 提示有尿路感染的尿液分析结果；2 存在泌尿生殖道结构、功能异常或其他易发感染的基础疾病”。  
+   “对于肾盂肾炎的诊断需尽快区分是否存在复杂因素，因为复杂性肾盂肾炎多伴有泌尿系统梗阻，可迅速进展为尿脓毒血症”。
+
+2. **梗阻/狭窄并发感染时的处理目标**  
+   检索到的泌尿外科规则写得很明确：输尿管狭窄或梗阻相关问题的“治疗目的是恢复输尿管腔连续性及其功能，解除梗阻，根除感染，挽救和保护肾功能”。  
+   相关临床表现包括“患侧腰痛”“并发感染时有畏寒、发热或脓尿”“双侧输尿管狭窄可出现肾功能不全”。
+
+3. **梗阻严重时应尽快引流/解除梗阻**  
+   “严重的双侧性肾梗阻应立即给予手术解除梗阻，最大程度地避免肾功能进一步损害。解除上尿路梗阻最常用的方法是输尿管内放置支架和经皮肾穿刺造瘘手术”。  
+   另外，“积极手术治疗引起或加重尿路感染的尿路梗阻性疾病包括结石、肿瘤、狭窄、先天性畸形等，及时更换或去除长期留置的尿管、支架管等可能诱发感染的医源性异物。在施行手术或操作前要积极控制感染，以免手术或操作时继发尿源性脓毒血症”。
+
+4. **高龄、糖尿病是尿源性脓毒症高危因素**  
+   “尿源性脓毒症的高危因素包括：高龄、糖尿病……以及尿路结石或其他原因引起的梗阻、尿路感染、尿细菌培养阳性、内镜手术等局部因素”。  
+   “老年患者、糖尿病患者……更容易发生尿脓毒症”。
+
+5. **无功能肾相关规则**  
+   检索到的肾切除适应证规则是：“患侧肾脏无功能，对侧肾脏功能良好”时可考虑肾切除。  
+   但同一批证据也提示：“结石导致患肾无功能、无症状、对侧肾功能正常的患者”可列入非手术治疗适应证。  
+   也就是说，是否切除并不是只看右肾“几乎没功能”，还要看对侧肾是否足够好、是否有症状/感染、以及整体手术风险。
+
+---
+
+**二、把您的情况代入这些规则**
+
+您目前至少符合检索证据里提示的多个高危点：
+
+- **感染表现**：您有反复尿液浑浊、近3个月发热和腰痛；而证据中与上尿路梗阻/感染相关的典型表现正包括腰痛、发热、脓尿。  
+- **复杂因素**：您有全膀胱切除术后尿流改道/右输尿管造口这一结构改变，且影像提示右肾盂及右输尿管周围脂肪间隙模糊、多发渗出；按照规则，“存在泌尿生殖道结构、功能异常或其他易发感染基础疾病”就符合复杂性尿路感染的框架。  
+- **肾功能风险**：右肾GFR 8 ml/min，左肾GFR 21 ml/min。合计约为 **8 + 21 = 29 ml/min**。这说明右肾接近无功能，而左肾也已明显减低。检索规则虽未给出您这种场景的具体分级标准，但明确强调“解除梗阻、根除感染、挽救和保护肾功能”。  
+- **脓毒症高危背景**：您 **83岁 + 2型糖尿病 + 尿路感染/可能梗阻**，与证据中的高龄、糖尿病、梗阻、感染高危因素高度重合。  
+
+据此，您更像是**需要住院评估和治疗的复杂性上尿路感染**，并且要尽快判断右侧是否合并造口狭窄、上尿路梗阻、支架/导管问题，或已形成更严重的感染灶。
+
+---
+
+**三、基于证据，当前治疗思路应是什么**
+
+### 1）第一步：先按复杂性感染尽快控制感染
+检索结果明确提到，复杂性肾盂肾炎可迅速进展为尿脓毒血症。  
+因此，您这种“发热 + 腰痛 + 影像炎性渗出 + 肾功能差 + 高龄糖尿病”的情况，处理上应先尽快住院，完善尿液分析、尿常规等感染评估；证据中也写到尿路感染的基础检查包括全面泌尿系统查体、尿常规、尿液理学/生化/沉渣检查。  
+同时，白细胞、超敏C反应蛋白、降钙素原、血清乳酸等可作为脓毒症早期预警和预后参考指标。
+
+**结论**：当前不宜继续单纯门诊观察，尤其不应只按普通“慢性尿路感染”反复吃药了。
+
+### 2）第二步：重点查右侧是否有梗阻/造口问题，并尽快决定是否引流
+证据指出，遇到腰痛、发热、脓尿时，检查要看：
+- B超：了解输尿管扩张、肾积水、肾皮质厚度；
+- 同位素肾图：了解分肾功能；
+- IVP：显示肾积水程度和狭窄部位；若上尿路不显影，需结合其他检查；
+- 输尿管逆行插管造影：帮助确认狭窄水平及长度；
+- CTU/MRU：可显示梗阻部位以上输尿管及肾盂扩张程度。
+
+您的资料里已经有CT提示右侧肾盂、输尿管周围脂肪间隙模糊及多发渗出，这与感染背景相符；下一步核心不是重复描述影像，而是回答：**右侧有没有可解除的梗阻、导管/造口是否狭窄、是否需要马上引流**。  
+检索规则中，解除上尿路梗阻常用方法是**输尿管内放置支架**和**经皮肾穿刺造瘘**。
+
+**结论**：如果右侧存在梗阻或造口引流不畅，单靠抗感染往往不够，往往还要配合引流/解除梗阻。
+
+### 3）第三步：右肾是否要切除，证据支持“现在不能只凭GFR 8就立刻下结论”
+这是很多患者最关心的问题。  
+检索到的肾切除规则支持：“患侧肾脏无功能，对侧肾脏功能良好”可考虑肾切除。  
+但您的情况里，**对侧左肾GFR只有21 ml/min，并不是证据里写的‘对侧肾脏功能良好’**。而另一条规则又提示：对于“患肾无功能、无症状、对侧肾功能正常”的部分情形可非手术处理。  
+
+把您的情况代入：
+- 右肾：接近无功能；
+- 左肾：也明显减低，不属于“对侧功能良好”；
+- 还有高龄、糖尿病、阵发性房颤、肺部结节等围手术风险背景。
+
+**因此，按现有证据，更合理的次序是：先控制感染、评估是否可引流/解除右侧问题、尽量保护左肾；至于右肾切除，不能仅凭‘右肾8 ml/min’就直接决定。**  
+是否最终走到肾切除，需要在感染控制后，由泌尿外科结合右侧是否持续成为感染灶、左肾能否承担术后肾功能、以及整体麻醉手术风险来综合判断。现有检索证据**不足以**直接给出“必须切除”这个结论。
+
+### 4）第四步：围手术/介入前必须做高危评估
+证据已明确，尿源性脓毒症高危因素包括高龄、糖尿病、梗阻、感染、内镜手术等。  
+并且在拟行手术或操作前，要“积极控制感染，以免手术或操作时继发尿源性脓毒血症”。  
+如果需要全麻手术，证据还提到术中需实时监测动脉血压和中心静脉压，术前药物准备充分。
+
+把您的情况代入：
+- **房颤**：提示任何介入/手术前都需要心血管和麻醉评估；
+- **糖尿病**：属于脓毒症高危；
+- **左肾功能差**：意味着任何感染失控、低血压、梗阻持续都可能进一步损害剩余肾功能。
+
+---
+
+**四、可以给您的明确建议**
+
+### 更可能需要的治疗路径
+1. **尽快住院，而不是继续长期门诊拖延。**  
+   因为检索证据显示复杂性肾盂肾炎合并梗阻可迅速进展为尿脓毒血症。
+
+2. **先做感染严重程度评估和基础化验。**  
+   包括尿常规/尿液分析等泌尿感染评估，以及白细胞、超敏C反应蛋白、降钙素原、乳酸等脓毒症预警指标。
+
+3. **尽快评估右侧造口/上尿路是否狭窄或梗阻。**  
+   证据支持使用B超、肾图、IVP、逆行造影、CTU/MRU等来判断狭窄部位、肾积水和分肾功能。
+
+4. **如果证实有引流不畅或梗阻，治疗重点往往是引流/解除梗阻。**  
+   检索到的规则给出的常用方式是输尿管支架或经皮肾穿刺造瘘。  
+   同时要及时处理长期留置导管、支架等可能诱发感染的医源性异物。
+
+5. **右肾是否切除：目前证据更支持“谨慎评估”，不是马上定论。**  
+   因为现有肾切除适应证强调的是“患侧无功能 + 对侧功能良好”，而您左肾GFR 21 ml/min，不符合“对侧功能良好”这点。  
+   所以在现有证据框架下，我更倾向于：**先控感染、先保左肾、先看右侧是否能通过引流减少感染源**；若以后仍反复成为持续感染灶，再由泌尿外科评估下一步。
+
+---
+
+**五、最终结论**
+
+综合检索到的规则和您的病情，**当前最需要的不是单纯吃消炎药观察，而是尽快住院，由泌尿外科主导处理复杂性上尿路感染，重点评估并处理右侧造口/上尿路是否存在梗阻或引流不畅**。依据是：复杂性肾盂肾炎伴梗阻可迅速进展为尿脓毒血症；处理原则是解除梗阻、根除感染、保护肾功能；而您又具备高龄、糖尿病、肾功能减退等高危背景。  
+
+**因此，最实际的治疗方向是：住院抗感染评估 + 右侧梗阻/造口问题评估 + 必要时引流解除梗阻 + 在感染控制后再决定是否需要更进一步的外科处理。**  
+**至于右肾切除，现有证据不能支持“立刻必须切除”，因为您的左肾功能并不好，这一点恰恰要求更谨慎。**
+
+如果您愿意，我可以下一步按“住院后要重点让医生查什么、问什么、哪些结果最关键”给您整理成一份就诊清单。</td></tr><tr data-page-node-id="IV9lOj8FdcJyRuL2A0FaTD"><td data-page-node-id="mKVTo0z8KQheIiPGsOkR8e" style="font-weight:bold"><!--pnid:CsEJpb2Emo5J0JanZ85CB0-->Q034</td><td data-page-node-id="xA8fJWEe13tIoQnPsek8PK" class="num"><!--pnid:2sGkj0GoL8XVi6mMWobgsk-->⚠️ PARTIAL</td><td data-page-node-id="kCs4dkuhhvJpBgQ0UjRQvo" style="max-width:200px; white-space:pre-wrap"><!--pnid:GgUEv0KpeTf3DwX2xgy2T8-->患者：医生您好，我是一名患者，最近我有一个问题想请教您。我已经有一个多月了，右季肋部一直有隐痛的感觉，我之前十多年前做过</td><td data-page-node-id="QQN0dUdoBCTv2nESN0QSNR"><!--pnid:uCpF5WDwvlo7WceQIgwWaT-->双肾囊肿（右侧为著）</td><td data-page-node-id="PZbpD7FNrfKiXwjvM7lkop" class="num"><!--pnid:fkT8UzYynBOZn88JkCdgly-->0%</td><td data-page-node-id="toXyvDA0P8nJ2gaRUKJwdu" class="num"><!--pnid:yLUUfT2DwnFYUGRo8vXXUD-->95%</td><td data-page-node-id="iUJSmNkG2c6rxzUjE8Srjr" class="num"><!--pnid:a7eKN1vq9nK81PTsgllYpZ-->89%</td><td data-page-node-id="noKZ2dvW0nE9qJB5I77cVN" class="num"><!--pnid:DuMeJpUSOEIG51rwOblulX-->50%</td><td data-page-node-id="J99FKi6W3obTELXYkyGfvq" class="num"><!--pnid:U3hRDXdjQ1NYRodUVLteQf-->⚠️ PARTIAL</td><td data-page-node-id="H2CyjVmDYETRmfLDTDoBRB"><!--pnid:tsDPM1t4RtpZdgnZcvlI4w-->-</td><td data-page-node-id="mUXcc9AKoVuTHV48myYTiV"><!--pnid:6BUw2ZlVjycLnrIIfbEhlV-->腹腔镜下右肾囊肿去顶术</td><td data-page-node-id="MNmFoYEi6GwvuiK2I2Khv0" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:Y0KmHIKAqzNa64tyfy3BRy-->您好，根据您的描述和检查结果，您被诊断为双肾囊肿（右侧为著），可考虑行腹腔镜下右肾囊肿去顶术，可能对右侧季肋部疼痛改善有帮助。在手术前，我们会进行血常规、凝血功能和肝功能等检查，以确保您的身体状况适合手术。此外，我们还会进行心电图和双肺CT平扫等检查，以排除其他异常情况。</td><td data-page-node-id="4xk7wKoO695Qy7MxjewO3J" style="font-size:12px; white-space:pre-wrap"><!--pnid:PmmrDDf69O1CFKwsiLOjbg-->先把检索到的适用规则摆出来：
+
+1. 单纯性肾囊肿的影像学判断，B超可作为首选，典型表现是“肾实质内或包膜下出现圆形或卵圆形液性无回声区，壁薄而边缘光滑，后方回声增强”；CT则可显示“囊肿呈边界锐利的均匀性类圆形低密度，同邻近肾实质有明显分界”。  
+2. 治疗原则上，“单纯性肾囊肿几乎不影响肾功能，恶变机会很小，故对无症状和无并发症的患者不需治疗”；但若“出现疼痛、不适、尿路梗阻、感染、出血、高血压、肿瘤、有破裂可能或已破裂的囊肿要尽早治疗”。  
+3. 关于大小与症状的关系，检索结果写到“单纯性肾囊肿的直径大多小于2cm，患者一般无症状；当囊肿直径达4cm时往往引起症状。由于较大的囊肿突起向外牵拉肾包膜或向内压迫肾实质，患者常有患侧腹或背部疼痛，以胀痛为主”。  
+4. 若考虑介入/手术，现有证据给出的门槛是：直径＞5cm的较大囊肿可考虑穿刺抽液并注入硬化剂；直径超过10cm、体积超过500ml、可疑癌变或穿刺后复发的囊肿应考虑外科手术。
+
+把您的情况代入这些规则：
+
+- 您这次检查提示“双肾多发囊肿”，其中右肾中极后份较大囊肿约4cm。按照上述规则，4cm这个大小**已经处在“往往会引起症状”的范围**，而且您现在正好有**右季肋部持续一个多月隐痛**，这和“较大囊肿牵拉肾包膜或压迫肾实质后出现患侧腹背部胀痛”的描述是吻合的。  
+- 但同时，现有证据也没有说“4cm囊肿一律立刻手术”。相反，明确给出的介入阈值是**＞5cm可考虑穿刺硬化**，**＞10cm或可疑癌变/复发**再考虑外科手术。  
+- 因此，按检索到的规则，您目前更像是：**有症状的约4cm右肾囊肿，需要到泌尿外科进一步评估其是否就是疼痛来源，以及是否已经出现并发症；但仅凭“4cm”这个数字，本身还不到证据中明确写出的常规穿刺或手术门槛**。  
+
+结合现有证据，可按下面思路处理：
+
+### 一、先做进一步评估，而不是马上定手术
+检索结果提示，出现腹部或背部胀痛、血尿、腹部包块等症状时应及时就医，之后医生可能建议做B超、CT，必要时做囊肿穿刺囊液检查，以进一步明确诊断。  
+对您来说，重点是确认这几点：
+
+- 右侧4cm囊肿是否具备典型单纯囊肿影像表现。  
+- 疼痛是否确实与该囊肿位置一致，因为证据里说囊肿引起的多为患侧腹或背部疼痛、以胀痛为主。  
+- 有没有并发症线索：如感染、出血、梗阻、高血压受影响等，因为这些属于应尽早治疗的情形。  
+
+### 二、如果评估后认为是“单纯囊肿 + 症状轻 + 无并发症”
+按照检索到的原则，这类情况通常**不一定立刻做侵入性治疗**；尤其您这个较大囊肿约4cm，证据中尚未达到“＞5cm可考虑穿刺硬化”的条件。  
+这时更偏向**观察和随诊评估**，同时看疼痛是否持续、加重，或是否出现新情况。
+
+### 三、如果出现以下情况，治疗积极性要提高
+若后续评估发现存在以下任一情况，则更符合证据中的“尽早治疗”标准：
+
+- 疼痛持续明显或加重；  
+- 出现感染表现；  
+- 出现出血、血尿；  
+- 出现尿路梗阻；  
+- 囊肿压迫邻近血管而表现为肾性高血压；  
+- 影像学怀疑恶变，此时可在B超或CT引导下穿刺做囊液细胞学和生化检查。  
+
+### 四、关于您现在的高血压
+检索结果确实提到，肾囊肿在需要尽早治疗的情形中包括“高血压”，并且囊肿压迫邻近血管时可表现为肾性高血压。  
+但检索结果**没有**提供氢氯噻嗪、氨氯地平在本场景下的具体调整方案，也**没有**证明您目前的高血压一定就是囊肿导致的，所以不能仅据现有证据判断要不要改降压药。就证据能支持的范围，只能说：**需要结合泌尿外科评估，判断囊肿与高血压是否存在关系**。  
+
+### 五、关于“右季肋部隐痛一定是不是肾囊肿引起”
+不能下绝对结论。  
+证据支持：4cm囊肿**可以**引起患侧腹背部疼痛。  
+但证据里**没有**给出您这个“右季肋部隐痛”与既往胆囊切除、肝左叶囊肿、回盲部憩室之间的鉴别流程，所以不能仅凭现有检索结果断言疼痛一定来自肾囊肿。  
+
+## 结论
+根据现有检索证据，您的治疗思路更像是：
+
+- **先到泌尿外科进一步评估，而不是直接手术。**
+- 您右肾约4cm囊肿**有可能**成为右侧疼痛来源，因为证据提示囊肿达4cm时往往会引起症状。
+- 但从证据给出的处理阈值看，**4cm本身尚未达到“＞5cm可考虑穿刺硬化”或“＞10cm考虑外科手术”的标准**。
+- 所以当前更合理的方向是：**确认是否为单纯囊肿、判断疼痛是否由其引起、排查感染/出血/梗阻/恶变线索；若无这些问题，多数先观察随诊；若有并发症或症状明显，则进一步治疗。**如果您愿意，我下一步可以基于这些检索结果，继续帮您整理成一份更实用的**“门诊就诊清单”**：包括您复诊泌尿外科时该带哪些资料、医生大概率会重点问什么、以及哪些症状出现时需要尽快就医。</td></tr><tr data-page-node-id="huGXeB8p7HHWmfJ5DHXGOW"><td data-page-node-id="hlom9cGlJlCJDG5hRboSg0" style="font-weight:bold"><!--pnid:lcRulRqgojS5FIJcJkyHtu-->Q037</td><td data-page-node-id="rHtkH1GPgqAXx0Sn7FSD8v" class="num"><!--pnid:7JMxykzUtndRwa7qYYrFQa-->⚠️ PARTIAL</td><td data-page-node-id="PhqkCbZTBSiaaOONQxxDDM" style="max-width:200px; white-space:pre-wrap"><!--pnid:5vDWRMLOud2bVr0leOBtNP-->患者：医生您好，我是一名45岁的女性患者。我有一个主诉，就是我发现自己左输尿管有一个占位已经有两个月了。最近一次检查是在</td><td data-page-node-id="nlWGmuP60AUrXboLL1VLRl"><!--pnid:I8nMv985zVks5ksfpe223q-->左输尿管占位、上游尿路积水扩张、左肾功能不全</td><td data-page-node-id="5w0YOtv1AP9p9VF64zDMYf" class="num"><!--pnid:neIrfu644wkoc2hj2k7yWB-->0%</td><td data-page-node-id="n0DbHYzOGjPTmuAMAN8bbo" class="num"><!--pnid:N9WmGvJqvuDF8sl2Mw4idO-->95%</td><td data-page-node-id="Dvs71llIGtAXtixbQEKJXw" class="num"><!--pnid:KvGpUxDHJWPkzga6fPtqJ6-->89%</td><td data-page-node-id="a3gYS9Av8CVfJKr6Twv4xR" class="num"><!--pnid:Da2KykExMPYP1HFoBR5HfP-->66%</td><td data-page-node-id="Xxvz9TldDOQoZuXVNauzBc" class="num"><!--pnid:eYENo1y3XvNTbkd7K5W1xw-->⚠️ PARTIAL</td><td data-page-node-id="IZQOeTucxYrcuI9FP4Jnet"><!--pnid:QUtnJHr4Qo93Gczzh63Jqb-->-</td><td data-page-node-id="9i3BiCTjSMsTywX9CFj6gA"><!--pnid:8mQZ94xXWYCirmD2xTDVY7-->腹腔镜下左输尿管癌根治术（经腹术前膀胱镜）</td><td data-page-node-id="uXdmDpvJraYdDeRaouXd0I" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:ovyfCGIwGYtKziTbPhyLgz-->医生：您好，根据您的病情描述和检查结果，您的左输尿管占位可能是肿瘤性病变所致，并导致了上游尿路积水扩张和左肾功能不全。针对这种情况，我建议您进行腹腔镜下左输尿管癌根治术（经腹术前膀胱镜）。手术会通过腹部切口进行，以彻底切除输尿管占位病变，并恢复尿液的正常流动。在手术前，我们会进行必要的准备工作，如备皮和备血。手术后，您需要密切观察伤口愈合情况，并按照医生的建议进行术后护理和康复训练。如果您有任何疑问或担忧，请随时向我提问。</td><td data-page-node-id="djqwgRcIK639tdV6CDKLLS" style="font-size:12px; white-space:pre-wrap"><!--pnid:i2iYntzdQefPQwotBLEKwv-->先把与您场景最相关的规则摆出来：
+
+1. **CTU 的作用**：CTU 是“目前临床价值最高、诊断 UTUC 准确性最高的检查”，可以判断“肿瘤位置、浸润深度及与周围器官关系”，并影响诊疗方案制定。  
+2. **UTUC 术前高危分层**：高危 UTUC 只要满足任一条即可，包括“合并肾积水”“肿瘤直径≥2cm”“细胞学检查提示高级别肿瘤”“输尿管肾盂镜活检提示高级别肿瘤”“多灶性肿瘤”“CT 检查提示肿瘤浸润性生长”等。  
+3. **高危患者的主要治疗原则**：根治性肾输尿管全长切除加膀胱袖状切除术仍是 UTUC 治疗的金标准；特别是影像提示浸润性疾病、高级别肿瘤、肿瘤最大直径在 2cm 之上、多中心起病者，更应考虑根治性切除；相对输尿管下段肿瘤，肾盂和输尿管中上段肿瘤也更倾向采用根治性切除。  
+4. **合并梗阻和肾功能受损时的先期处理**：严重的双侧性肾梗阻应立即解除梗阻；解除上尿路梗阻最常用的方法是“输尿管内放置支架”和“经皮肾穿刺造瘘手术”，解除梗阻后 GFR 可望在 1~4 周逐渐恢复；对“输尿管狭窄”类梗阻，治疗目的也是“解除梗阻、挽救和保护肾功能”。  
+5. **术前检查评估**：对伴肾积水/肾功能受损的上尿路梗阻，资料中提到应做 B 超了解肾积水和肾皮质厚度、同位素肾图了解分肾功能、IVP 了解积水程度和狭窄部位、输尿管逆行插管造影判断狭窄水平及长度；若不用造影剂，CT 尿路成像及 MRU 也可显示梗阻上方输尿管和肾盂扩张程度。  
+
+把您的情况代入这些规则：
+
+- 您的 CTU 已经提示**左输尿管盆段壁不规则增厚、管腔狭窄、团块状软组织密度影、明显强化、累及约 53mm，并有上游尿路扩张**。按规则，CTU 本身正是用来判断肿瘤位置、浸润深度和周围关系的关键检查。  
+- 您有**上游尿路扩张/积水**，而高危标准里明确写到“合并肾积水”即可归入高危；同时您的病变范围约 **53mm = 5.3cm**，算式是 **53mm ÷ 10 = 5.3cm**，已经**&gt;2cm**，又符合“肿瘤直径≥2cm”这一高危条件。  
+- 所以，**即使先不看细胞学和活检结果，单凭“合并肾积水/上游扩张”+“病灶范围 5.3cm ≥ 2cm”这两点，已经很像资料中的高危 UTUC 场景**。  
+- 在这种场景下，资料支持的主导治疗方向不是保守观察，而是**优先按高危病变思路评估是否行根治性肾输尿管全长切除加膀胱袖状切除术**。  
+
+### 结合您目前情况，更实际的处理顺序
+**第一步：尽快完善术前评估，重点看梗阻程度和左肾还能保留多少功能。**  
+可参考资料中的检查思路：  
+- **B 超**：看肾积水、肾皮质厚度。  
+- **同位素肾图**：看左、右肾的分肾功能，这对后续决定手术方式很关键。  
+- **逆行插管造影**：帮助判断狭窄/占位的水平和长度。  
+- 如需避免再次使用造影剂，资料提到 **MRU 或 CT 尿路成像** 可显示梗阻以上扩张情况。  
+
+**第二步：如果梗阻明显、肾功能正在受损，应先解除梗阻，保护肾功能。**  
+资料里最明确的措施是：  
+- **输尿管内放置支架**；  
+- **经皮肾穿刺造瘘**。  
+这一步的目标不是根治肿瘤，而是先把尿路引流通畅，争取减轻积水、保护左肾功能。  
+
+**第三步：若进一步评估仍支持高危输尿管肿瘤，应以根治性手术为主。**  
+按现有证据，最符合的方案是：  
+- **根治性肾输尿管全长切除 + 膀胱袖状切除术**。  
+因为资料明确说：  
+- 这是金标准；  
+- 对影像提示浸润性疾病、肿瘤较大（&gt;2cm）的患者更应考虑根治性切除。  
+
+### 关于您提到的高血压
+【直接回答】检索结果中**没有找到“厄贝沙坦、苯磺酸氨氯地平在上尿路尿路上皮癌围手术期是否继续/停用、停多久、怎么调药”的直接规则**。  
+
+【检索到的相关线索】  
+- 有一条资料提到“术前药物准备充分，术中术者与麻醉师及时沟通及麻醉药物的适时适量使用是预防术中低血压的关键要素”，但这条内容来自其他肿瘤围麻醉场景，不是针对 UTUC 或您这两种降压药。  
+- 另有资料提到部分晚期患者可出现“高血压等肾功能不全的表现”，说明肾功能问题与血压管理有关，但并未给出具体围手术期降压药处理方案。  
+
+【为何无法完全回答】  
+这些线索只说明围手术期需要重视血压和麻醉沟通，但**没有给出厄贝沙坦或氨氯地平的具体停药/继续用药规则**，因此我不能据此替您编造具体用药方案。  
+
+### 明确结论
+基于现有证据，您的情况**更像需要尽快按“高危上尿路尿路上皮癌/输尿管肿瘤”路径处理**：  
+1. **不要继续长期观察**；  
+2. **先评估并在必要时先解除梗阻**（输尿管支架或经皮肾造瘘），以保护左肾功能；  
+3. **完善分肾功能和梗阻范围评估**（B 超、同位素肾图、逆行造影/MRU 等）；  
+4. 如果进一步评估仍支持高危输尿管肿瘤，**根治性肾输尿管全长切除加膀胱袖状切除术**是资料最支持的主方案。  
+
+如果您愿意，我下一步可以按您这个病例，继续帮您整理成一份**“住院前待办清单”**，把建议完善的检查、可能的引流方式、以及和医生沟通时要重点问的 5 个问题列出来。</td></tr><tr data-page-node-id="FbSuiFvapG0DewRQTQvgSr"><td data-page-node-id="RoiEVS4RgXkbLzx5Kdujjd" style="font-weight:bold"><!--pnid:1zuenVyfYvSxYr4IUArpHC-->Q041</td><td data-page-node-id="YhfN4FCbpf5CXQSRaUSq8T" class="num"><!--pnid:Bkgng0XDGQckoPRnJgdilI-->⚠️ PARTIAL</td><td data-page-node-id="2Y2LMJcMd9Ta3I8VO9ldNz" style="max-width:200px; white-space:pre-wrap"><!--pnid:BkV3AP1QuAEaJGGlpcSBPG-->医生，您好。我是一名72岁的男性患者，最近体检发现我的PSA值升高已经有半年多了。我之前接受了阿帕他胺口服和诺雷德注射的</td><td data-page-node-id="KK1iVLQ4QknQSpDLiqi34y"><!--pnid:5bgcT1YnSAxdOrjc6SeW40-->前列腺癌（T2c N1 M0 ISUP 5）</td><td data-page-node-id="VaZS6x7fT32U0rClwlEC8v" class="num"><!--pnid:JwYnjJHGT8exYCII2FQnSm-->0%</td><td data-page-node-id="UtyOjwtCdgCMWNkQBbsmQM" class="num"><!--pnid:swizbFO2aoHyuPoaPSTyY6-->95%</td><td data-page-node-id="A04UbK0PHFS4ncONOVpN0K" class="num"><!--pnid:DXyjn6jb1wpEMy1XTyWWqR-->93%</td><td data-page-node-id="XokwnqSYnxUavZHHBepGuq" class="num"><!--pnid:YZudbbWvKl3ypnrVEXyw5i-->50%</td><td data-page-node-id="K0dsiVpUUqXm24A198uMgu" class="num"><!--pnid:Sl9Ru8ozbTQ2O4Bfiooicv-->⚠️ PARTIAL</td><td data-page-node-id="IRUnGr3uOcAcgq7aeWjiAY"><!--pnid:DQ1nz8mVHZTNXQ5U1D2dGW-->-</td><td data-page-node-id="VIttJddG1bfKbFW3MEbpl0"><!--pnid:YIcNibMC8OKETVNUukwFnM-->机器人前列腺癌根治术+盆腔淋巴结清扫手术</td><td data-page-node-id="WqgUIlSe5rcAeOoYgYQKUr" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:9ovnRarinTREsg075Hgimr-->您好，根据您提供的病情描述和检查结果，您被诊断为前列腺癌（T2c N1 M0 ISUP 5）。针对您的病情，我建议您进行机器人前列腺癌根治术+盆腔淋巴结清扫手术。这种手术可以有效地治疗前列腺癌，并且可以清除可能存在的淋巴结转移。手术前，我们会进行血常规、肝肾功能等方面的检查，以确保您的身体状况适合手术。根据您提供的信息，您的血常规、肝肾功能和心梗标志物检查结果均未见明显异常，这对手术的顺利进行是有利的。另外，您的心电图显示正常，心彩超检查显示室间隔基底段增厚1，这些结果也没有明显影响手术的问题。在手术前，我们还会进行术前准备，如备皮等。另外，您提到有高血压病史，目前血压稳定在140/90mmHg，这个血压水平对手术来说是可以接受的。关于您最近体检时被告知有心律不齐的情况，如果没有出现心慌、胸闷等相关症状，我们可以在手术前进一步评估您的心脏状况，确保手术的安全性。至于您之前接受过右侧耳后脂肪瘤手术的具体时间，我们可以进一步了解，但一般来说，这个手术对前列腺癌手术不会有明显影响。最后，根据您提供的病史，您没有糖尿病、冠心病或脑血管病的病史，也没有相关的遗传疾病或过敏史，这些对手术的安全性是</td><td data-page-node-id="TMdjefhBDXe9aVdHgWw6gY" style="font-size:12px; white-space:pre-wrap"><!--pnid:28sxJNSUOvoIii4sR6FVtd-->先说结论：从现有证据看，您已经具备“高侵袭性前列腺腺癌”的明确信号——活检为前列腺腺癌，Gleason 4+5=9 属于 ISUP 分级分组 5；同时影像提示可能存在盆腔淋巴结转移。按检索到的规则，下一步治疗不能只盯着 PSA 数字本身，而要先把**分期重新做扎实**，再据分期决定是以**局部晚期/N1M0 路径**还是**远处转移/M1 路径**来治疗。
+
+## 一、先套用检索到的规则
+
+### 1）病理分级规则
+检索到的原文写明：ISUP 前列腺腺癌分级评分中，“分级分组 5: 5+4=9 分；4+5=9 分；5+5=10 分”。  
+这意味着您活检的 **Gleason 4+5=9**，按已检索规则就是 **ISUP 5 级/分级分组 5**。
+
+### 2）分期评估规则
+检索结果写明，前列腺癌临床分期主要依靠 DRE、CT、MRI、骨扫描和 PSMA PET/CT 等检查判断，采用 AJCC 的 TNM 分期系统。  
+其中：  
+- T 分期主要通过 DRE、MRI 等影像学检查确定，病理分级和 PSA 可协助分期。  
+- N 分期表示淋巴结转移情况，MRI、CT、B 超、胆碱 PET/CT 和 PSMA PET/CT 可协助判断临床 N 分期。  
+- M 分期主要看骨转移、盆腔外非区域淋巴结和内脏转移；全身核素骨显像、CT、MRI 是常规检查；推荐选择 PSMA PET/CT 或 PET/MRI 进行精准分期，可替代传统影像学检查。  
+- MRI 可以显示前列腺包膜完整性、周围组织侵犯、盆腔淋巴结受侵犯以及骨转移病灶，在临床分期上有重要作用。  
+- CT 的主要作用也是协助临床分期，了解邻近组织器官侵犯及盆腔内有无肿大淋巴结。  
+- 分期表还写明：区域淋巴结转移是 N1；若为区域淋巴结以外的淋巴结转移则属 M1a。
+
+### 3）治疗决策原则
+检索结果写明：前列腺癌要根据临床及病理参数进行危险度分层，并结合预期寿命、健康状态及患者意愿制定个体化治疗和随访方案；可纳入决策的治疗方式包括根治性前列腺切除术（RP）和根治性放射治疗（RT）。  
+同时，原文明确指出：部分前列腺癌具有高侵袭性、进展迅速等特点，这类患者需要更为积极的局部或系统治疗。  
+AJCC 预后分期中还写到：任何 T、N1、M0 均属于 V 期 A；任何 T、任何 N、M1 属于 V 期 B。
+
+## 二、把您的情况代入这些规则
+
+您目前已知信息可以直接代入如下：
+
+1. **病理已经确诊前列腺腺癌**。  
+2. **Gleason 4+5=9**，对应 **ISUP 5**，提示肿瘤侵袭性高。  
+3. **PSA 182ng/ml**，属于明显升高；但检索到的规则同时提醒，PSA 是“前列腺器官特异性而非前列腺癌特异性”的标志物，病情判断不能只靠 PSA，仍需结合分期影像与病理。  
+4. PET-CT 提示“左侧髂内血管旁淋巴结转移可能”。如果这属于**区域淋巴结**，对应 N1；如果后续证实为区域外淋巴结或还有其他远处病灶，则会落入 M1a 或其他 M1 分期。  
+5. 您已经接受过阿帕他胺口服和诺雷德注射后，PSA 仍很高，这说明**当前治疗效果至少不理想，需要重新评估分期和后续策略**。但要注意：本次检索结果**没有给出去势抵抗性前列腺癌（CRPC）的明确定义标准、睾酮阈值、连续 PSA 进展判定次数和后续具体换药/化疗方案条文**，所以我不能依据现有证据直接下“已经是 CRPC”的结论。
+
+## 三、基于现有证据，您现在最合理的下一步
+
+### 第一步：尽快完成“再分期”
+按检索到的规则，您下一步最需要补齐的是这些检查方向：  
+- **MRI**：看前列腺包膜、周围组织侵犯、盆腔淋巴结情况。  
+- **CT**：协助看邻近组织器官侵犯和盆腔淋巴结肿大。  
+- **骨扫描 / 相关骨转移评估**：因为骨是常见远处转移部位。  
+- **PSMA PET/CT 或 PET/MRI**：检索结果明确推荐其用于精准分期，可替代传统影像学检查。  
+
+对您这个场景，核心问题不是“有没有癌”，而是：  
+**究竟是高危/局部晚期伴区域淋巴结转移（N1M0），还是已经存在远处转移（M1）？**  
+这个问题会直接决定下一步治疗主轴。
+
+### 第二步：在 MDT 框架下决定“局部+系统”还是“以系统治疗为主”
+检索到的规则提示，对高侵袭性、进展快的患者，需要更积极的局部或系统治疗。  
+因此，您这种 **Gleason 9 + PSA 很高 + 疑似淋巴结转移 + 既往内分泌治疗效果不佳** 的情况，更适合进入**多学科综合评估**，至少要由泌尿外科、肿瘤科、放疗科一起讨论。
+
+按已检索证据，可以这样理解：
+
+#### 情形 A：如果补充分期后属于 N1M0
+规则中写明“任何 T，N1，M0”为 V 期 A。  
+在这种情况下，检索到的治疗框架允许把 **根治性前列腺切除术（RP）** 和 **根治性放射治疗（RT）** 纳入个体化决策。  
+也就是说，若确认病变仍局限于前列腺及区域淋巴结，临床上应重点讨论是否采用**更积极的局部治疗策略**，而不是单纯维持原方案不变。
+
+#### 情形 B：如果补充分期后属于 M1
+规则中写明“任何 T，任何 N，M1”为 V 期 B。  
+这时治疗重点通常更偏向**系统治疗主导**，局部治疗是否参与，需要围绕整体分期、转移负荷及患者全身状态来讨论。  
+但要强调：本次检索结果**没有提供 M1 前列腺癌具体标准系统治疗清单或阿帕他胺失败后的明确序贯方案**，所以我不能越过证据替您指定具体药名或化疗程式。
+
+### 第三步：重新评估当前内分泌治疗是否真正达到“去势状态”
+【直接回答】检索结果中**未找到**“阿帕他胺+诺雷德后 PSA 仍升高时，判定去势抵抗性前列腺癌所需的睾酮阈值、PSA 连续进展标准和药物切换规则”这些关键条文。  
+【检索到的相关线索】  
+- 检索到前列腺癌分期依赖 CT、MRI、骨扫描和 PSMA PET/CT 等检查。  
+- 检索到推荐 PSMA PET/CT 或 PET/MRI 做精准分期。  
+- 检索到 PSA 是更好的前列腺癌预测因子，但并非前列腺癌特异性指标。  
+【为何无法完全回答】这些线索说明了 PSA 和影像评估的重要性，但**没有给出**“CRPC 的正式判定标准”和“阿帕他胺失败后必须如何换线”的规则，因此我不能凭经验直接定义您已进入哪一阶段。
+
+不过，结合您场景，临床上下一步一定要围绕“是否已进入新的疾病阶段”去做复核；现有证据能支持的是：**需要做再次影像分期评估**，而不是仅凭一次 PSA 182 就仓促改方案。
+
+## 四、关于手术或放疗，您能不能做？
+
+基于检索结果，只能给您一个“原则性”判断：
+
+- 原文明确把 **RP** 和 **RT** 都列为前列腺癌个体化治疗方案的一部分。  
+- 同时原文强调，对高侵袭性、进展迅速者，需要更积极的局部或系统治疗。  
+
+所以，对您来说，**不是简单地说“还能不能手术”**，而是要先看：  
+1. 是否仅为区域淋巴结转移；  
+2. 原发灶局部侵犯范围如何；  
+3. 是否已有骨或内脏等远处转移；  
+4. 您的整体健康状态和心血管状况是否能承受相应治疗。  
+
+也就是说，**手术或放疗不是先验排除项，但必须建立在完整分期和身体评估后再定**。
+
+## 五、您合并高血压、心律不齐，治疗前该怎么评估？
+
+【直接回答】检索结果中**没有找到**“前列腺癌患者在 ADT、阿帕他胺或化疗前的专门心血管评估流程、心电图/超声/动态心电图/停药阈值”等前列腺癌专属规则。  
+【检索到的相关线索】  
+- 检索结果中提到：有 CVD 风险的患者建议检测血清心血管风险指标。  
+- 还提到诊断评估中可有“心血管系统评估与分级”。  
+- 另有一条提到某些药物可引起相关问题。  
+【为何无法完全回答】这些线索来自 ED 相关评估内容，只能说明“有心血管风险者应做心血管评估”，但**没有展开到前列腺癌用药前的具体项目、频率和药物注意事项**，因此不能据此替代肿瘤治疗前的正式心内科评估流程。
+
+但就您当前场景，现有证据至少支持一个明确方向：  
+您已有**高血压病史**且新近提示**心律不齐**，因此在继续或升级抗肿瘤治疗前，应把这部分作为重要合并症一起纳入评估，而不是忽略。  
+换句话说，您下一步不仅需要泌尿肿瘤 MDT，也应结合心血管风险做治疗前评估。
+
+## 六、给您的明确建议
+
+基于现有证据，我给您的落地结论是：
+
+1. **您属于高危且高侵袭性的前列腺腺癌患者**，因为已确诊腺癌且 Gleason 4+5=9，对应 ISUP 5。  
+2. **当前最关键的不是立即武断换药，而是先完成再分期**：重点完善 MRI、CT、骨转移评估，以及优先考虑 PSMA PET/CT 或 PET/MRI 做精准分期。  
+3. **如果最后是 N1M0**，可进入以积极局部治疗为重要组成部分的个体化方案讨论，RP 和 RT 都属于规则中列出的治疗选项。  
+4. **如果已是 M1**，则更应以系统治疗思路为主，但本轮证据不足以规定您具体该换哪一种后线方案。  
+5. **您此前阿帕他胺+诺雷德后 PSA 仍达 182ng/ml，提示当前方案疗效不佳或疾病阶段可能变化**，但现有检索证据不足以直接认定为去势抵抗性前列腺癌；这一步必须靠进一步评估来确认。  
+6. **合并高血压和心律不齐时，不建议在没有心血管评估的情况下贸然推进更强治疗**；至少要把心血管风险纳入治疗前评估。
+
+如果您愿意，我下一步可以基于您这次的资料，继续帮您整理成一个**“门诊/住院时可直接拿给医生看的 MDT 问诊清单”**，把要问的分期问题、治疗分支问题和心血管评估问题逐条列出来。</td></tr><tr data-page-node-id="17vvtei3QPebRtZJHNOhHN"><td data-page-node-id="6pYjVy8RDfoJeal5TLPvWn" style="font-weight:bold"><!--pnid:FUpEIqJbeLwUvQAluSMxrM-->Q045</td><td data-page-node-id="ax0Rfek7cen5M7Cd9uqTWl"><!--pnid:vsvRrfQHet7DcfHd5BQbHZ-->⚠️ PARTIAL <span data-page-node-id="W3R5V3baGng1QJQNNMUNhY" style="color:#FF9800; font-size:10px"><!--pnid:IGYlKMWO3klVEkcpbtYOfw-->关键词100%但LLM判不完整</span></td><td data-page-node-id="uZ5zuMRoxsVQbZdDz1t8t2" style="max-width:200px; white-space:pre-wrap"><!--pnid:OI0XJhlfVXUMBTM92Zw0Xw-->医生，您好。我是一名87岁的女性患者，最近半年来我发现自己尿频，夜间尿量增多，每晚要起夜3到4次，并伴有尿急的症状。我在</td><td data-page-node-id="1To91QS4j1JhqD6zkfKK3h"><!--pnid:ZNzJJBlMjGMSjxBdrqiWJ5-->右侧输尿管占位性病变</td><td data-page-node-id="paxynyInpzqwDC8H9UukgY" class="num"><!--pnid:gRiUDoO9kA0FQOlf7VWTPk-->100%</td><td data-page-node-id="4w0Uhi4ff5ODc7sxRy9B7P" class="num"><!--pnid:OnZ2HQuOKfipN8aMyFOM6n-->92%</td><td data-page-node-id="L9moONK7i3pyIPV2L8plqO" class="num"><!--pnid:6HtMZPW43MNyRs88v7Sc0p-->93%</td><td data-page-node-id="7GZKe4H1kyvhg3bDcRM4Uo" class="num"><!--pnid:Z2yeIZQpyz7ojk5rUl7USq-->50%</td><td data-page-node-id="NEOxrHaBuyX49LJ7MmEPPh" class="num"><!--pnid:cM10IODBaSCXSsA3Jdf6e1-->⚠️ PARTIAL</td><td data-page-node-id="romG4EoVlAq2SW53AkCuSE"><!--pnid:NLMFhBUAZeFa1fkgPdmHXi-->腹腔镜下右侧输尿管癌根治术（术前输尿管镜检）</td><td data-page-node-id="yvkwphWGejlaj5eV0jVljX"><!--pnid:PgMXikYPMxnaAU5cyzPdTp-->-</td><td data-page-node-id="SzV1qP1wiuRQXekwwUfaqs" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:I6O8qhICy5qCZfIziTsbO8-->您好，根据您的病情描述和检查结果，您被诊断为右侧输尿管占位性病变。这种情况通常需要进行手术治疗。针对您的情况，建议进行腹腔镜下右侧输尿管癌根治术（术前输尿管镜检）。根据您提供的信息，您已经完成了术前的准备工作，包括备皮和备血。</td><td data-page-node-id="umhgj3CLOKklNzjstYjKkM" style="font-size:12px; white-space:pre-wrap"><!--pnid:PHsp23qfMdnjSzFGvsatc7-->先说结论：按检索到的规则，您这个“右侧输尿管占位 + 右肾/输尿管积水 + 肌酐持续升高 + 尿白细胞增高”的情况，处理重点不是单纯“观察肾积水”，而是要把它当作“上尿路梗阻，并且需要尽快明确是不是上尿路肿瘤/输尿管病变所致”的场景来处理。若梗阻重、肾功能继续恶化，常用的解除梗阻方式是输尿管支架置入或经皮肾穿刺造瘘；在感染风险存在时，操作前还要先积极控制感染。后续再根据进一步检查结果决定是否进入根治性治疗路径。
+
+## 1）先套用检索到的规则
+
+### 规则一：上尿路梗阻合并肾功能受损时，要尽快解除梗阻
+原文写得很明确：“严重的双侧性肾梗阻应立即给予手术解除梗阻，最大程度地避免肾功能进一步损害。已伴有肾功能衰竭者术前做透析治疗。解除上尿路梗阻最常用的方法是输尿管内放置支架和经皮肾穿刺造瘘手术。解除梗阻后可望 GFR 在 1~4 周逐渐恢复，较长时期的梗阻肾功能丧失，常不能逆转。”虽然这条原文强调的是“双侧性肾梗阻”，但它同时给出了“解除上尿路梗阻最常用的方法”，即输尿管支架和经皮肾穿刺造瘘。
+
+### 规则二：输尿管病变/狭窄导致积水时，目标是解除梗阻、保护肾功能
+原文指出，输尿管狭窄的“治疗目的是恢复输尿管腔连续性及其功能，解除梗阻，根除感染，挽救和保护肾功能”。  
+并写到可用的腔内方式包括：“输尿管狭窄段短：可用输尿管镜直视下将输尿管扩张导管插过狭窄部扩张输尿管，留置 D-J 管”以及“肾盂输尿管连接部狭窄：可行经皮肾穿刺……球囊扩张放内支架”。  
+这说明在上尿路梗阻场景里，“先引流减压”是规则内的常见路径，而不是等着肾积水自己好转。
+
+### 规则三：如果是上尿路尿路上皮癌（UTUC）风险场景，合并肾积水属于高危因素
+关于右侧输尿管占位性病变，原文写到：术前可分低危与高危；“高危 UTUC:(只需满足下列任何1个条件)1.合并肾积水……8.CT 检查提示肿瘤浸润性生长”。  
+同时，CTU“是目前临床价值最高、诊断 UTUC 准确性最高的检查”，可判断“肿瘤位置、浸润深度及与周围器官关系”，并影响诊疗方案制定。  
+若具备高危因素，“根治性肾输尿管全长切除加膀胱袖状切除术仍然是 UTUC 治疗的金标准手术方式”。
+
+### 规则四：梗阻合并感染风险时，手术/操作前要先控制感染
+原文写到：“积极手术治疗引起或加重尿路感染的尿路梗阻性疾病包括结石、肿瘤、狭窄、先天性畸形等……在施行手术或操作前要积极控制感染，以免手术或操作时继发尿源性脓毒血症。”还提到复杂性肾盂肾炎/复杂性尿路感染“多伴有泌尿系统梗阻，可迅速进展为尿脓毒血症”。
+
+## 2）把您的情况代入这些规则
+
+### 您目前已经满足“不能只观察”的几个信号
+结合您提供的情况：
+
+- CT 已提示“右肾和输尿管积水、右侧输尿管盆段占位、膀胱壁增厚”；
+- 最近肌酐从 146umol/L 到 178umol/L，呈上升；
+- 尿常规白细胞 7 个/高倍视野；
+- 还有尿频、夜尿增多、尿急等下尿路症状。
+
+把这些代入规则，可得到几层判断：
+
+1. **存在明确的上尿路梗阻线索**。  
+   输尿管病变可导致上游输尿管扩张和肾积水，检查上需要进一步明确梗阻部位和性质。
+
+2. **肾功能在变差，说明不能长期拖延**。  
+   检索结果虽然没有给出“单侧梗阻、肌酐达到多少必须立即造瘘”的具体阈值，但已明确：解除梗阻的目的就是避免肾功能进一步损害，而梗阻时间长，肾功能丧失可不能逆转。
+
+3. **“输尿管占位 + 肾积水”本身要高度怀疑 UTUC 风险场景**。  
+   因为“合并肾积水”已被列入高危 UTUC 条件之一。  
+   这并不等于已经确诊肿瘤，但意味着后续检查和治疗不能只按普通炎症或单纯积水来处理。
+
+4. **白细胞升高提示要重视感染评估**。  
+   检索结果没有给出“7个/HP 的具体分层意义”，但已明确：梗阻合并感染是复杂感染风险场景，术前要积极控制感染，避免尿源性脓毒血症。
+
+### 关于膀胱壁增厚、膀胱内壁毛躁
+检索到的相关线索显示，腺性膀胱炎可表现为反复发作、难治性的尿频、尿急、尿痛、血尿等，病变常见于膀胱三角区、膀胱颈部及输尿管口周围；若累及输尿管开口，还可引起输尿管扩张及肾积水。  
+同时，存在尿痛、尿频、尿急时也应考虑膀胱炎/尿路感染，并结合尿液检查判断。  
+也就是说，您提到的“膀胱壁增厚、内壁毛躁”不能仅凭这份证据断定是肿瘤还是炎症，但它提示还需要进一步做膀胱层面的鉴别，而不能只盯着肾积水本身。
+
+## 3）基于证据，您现在更合理的治疗路径
+
+### 第一步：尽快到泌尿外科进一步评估是否需要先引流减压
+从现有证据看，您最需要问清楚的不是“吃什么药消积水”，而是：
+
+- 梗阻是否已经明显影响右肾排泄；
+- 肌酐升高是否仍在进展；
+- 目前能否经输尿管放置支架；
+- 若不能顺利通过梗阻段，是否需要经皮肾穿刺造瘘。
+
+因为检索证据明确给出了上尿路梗阻常用解除方式：**输尿管支架**和**经皮肾穿刺造瘘**。  
+如果目的是先保肾、先减压，这两种方式是规则内最直接的处理手段。
+
+### 第二步：在减压前后，完善“占位性质”检查
+检索到的进一步检查线索包括：
+
+- **CTU**：是目前首选影像学检查，可判断肿瘤位置、浸润深度及与周围器官关系；
+- **细胞学检查**：被用于低危/高危 UTUC 分层；
+- **输尿管肾盂镜活检**：同样被用于分层，说明它是重要的病理取证方式；
+- **逆行插管造影**：若导管能通过狭窄段，可确诊狭窄水平及长度；若不能通过，则需结合其他检查判断；
+- **MRU/CT尿路成像**：在不使用造影剂情况下，也可显示梗阻以上输尿管及肾盂扩张程度。
+
+结合您的场景，可理解为：  
+**先解决“肾脏被堵”的问题，同时尽快弄清“堵塞是肿瘤、炎症、狭窄，还是膀胱输尿管口附近病变所致”。**
+
+### 第三步：若最终证实是高危 UTUC，再进入根治性治疗路径
+证据里明确：合并肾积水属于高危 UTUC 因素之一，高危患者更倾向于根治性切除；标准术式是“根治性肾输尿管全长切除加膀胱袖状切除术”。  
+所以，如果后续检查支持输尿管尿路上皮癌，而且分层落在高危范围，那么治疗方向通常不是长期留管了事，而是要评估是否能进入根治性治疗。
+
+## 4）结合您的抗栓情况，当前证据能回答到哪里
+
+【直接回答】  
+检索结果中**未找到**“氯吡格雷使用中的脑梗患者做膀胱镜、输尿管支架置入、经皮肾造瘘或输尿管镜时，具体应停药几天、何时恢复、是否需要桥接”的围手术期抗栓管理细则。
+
+【检索到的相关线索】  
+1. 检索结果明确没有直接命中“氯吡格雷”相关内容。  
+2. 有证据提到 UTUC 患者近年来因“抗凝和抗血小板药物使用的增多，血尿的发生率可能更高”。  
+3. 有证据提到上尿路梗阻常用介入/手术方式包括输尿管内支架和经皮肾穿刺造瘘，但没有围手术期抗栓停用规则。
+
+【为何无法完全回答】  
+这些线索只说明您现在的病变背景和可能要做的操作，**没有提供**氯吡格雷围手术期的具体停药/桥接标准，因此我不能根据现有证据替您给出具体停药方案。
+
+## 5）对您最实用的明确建议
+
+基于现有证据，我建议您尽快按以下优先级处理：
+
+1. **尽快复诊泌尿外科，重点不是单纯复查，而是评估是否需要立即解除右侧上尿路梗阻。**  
+   因为您已有右侧积水、输尿管占位、肌酐升高，符合“先保肾、先解除梗阻”的思路。
+
+2. **优先讨论两种减压方式：输尿管支架或经皮肾穿刺造瘘。**  
+   这是检索证据里最明确的常用解除梗阻方法。
+
+3. **同时完善占位性质检查。**  
+   包括 CTU、尿细胞学、必要时输尿管肾盂镜活检；如果还要鉴别膀胱病变，膀胱镜检查也应纳入考虑。检索结果支持 CTU、细胞学、输尿管肾盂镜活检在这一路径中的重要性。
+
+4. **如果有感染迹象，操作前先控制感染。**  
+   您有尿白细胞升高，且梗阻背景下感染风险更值得重视；证据明确要求在手术或操作前积极控制感染。
+
+5. **不要把“膀胱壁增厚/内壁毛躁”简单当作普通膀胱炎。**  
+   现有证据提示它既可能与炎症相关，也可能与造成输尿管口受累的膀胱病变有关，仍需进一步鉴别。
+
+最后归纳成一句话：  
+**您现在更像是“右侧输尿管占位造成的梗阻性肾积水，并已出现肾功能受损趋势”的情况，治疗上通常应先尽快评估并解除梗阻（支架或肾造瘘），同时完善 CTU/细胞学/镜下活检等检查明确病因，再决定是否进入根治性手术路径；若合并感染迹象，需先积极控制感染。**
+
+如果您愿意，我可以下一步帮您把这份情况整理成一份**“去泌尿外科住院/门诊时可直接给医生看的要点清单”**，包括您该带哪些检查、重点要问医生哪几个问题。</td></tr><tr data-page-node-id="lwKThPrBZl4IZnyX6AvEuw"><td data-page-node-id="syyCpkeAoz6AFx9z3CNzD7" style="font-weight:bold"><!--pnid:Iw2WYaw9V5L4VDcsHTNnnL-->Q050</td><td data-page-node-id="py4oPoYzHWAavvivzh4Z5B" class="num"><!--pnid:D4thoPB96ZBLvRKFkYSzkT-->⚠️ PARTIAL</td><td data-page-node-id="ajAjls5qKQoXG8uTO66fK4" style="max-width:200px; white-space:pre-wrap"><!--pnid:XhKaefaHmGhizedExPOMfg-->医生您好，我母亲今年67岁，曾经多次出现尿路感染，在外院CT检查结果显示双肾小结石，左输尿管下段近膀胱入口处小结石，其上</td><td data-page-node-id="nSAGLLBvunpztznitD6tcl"><!--pnid:yybFS7Hxc6uejFjwOUnb8k-->左输尿管下段结石、双肾小结石</td><td data-page-node-id="q5FkClD3ecuMEyH9th52lb" class="num"><!--pnid:Do0KnZXRMKciG0B3Jfe5Nk-->0%</td><td data-page-node-id="Q72e84r9AeP3f7bY79CdfB" class="num"><!--pnid:8UlgXicA0FSHFMUrgFQX56-->95%</td><td data-page-node-id="EgoITsquYAWWyiK0zPB5Nv" class="num"><!--pnid:uc5tWu8hWTzN6w6KfsEOVo-->93%</td><td data-page-node-id="g5NWnNtdEXm7iQ0Orp1dj5" class="num"><!--pnid:YfWL4vBO6SdzGlvHNEI7SF-->50%</td><td data-page-node-id="XDNAPfgKtDVw7fMl84RhGv" class="num"><!--pnid:qmz5zOhiAkkuue2CJnd4bA-->⚠️ PARTIAL</td><td data-page-node-id="LaDTaGnCJG13zpVd2dCqAg"><!--pnid:UWSHUR4GubU980RnljJ3dr-->-</td><td data-page-node-id="nQFKiPj7RxL2HW2enRNABv"><!--pnid:t9nlOiu5hyBUPIlSWurBw8-->左URSL</td><td data-page-node-id="q9fTxGHI8Ph5j4pfrcbxJZ" style="font-size:12px; max-width:280px; white-space:pre-wrap"><!--pnid:pMkIxeq6beYtOHgAfEn6Pg-->您好，根据您的描述和检查结果，您被诊断为左输尿管下段结石，双肾小结石，建议行左URSL，术后定期复查，监测结石大小及肾功能的变化。</td><td data-page-node-id="hzSeUGGDa9WaS5IMfznfpI" style="font-size:12px; white-space:pre-wrap"><!--pnid:WmrhF8VkueV3aMRTAUQvne-->先按检索到的规则来套用这个场景。
+
+**1. 先看这条输尿管下段小结石的处理原则**  
+对于直径 **&lt;5mm** 的输尿管结石，“约75%可自行排出，因此首选非手术治疗”；对于 **5~10mm** 的结石，“可在密切监测下选用非手术治疗”。非手术治疗措施包括：**大量饮水，每天2500~3000ml；适度运动；应用镇痛药物缓解肾绞痛症状；定期监测结石位置及肾积水的变化**。输尿管结石平均排石时间 **6~29天**，因此建议排石随访观察 **1个月以内为宜**。  
+另外，**远端/下段输尿管结石**自行排出的概率相对更高，检索结果提到远端输尿管结石可自行排出比例为 **68%**。  
+药物排石方面，促排石药物包括 **α受体阻滞剂、钙通道抑制剂和PDEI-5**；其中“**α受体阻滞剂的排石效应已在临床中得到证实，对远端输尿管结石&gt;5mm的患者使用α受体阻滞剂可增加排石概率**”。
+
+**2. 再看感染和梗阻这条规则**  
+复杂性尿路感染的诊断主要包括两个条件：**有提示尿路感染的尿液分析结果**，并且**存在泌尿生殖道结构、功能异常或其他易发感染的基础疾病**。  
+而对于肾盂肾炎等上尿路感染，资料明确提到：**复杂性肾盂肾炎多伴有泌尿系统梗阻，可迅速进展为尿脓毒血症**。  
+同时，**结石、狭窄、肿瘤等引起或加重尿路感染的梗阻性疾病，应积极手术处理；在施行手术或操作前要积极控制感染，以免继发尿源性脓毒血症**。  
+对尿源性脓毒症危险因素的评估中，还把**高龄、尿路结石或其他原因引起的梗阻、尿路感染、尿细菌培养阳性**列为高危因素。
+
+**3. 再看影像和积水随访要求**  
+所有有泌尿系结石症状的患者都应进行**影像学检查**，其结果对进一步诊治有重要价值。  
+对于梗阻/积水，B超可见狭窄或梗阻段以上输尿管扩张、肾积水；CT尿路成像或MRU可显示**梗阻部位以上输尿管及肾盂扩张程度**。
+
+**把您母亲的情况代入这些规则：**  
+- 已知情形是：**67岁**、**反复尿路感染**、**左输尿管下段近膀胱入口处小结石**、**上游尿路轻度扩张积水**、另有**双肾小结石**。  
+- 这说明她同时具备“**结石** + **反复感染** + **已有梗阻表现（轻度扩张积水）**”这几个要素。按照检索到的规则，这类情况不能只把它当成单纯“小石头”等待；因为感染合并梗阻时，风险点在于可向复杂性感染甚至尿脓毒血症发展。  
+- 但另一方面，检索结果也提示：**小的下段输尿管结石**，如果没有更严重的危险信号，通常可以先按**非手术治疗 + 密切监测**处理。
+
+**因此，可按两种情况理解：**
+
+### 一、如果目前没有明显活动性感染或全身重症表现
+可优先考虑**保守排石**：  
+1. **饮水**：每天 **2500~3000ml**。  
+2. **适度运动**。  
+3. **镇痛**：如有肾绞痛，按医嘱用镇痛药。  
+4. **复查监测**：重点看**结石位置有没有下移/排出、肾积水是否加重**。  
+5. **观察时限**：排石观察通常以 **1个月以内** 为宜。  
+6. **药物排石**：如果这枚左下段结石 **&gt;5mm**，可和泌尿外科医生讨论是否使用**α受体阻滞剂**帮助排石，因为证据中明确提到它对**远端输尿管结石&gt;5mm**可增加排石概率。  
+
+### 二、如果目前存在感染活动，尤其伴梗阻
+这时治疗重点应转为：  
+1. **先控制感染**，因为手术或操作前应积极控制感染。  
+2. **尽快评估梗阻程度和感染风险**，包括尿液检查、影像复查；检索结果提到尿常规/尿沉渣是常用检查，影像学对进一步诊治重要。  
+3. 若医生判断是**感染被梗阻结石持续维持或加重**，资料支持对这类**引起或加重尿路感染的梗阻性疾病积极手术处理**。  
+4. 对于解除上尿路梗阻，检索结果提到常用方法包括**输尿管内放置支架**和**经皮肾穿刺造瘘**。不过，这条证据来自“严重双侧性肾梗阻”上下文，能说明“解除梗阻的方法有哪些”，但**没有直接给出您母亲这种“单侧轻度积水+下段小结石”必须立刻做哪一种**，因此具体方式仍需泌尿外科结合当时感染程度判断。  
+5. 如果保守治疗无效，资料提到：**中下段输尿管结石经保守治疗后仍无效者，应采用膀胱镜下逆行取石方法；若结石影响肾功能或该法不能成功，则需外科手术去除**。  
+6. 体外冲击波碎石（ESWL）也是可用于结石去除的治疗方法，资料写明其定义，但对“您母亲这种具体场景何时优先ESWL、何时优先输尿管镜”的更细适应证，当前检索结果没有展开到可直接下定论的程度。
+
+### 双肾小结石怎么处理
+检索结果对**肾小结石**给出的原则偏向：某些**无症状、无梗阻**的肾盏结石可采用**非手术治疗**，策略包括纠正易发因素、调整饮食结构和饮水习惯、控制BMI&lt;25kg/m²、使24小时尿量维持在2000ml以上、适当运动等。  
+代入您母亲的情况，可以理解为：目前更需要优先处理的重点是**左侧输尿管下段结石及其引起的轻度积水、反复感染问题**；双肾小结石若无明显梗阻和症状，通常以**随访和预防复发**为主。
+
+## 结论
+**您母亲这种情况，治疗重点不是单看“结石小不小”，而是看“结石是否持续造成梗阻并和反复感染互相促进”。**  
+- **如果当前感染已经平稳、没有发热等重症表现、积水仅轻度**：通常可先按**保守排石 + 密切复查**处理，观察期以**1个月以内**为宜。  
+- **如果目前仍反复感染，或者出现发热、脓尿、感染加重趋势，且影像提示梗阻持续**：就应尽快到**泌尿外科**评估，倾向先**控制感染并解除梗阻**，而不是单纯继续拖着等排石。  
+- **双肾小结石**若无明显症状和梗阻，多以**随访、饮水和复发预防**为主。
+
+如果您愿意，我下一步可以按“**现在适合先保守，还是该尽快手术/放支架**”这个目的，帮您把需要重点查看的 CT/化验单指标整理成一个就诊清单。</td></tr></tbody></table></div></div>
+
+<footer data-page-node-id="HYblUqPX16AqjZdfgP8sDV"><!--pnid:cFDpLUvyVxdTDreXpo3aQb-->报告自动生成 | 2026-07-23 12:58:15</footer>
+</div></body></html>

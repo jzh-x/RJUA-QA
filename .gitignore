@@ -1,0 +1,19 @@
+### Python ###
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+
+### Secrets ###
+.env
+
+### Output ###
+rjua_results/
+results_partial.json
+results_partial_*.json
+eval_results/
+evaluation_results/
+
+### OS ###
+.DS_Store
+Thumbs.db
