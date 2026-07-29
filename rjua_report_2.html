@@ -33,10 +33,10 @@ td{padding:5px 8px;border:1px solid #ddd;vertical-align:top}td.text{word-break:b
 <div class="card">
 <h2>四维评测释义</h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-<div style="background:#E8F5E9;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#2E7D32">📋 完整度</div><div style="font-size:13px;margin:4px 0"><b>93.0%</b></div><div style="font-size:12px;color:#555">关键词匹配 + LLM Judge 兜底：PASS=100%, PARTIAL≥50%</div></div>
-<div style="background:#E3F2FD;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#1565C0">✅ 正确度</div><div style="font-size:13px;margin:4px 0"><b>83.0%</b></div><div style="font-size:12px;color:#555">DeepSeek-V3 3轮投票（PASS=1/PARTIAL=0.5/FAIL=0），取均值</div></div>
-<div style="background:#FFF3E0;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#E65100">📚 忠实度</div><div style="font-size:13px;margin:4px 0"><b>88.9%</b></div><div style="font-size:12px;color:#555">RAGAS: 提取断言 → 逐句验证是否被源文档支持 → 被支持数/总数</div></div>
-<div style="background:#F3E5F5;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#6A1B9A">🎯 相关度</div><div style="font-size:13px;margin:4px 0"><b>90.3%</b></div><div style="font-size:12px;color:#555">RAGAS: 逆向生成3个问题 → 评估语义相似度 → 0-1连续分</div></div>
+<div style="background:#E8F5E9;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#2E7D32">📋 完整度</div><div style="font-size:13px;margin:4px 0"><b>93.0%</b></div><div style="font-size:12px;color:#555"><b>答得全不全？</b>高分 = 答案覆盖了医生期望的所有要点。</div></div>
+<div style="background:#E3F2FD;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#1565C0">✅ 正确度</div><div style="font-size:13px;margin:4px 0"><b>83.0%</b></div><div style="font-size:12px;color:#555"><b>答得对不对？</b>高分 = 医学判断正确，不给错的治疗建议。</div></div>
+<div style="background:#FFF3E0;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#E65100">📚 忠实度</div><div style="font-size:13px;margin:4px 0"><b>88.9%</b></div><div style="font-size:12px;color:#555"><b>是不是瞎编？</b>高分 = 每句话都在源文档里有依据，不编造。</div></div>
+<div style="background:#F3E5F5;padding:12px;border-radius:8px"><div style="font-size:16px;font-weight:bold;color:#6A1B9A">🎯 相关度</div><div style="font-size:13px;margin:4px 0"><b>90.3%</b></div><div style="font-size:12px;color:#555"><b>答得切不切题？</b>高分 = 没跑偏，正好回答你问的那个问题。</div></div>
 </div>
 </div>
 
